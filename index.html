@@ -6,7 +6,7 @@
     <title>最新トレンドレポート アーカイブ | クロニクス株式会社</title>
     <style>
         :root {
-            --primary-color: #1a3687; /* 画像に合わせた濃いブルー */
+            --primary-color: #1a3687;
             --secondary-color: #f4f7f6;
             --text-color: #333;
             --border-color: #ddd;
@@ -20,23 +20,38 @@
             margin: 0;
             padding: 0;
         }
+        
+        /* ヘッダー */
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 3rem 1rem;
+            padding: 2.5rem 1rem 3rem 1rem;
             text-align: center;
+        }
+        /* 上部ロゴのスタイル */
+        .header-logo-container {
+            margin-bottom: 1.2rem;
+        }
+        .header-logo {
+            max-width: 220px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
         }
         header h1 {
             margin: 0;
             font-size: 1.8rem;
         }
         header p {
-            margin-top: 1rem;
+            margin-top: 0.8rem;
             font-size: 1rem;
             opacity: 0.9;
         }
         
-        /* ナビゲーションメニュー（上部に固定） */
+        /* ナビゲーションメニュー */
         .category-nav {
             background-color: white;
             padding: 1rem;
@@ -66,15 +81,14 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
-        /* カテゴリーセクションの見出し */
         .category-section {
             margin-bottom: 4rem;
-            padding-top: 2rem; /* アンカーリンク時のズレ防止 */
+            padding-top: 2rem;
         }
         .category-title {
             font-size: 1.6rem;
@@ -84,75 +98,90 @@
             margin-bottom: 1.5rem;
         }
 
-        /* レポートブロックのスタイル */
+        /* 複数列グリッド */
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        /* レポートカード */
         .report-card {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
             border-top: 4px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
         }
         .report-card .vol-badge {
             display: inline-block;
             background-color: #555;
             color: white;
-            padding: 0.2rem 0.8rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            align-self: flex-start;
         }
         .report-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--primary-color);
             margin-top: 0;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            min-height: 3.2em;
         }
         .report-content {
-            margin: 1.5rem 0;
+            margin: 1rem 0;
+            flex-grow: 1;
         }
         .report-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
             color: #555;
         }
+        .report-content p {
+            font-size: 0.95rem;
+        }
+        
         .audio-section {
             background-color: var(--secondary-color);
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
         }
         .audio-section h4 {
             margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
         audio {
             width: 100%;
+            height: 40px;
         }
-        /* ボタンエリア */
+        
+        /* ボタン */
         .action-links {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
         }
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem 1.5rem;
+            padding: 0.8rem 1rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.9rem;
             transition: background-color 0.3s;
-            flex: 1;
-            min-width: 250px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .btn-pdf {
             background-color: var(--accent-color);
@@ -168,24 +197,38 @@
         .btn-link:hover {
             background-color: #002b5e;
         }
+        
+        /* フッター */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 1rem 2rem 1rem;
             font-size: 0.9rem;
             color: #777;
             background-color: white;
             border-top: 1px solid var(--border-color);
+        }
+        /* 最下部ロゴのスタイル */
+        .footer-logo-container {
+            margin-bottom: 1.2rem;
+        }
+        .footer-logo {
+            max-width: 180px;
+            height: auto;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>CHRONIX 最新トレンドレポート アーカイブ</h1>
+    <!-- 上部ロゴ -->
+    <div class="header-logo-container">
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
+    <h1>最新トレンドレポート アーカイブ</h1>
     <p>マンスリーで配信しているBtoB向け最新技術・市場動向レポートのバックナンバーです。</p>
 </header>
 
-<!-- カテゴリーナビゲーション -->
 <nav class="category-nav">
     <a href="#cat1">FAマシンビジョン・スマートカメラ</a>
     <a href="#cat2">先端光学・超精密位置決め・特殊科学計測</a>
@@ -197,72 +240,62 @@
 
 <div class="container">
 
-    <!-- ▼▼ カテゴリー1 ▼▼ -->
+    <!-- カテゴリー1 -->
     <section id="cat1" class="category-section">
         <h2 class="category-title">FAマシンビジョン・スマートカメラ</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <span class="vol-badge">Vol.2</span>
+                <h3>【マシンビジョン】最新レンズテクノロジーによる検査効率化</h3>
+                <div class="report-content">
+                    <h4>📝 レポート解説</h4>
+                    <p>Opt Eng液体レンズを活用した、高速フォーカス調整によるタクトタイム短縮の事例と市場動向について解説します。</p>
+                </div>
+                <div class="audio-section">
+                    <h4>🎧 音声解説を聴く</h4>
+                    <audio controls><source src="#" type="audio/mpeg"></audio>
+                </div>
+                <div class="action-links">
+                    <a href="#" class="btn btn-pdf">📄 PDFをダウンロード</a>
+                    <a href="#" class="btn btn-link">🔗 関連製品を見る</a>
+                </div>
+            </article>
 
-        <!-- レポート Vol.2 (最新を上に配置していくのがおすすめです) -->
-        <article class="report-card">
-            <span class="vol-badge">Vol.2</span>
-            <h3>【マシンビジョン】タイトル未定（※次回配信用ダミー）</h3>
-            
-            <div class="report-content">
-                <h4>📝 レポート解説</h4>
-                <p>ここにVol.2の解説テキストが入ります。毎月このブロックをコピーして、内容を書き換えるだけでアーカイブが追加されます。</p>
-            </div>
-            <div class="audio-section">
-                <h4>🎧 音声解説を聴く (約X分)</h4>
-                <audio controls>
-                    <source src="#" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="action-links">
-                <a href="#" class="btn btn-pdf">📄 PDFレポートをダウンロード</a>
-                <a href="#" class="btn btn-link">🔗 関連製品を見る</a>
-            </div>
-        </article>
-
-        <!-- レポート Vol.1 -->
-        <article class="report-card">
-            <span class="vol-badge">Vol.1</span>
-            <h3>マシンビジョン市場レポート：全数自動検査と現場適応型AI</h3>
-            
-            <div class="report-content">
-                <h4>📝 レポート解説</h4>
-                <p>製造現場における全数自動検査の需要拡大と、それに伴うマシンビジョン市場の成長予測について解説します。現場適応型AIによる検査精度の向上と導入における課題解決アプローチに焦点を当てています。</p>
-            </div>
-            <div class="audio-section">
-                <h4>🎧 音声解説を聴く</h4>
-                <audio controls>
-                    <source src="#" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="action-links">
-                <a href="pdf/マシンビジョン市場レポート_全数自動検査と現場適応型AI_vol1(4).pdf" class="btn btn-pdf" download>📄 PDFレポートをダウンロード</a>
-                <a href="#" class="btn btn-link">🔗 関連製品を見る</a>
-            </div>
-        </article>
+            <article class="report-card">
+                <span class="vol-badge">Vol.1</span>
+                <h3>マシンビジョン市場レポート：全数自動検査と現場適応型AI</h3>
+                <div class="report-content">
+                    <h4>📝 レポート解説</h4>
+                    <p>製造現場における全数自動検査の需要拡大と、それに伴うマシンビジョン市場の成長予測について解説します。</p>
+                </div>
+                <div class="audio-section">
+                    <h4>🎧 音声解説を聴く</h4>
+                    <audio controls><source src="#" type="audio/mpeg"></audio>
+                </div>
+                <div class="action-links">
+                    <a href="pdf/マシンビジョン市場レポート_全数自動検査と現場適応型AI_vol1(4).pdf" class="btn btn-pdf" download>📄 PDFをダウンロード</a>
+                    <a href="#" class="btn btn-link">🔗 関連製品を見る</a>
+                </div>
+            </article>
+        </div>
     </section>
 
-
-    <!-- ▼▼ カテゴリー2 ▼▼ -->
+    <!-- カテゴリー2 -->
     <section id="cat2" class="category-section">
         <h2 class="category-title">先端光学・超精密位置決め・特殊科学計測</h2>
-
-        <!-- レポート Vol.1 -->
-        <article class="report-card">
-            <span class="vol-badge">Vol.1</span>
-            <h3>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h3>
-            
-            <div class="report-content">
-                <h4>📝 レポート解説</h4>
-                <p>環境規制の厳格化と先端半導体・超解像観察での高精度化が相まって、適応光学およびピエゾ駆動技術の重要性が急増しています。欧州RoHS指令の鉛免除規定見直しによる非鉛圧電体の実用化や、2034年に94.4億ドル規模へ急拡大する適応光学(AO)市場の動向について解説します。</p>
-            </div>
-            <div class="audio-section">
-                <h4>🎧 音声解説を聴く (約5分)</h4>
-                <audio controls>
-                    <source src="#" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="action-links">
-                <a href="pdf/適応光学・超精密ピエゾ技術
+        <div class="report-grid">
+            <article class="report-card">
+                <span class="vol-badge">Vol.1</span>
+                <h3>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h3>
+                <div class="report-content">
+                    <h4>📝 レポート解説</h4>
+                    <p>環境規制の厳格化と先端半導体・超解像観察での高精度化に伴う、適応光学およびピエゾ駆動技術の重要性急増について解説します。</p>
+                </div>
+                <div class="audio-section">
+                    <h4>🎧 音声解説を聴く (約5分)</h4>
+                    <audio controls><source src="#" type="audio/mpeg"></audio>
+                </div>
+                <div class="action-links">
+                    <a href="pdf/適応光学・超精密ピエゾ技術の最新動向レポート_vol_1.pdf" class="btn btn-pdf" download>📄 PDFをダウンロード</a>
+                    <a href="https://www.chronix.co.jp/" target="_blank" class="btn btn
