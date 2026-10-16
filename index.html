@@ -6,23 +6,24 @@
     <title>最新トレンドレポート アーカイブ | クロニクス株式会社</title>
     <style>
         :root {
-            --primary-color: #004080;
+            --primary-color: #1a3687; /* 画像に合わせた濃いブルー */
             --secondary-color: #f4f7f6;
             --text-color: #333;
             --border-color: #ddd;
+            --accent-color: #e74c3c;
         }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #f9f9f9;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
         }
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
         }
         header h1 {
@@ -30,48 +31,106 @@
             font-size: 1.8rem;
         }
         header p {
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             font-size: 1rem;
             opacity: 0.9;
         }
+        
+        /* ナビゲーションメニュー（上部に固定） */
+        .category-nav {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .category-nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+        }
+        .category-nav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
         .container {
             max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
+
+        /* カテゴリーセクションの見出し */
+        .category-section {
+            margin-bottom: 4rem;
+            padding-top: 2rem; /* アンカーリンク時のズレ防止 */
+        }
+        .category-title {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
         /* レポートブロックのスタイル */
         .report-card {
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 2rem;
             margin-bottom: 2rem;
             border-top: 4px solid var(--primary-color);
         }
-        .report-card h2 {
+        .report-card .vol-badge {
+            display: inline-block;
+            background-color: #555;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .report-card h3 {
             font-size: 1.4rem;
             color: var(--primary-color);
             margin-top: 0;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            padding-bottom: 1rem;
         }
         .report-content {
             margin: 1.5rem 0;
         }
-        .report-content h3 {
+        .report-content h4 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: #555;
         }
         .audio-section {
             background-color: var(--secondary-color);
-            padding: 1rem;
-            border-radius: 6px;
+            padding: 1.5rem;
+            border-radius: 8px;
             margin: 1.5rem 0;
         }
-        .audio-section h3 {
+        .audio-section h4 {
             margin-top: 0;
+            margin-bottom: 1rem;
             font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         audio {
             width: 100%;
@@ -81,22 +140,22 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s;
             flex: 1;
-            min-width: 200px;
+            min-width: 250px;
         }
         .btn-pdf {
-            background-color: #e74c3c;
+            background-color: var(--accent-color);
             color: white;
         }
         .btn-pdf:hover {
@@ -114,6 +173,8 @@
             padding: 2rem;
             font-size: 0.9rem;
             color: #777;
+            background-color: white;
+            border-top: 1px solid var(--border-color);
         }
     </style>
 </head>
@@ -124,95 +185,84 @@
     <p>マンスリーで配信しているBtoB向け最新技術・市場動向レポートのバックナンバーです。</p>
 </header>
 
+<!-- カテゴリーナビゲーション -->
+<nav class="category-nav">
+    <a href="#cat1">FAマシンビジョン・スマートカメラ</a>
+    <a href="#cat2">先端光学・超精密位置決め・特殊科学計測</a>
+    <a href="#cat3">レーザー加工・溶接品質モニタリング</a>
+    <a href="#cat4">赤外線・サーマル・ガス検知</a>
+    <a href="#cat6">SWIRインライン検査</a>
+    <a href="#cat7">車載ADASセンシング</a>
+</nav>
+
 <div class="container">
 
-    <!-- ブロック1：提供されたPDF資料の内容 -->
-    <article class="report-card">
-        <h2>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h2>
-        
-        <div class="report-content">
-            <h3>📝 レポート解説</h3>
-            <p>環境規制の厳格化と先端半導体・超解像観察での高精度化が相まって、適応光学およびピエゾ駆動技術の重要性が急増しています。欧州RoHS指令の鉛免除規定見直しによる非鉛圧電体の実用化や、2034年に94.4億ドル規模へ急拡大する適応光学(AO)市場の動向について解説します。</p>
-        </div>
+    <!-- ▼▼ カテゴリー1 ▼▼ -->
+    <section id="cat1" class="category-section">
+        <h2 class="category-title">FAマシンビジョン・スマートカメラ</h2>
 
-        <div class="audio-section">
-            <h3>🎧 音声解説を聴く (約5分)</h3>
-            <!-- srcに実際の音声ファイルのURL(GitHubの相対パス等)を指定してください -->
-            <audio controls>
-                <source src="audio/vol1_adaptive_optics.mp3" type="audio/mpeg">
-                お使いのブラウザは音声再生をサポートしていません。
-            </audio>
-        </div>
+        <!-- レポート Vol.2 (最新を上に配置していくのがおすすめです) -->
+        <article class="report-card">
+            <span class="vol-badge">Vol.2</span>
+            <h3>【マシンビジョン】タイトル未定（※次回配信用ダミー）</h3>
+            
+            <div class="report-content">
+                <h4>📝 レポート解説</h4>
+                <p>ここにVol.2の解説テキストが入ります。毎月このブロックをコピーして、内容を書き換えるだけでアーカイブが追加されます。</p>
+            </div>
+            <div class="audio-section">
+                <h4>🎧 音声解説を聴く (約X分)</h4>
+                <audio controls>
+                    <source src="#" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="action-links">
+                <a href="#" class="btn btn-pdf">📄 PDFレポートをダウンロード</a>
+                <a href="#" class="btn btn-link">🔗 関連製品を見る</a>
+            </div>
+        </article>
 
-        <div class="action-links">
-            <a href="pdf/適応光学・超精密ピエゾ技術の最新動向レポート_vol_1.pdf" class="btn btn-pdf" download>
-                📄 PDFレポートをダウンロード
-            </a>
-            <a href="https://www.chronix.co.jp/" target="_blank" class="btn btn-link">
-                🔗 関連製品: Bertin Alpao 可変型ミラー
-            </a>
-        </div>
-    </article>
+        <!-- レポート Vol.1 -->
+        <article class="report-card">
+            <span class="vol-badge">Vol.1</span>
+            <h3>マシンビジョン市場レポート：全数自動検査と現場適応型AI</h3>
+            
+            <div class="report-content">
+                <h4>📝 レポート解説</h4>
+                <p>製造現場における全数自動検査の需要拡大と、それに伴うマシンビジョン市場の成長予測について解説します。現場適応型AIによる検査精度の向上と導入における課題解決アプローチに焦点を当てています。</p>
+            </div>
+            <div class="audio-section">
+                <h4>🎧 音声解説を聴く</h4>
+                <audio controls>
+                    <source src="#" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="action-links">
+                <a href="pdf/マシンビジョン市場レポート_全数自動検査と現場適応型AI_vol1(4).pdf" class="btn btn-pdf" download>📄 PDFレポートをダウンロード</a>
+                <a href="#" class="btn btn-link">🔗 関連製品を見る</a>
+            </div>
+        </article>
+    </section>
 
-    <!-- ブロック2：リスト画像から作成したダミー -->
-    <article class="report-card">
-        <h2>【マシンビジョン】全数自動検査と現場適応型AIの最新動向</h2>
-        
-        <div class="report-content">
-            <h3>📝 レポート解説</h3>
-            <p>製造現場における全数自動検査の需要拡大と、それに伴うマシンビジョン市場の成長予測について解説します。特に現場適応型AIによる検査精度の向上と、導入における課題解決アプローチに焦点を当てています。</p>
-        </div>
 
-        <div class="audio-section">
-            <h3>🎧 音声解説を聴く</h3>
-            <audio controls>
-                <source src="audio/machine_vision_ai.mp3" type="audio/mpeg">
-                お使いのブラウザは音声再生をサポートしていません。
-            </audio>
-        </div>
+    <!-- ▼▼ カテゴリー2 ▼▼ -->
+    <section id="cat2" class="category-section">
+        <h2 class="category-title">先端光学・超精密位置決め・特殊科学計測</h2>
 
-        <div class="action-links">
-            <a href="pdf/マシンビジョン市場レポート.pdf" class="btn btn-pdf" download>
-                📄 PDFレポートをダウンロード
-            </a>
-            <a href="#" class="btn btn-link">
-                🔗 関連製品を見る
-            </a>
-        </div>
-    </article>
-
-    <!-- ブロック3：リスト画像から作成したダミー -->
-    <article class="report-card">
-        <h2>【SWIRマシンビジョン】インライン検査の最新ソリューション</h2>
-        
-        <div class="report-content">
-            <h3>📝 レポート解説</h3>
-            <p>従来の可視光では困難だったシリコンウェハーの内部検査や、水分検知などを可能にするSWIR（短波長赤外）カメラ技術のインライン検査への応用と最新事例をご紹介します。</p>
-        </div>
-
-        <div class="audio-section">
-            <h3>🎧 音声解説を聴く</h3>
-            <audio controls>
-                <source src="audio/swir_vision.mp3" type="audio/mpeg">
-                お使いのブラウザは音声再生をサポートしていません。
-            </audio>
-        </div>
-
-        <div class="action-links">
-            <a href="pdf/SWIRマシンビジョンによるインライン検査.pdf" class="btn btn-pdf" download>
-                📄 PDFレポートをダウンロード
-            </a>
-            <a href="#" class="btn btn-link">
-                🔗 関連製品を見る
-            </a>
-        </div>
-    </article>
-
-</div>
-
-<footer>
-    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
-</footer>
-
-</body>
-</html>
+        <!-- レポート Vol.1 -->
+        <article class="report-card">
+            <span class="vol-badge">Vol.1</span>
+            <h3>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h3>
+            
+            <div class="report-content">
+                <h4>📝 レポート解説</h4>
+                <p>環境規制の厳格化と先端半導体・超解像観察での高精度化が相まって、適応光学およびピエゾ駆動技術の重要性が急増しています。欧州RoHS指令の鉛免除規定見直しによる非鉛圧電体の実用化や、2034年に94.4億ドル規模へ急拡大する適応光学(AO)市場の動向について解説します。</p>
+            </div>
+            <div class="audio-section">
+                <h4>🎧 音声解説を聴く (約5分)</h4>
+                <audio controls>
+                    <source src="#" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="action-links">
+                <a href="pdf/適応光学・超精密ピエゾ技術
