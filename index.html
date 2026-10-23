@@ -163,22 +163,24 @@
         }
 
         /* フッター */
+        .footer-address {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            background-color: white;
+        }
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
         footer {
             text-align: center;
-            padding: 3rem 1rem 2rem 1rem;
+            padding: 1rem;
             font-size: 0.85rem;
             color: #64748b;
             background-color: white;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-        }
-        .footer-logo-container {
-            margin-bottom: 1.2rem;
-        }
-        .footer-logo {
-            max-width: 170px;
-            height: auto;
-            display: inline-block;
         }
     </style>
 </head>
@@ -186,16 +188,77 @@
 
 <header>
     <div class="header-logo-container">
+        <!-- トップ階層なのでそのまま画像ファイルを指定 -->
         <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
     </div>
     <h1>最新トレンドレポート アーカイブ</h1>
-    <p>クロニクスがマンスリーで配信している最新技術・市場動向レポートのバックナンバーです。</p>
+    <p>クロニクスが配信している最新技術・市場動向レポートのバックナンバーです。</p>
 </header>
 
 <div class="container">
     <div class="report-grid">
 
-        <!-- 1. SWIRマシンビジョン -->
+        <!-- 新規1. マシンビジョン・自動全数検査 -->
+        <article class="report-card">
+            <div class="badge-container">
+                <span class="cat-badge">マシンビジョン/FA</span>
+                <span class="vol-badge">vol.01</span>
+            </div>
+            <h2>人手不足を打破する「全数自動検査」と「現場適応型AI」の新展開</h2>
+            
+            <div class="report-content">
+                <h3>📝 レポート解説</h3>
+                <p>自動全数検査への移行が進む一方、環境変化に伴う「チョコ停」や「品種切替時のセットアップ負荷」が課題となっています。液体レンズによる高速自動合焦と組み込みAIを融合させた省力化技術の最新動向を解説します。</p>
+            </div>
+
+            <div class="action-links">
+                <a href="reports/mv_hikrobot_vol1.html" class="btn btn-page">
+                    📖 レポート詳細を見る
+                </a>
+            </div>
+        </article>
+
+        <!-- 新規2. 自動運転ADAS・マルチモーダル -->
+        <article class="report-card">
+            <div class="badge-container">
+                <span class="cat-badge">モビリティ/SDV</span>
+                <span class="vol-badge">vol.01</span>
+            </div>
+            <h2>自動運転マルチモーダル冗長センシング 最新トレンドレポート</h2>
+            
+            <div class="report-content">
+                <h3>📝 レポート解説</h3>
+                <p>完全な自動運転の実現に向け、全天候型の検知冗長性確保とセンサーの小型・低コスト化を伴う車両統合アーキテクチャへのシフトが進んでいます。センシングの限界拡張とデータ循環基盤の最新動向を整理しました。</p>
+            </div>
+
+            <div class="action-links">
+                <a href="reports/adas_capt640_vol1.html" class="btn btn-page">
+                    📖 レポート詳細を見る
+                </a>
+            </div>
+        </article>
+
+        <!-- 新規3. 適応光学・ピエゾ -->
+        <article class="report-card">
+            <div class="badge-container">
+                <span class="cat-badge">適応光学/ナノポジショニング</span>
+                <span class="vol-badge">vol.01</span>
+            </div>
+            <h2>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h2>
+            
+            <div class="report-content">
+                <h3>📝 レポート解説</h3>
+                <p>先端半導体・超解像観察での高精度化が相まり、適応光学(AO)とピエゾ駆動技術の重要性が急増。熱歪みや大気揺らぎを克服する電磁駆動・画像計算を用いた可変型ミラーの最新動向を解説します。</p>
+            </div>
+
+            <div class="action-links">
+                <a href="reports/ao_piezo_vol1.html" class="btn btn-page">
+                    📖 レポート詳細を見る
+                </a>
+            </div>
+        </article>
+
+        <!-- 既存1. SWIRマシンビジョン -->
         <article class="report-card">
             <div class="badge-container">
                 <span class="cat-badge">SWIRインライン検査</span>
@@ -209,21 +272,17 @@
             </div>
 
             <div class="action-links">
-                <!-- 詳細ページへのリンクを設定 -->
                 <a href="reports/swir_inline_vol1.html" class="btn btn-page">
                     📖 レポート詳細を見る
-                </a>
-                <a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 関連製品: NIT LiSaSWIR
                 </a>
             </div>
         </article>
 
-        <!-- 2. レーザー加工・光学計測 -->
+        <!-- 既存2. レーザー加工・光学計測 -->
         <article class="report-card">
             <div class="badge-container">
                 <span class="cat-badge">レーザー加工・溶接品質</span>
-                <span class="vol-badge">vol.1</span>
+                <span class="vol-badge">vol.01</span>
             </div>
             <h2>レーザー加工技術と光学計測の最新動向</h2>
             
@@ -233,23 +292,19 @@
             </div>
 
             <div class="action-links">
-                <!-- 詳細ページへのリンクを設定 -->
                 <a href="reports/laser_vol1.html" class="btn btn-page">
                     📖 レポート詳細を見る
-                </a>
-                <a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 関連製品: Tucsen XTシリーズ
                 </a>
             </div>
         </article>
 
-        <!-- 3. 赤外線・OGIセンシング -->
+        <!-- 既存3. 赤外線・OGIセンシング -->
         <article class="report-card">
             <div class="badge-container">
                 <span class="cat-badge">赤外線・ガス検知(OGI)</span>
-                <span class="vol-badge">vol.1</span>
+                <span class="vol-badge">vol.01</span>
             </div>
-            <h2>危険ガス漏洩対策と赤外線OGIセンシング動向</h2>
+            <h2>危険ガス漏洩対策と赤外線OGIセンシングの最新動向</h2>
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
@@ -257,12 +312,8 @@
             </div>
 
             <div class="action-links">
-                <!-- 詳細ページへのリンクを設定 -->
                 <a href="reports/ogi_vol1.html" class="btn btn-page">
                     📖 レポート詳細を見る
-                </a>
-                <a href="https://www.lynred.com/products/ati640" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 関連製品: LYNRED ATI 640
                 </a>
             </div>
         </article>
@@ -270,10 +321,11 @@
     </div>
 </div>
 
+<div class="footer-address">
+    <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+</div>
+
 <footer>
-    <div class="footer-logo-container">
-        <img src="logo2.jpg" alt="CHRONIX ロゴ" class="footer-logo">
-    </div>
     <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
 </footer>
 
