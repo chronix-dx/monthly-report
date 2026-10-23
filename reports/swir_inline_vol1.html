@@ -22,21 +22,29 @@
             padding: 0;
         }
         
-        /* ヘッダー・フッター（共通） */
+        /* ヘッダー */
         header {
             background-color: var(--primary-color);
             color: white;
             padding: 1.5rem 1rem;
             text-align: center;
         }
-        header h1 { margin: 0; font-size: 1.4rem; }
-        .back-link {
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
             display: inline-block;
-            margin-top: 1rem;
+        }
+        .back-link {
+            display: block;
+            margin-top: 0.8rem;
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.85;
         }
         .back-link:hover { opacity: 1; text-decoration: underline; }
         
@@ -91,7 +99,6 @@
             padding-bottom: 0.5rem;
         }
         
-        /* 要点リスト等の装飾 */
         .summary-box {
             background-color: #f8fafc;
             border: 1px solid var(--border-color);
@@ -107,6 +114,17 @@
             margin-bottom: 0.5rem;
         }
         
+        /* 製品画像 */
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
         /* 表スタイル */
         table {
             width: 100%;
@@ -124,39 +142,25 @@
             color: #334155;
             width: 30%;
         }
-        
-        /* ダウンロードエリア */
-        .download-area {
-            background-color: var(--tag-bg);
-            padding: 2.5rem;
+
+        /* 最下部アドレスロゴ */
+        .footer-address {
             text-align: center;
-            border-top: 1px solid #c7d2fe;
+            padding: 2.5rem 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
             margin-top: 2rem;
+            background-color: #fafbfc;
         }
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 6px rgba(217, 56, 41, 0.3);
-            transition: all 0.2s ease;
-        }
-        .btn-download:hover {
-            background-color: #b92b1d;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(217, 56, 41, 0.4);
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
         }
         
-        /* フッター */
+        /* コピーライト */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             font-size: 0.85rem;
             color: #64748b;
         }
@@ -165,7 +169,9 @@
 <body>
 
 <header>
-    <h1>CHRONIX 最新トレンドレポート</h1>
+    <div>
+        <img src="../logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
     <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
 </header>
 
@@ -219,56 +225,10 @@
 
         <h2>さらに知る：最先端SWIR ラインスキャンカメラ</h2>
         <h3>NIT (New Imaging Technologies) - LiSaSWIR 2048</h3>
+        
+        <!-- 製品画像 -->
+        <img src="../lisaswir_2048.jpg" alt="NIT LiSaSWIR 2048" class="product-img">
+
         <ul>
             <li><strong>超高速110kHz フル解像度と高感度 InGaAs センサ:</strong><br>自社開発「NSC2301T-SI」センサを搭載。2048×1ピクセルの高解像度で110kHz以上の高速駆動を実現し、ウェハ検査やOCTなどの高度なインライン処理に最適です。</li>
-            <li><strong>波長0.9～1.7µm の広帯域対応:</strong><br>ピーク時80%以上の高い量子効率 (QE)を誇ります。半導体検査をはじめ、ソーラーパネル、熱ガラス、食品・廃棄物選別など多彩な用途に対応します。</li>
-            <li><strong>オンボード処理と柔軟な統合:</strong><br>カメラ本体内で欠陥画素補正 (BPR) や不均一性補正 (NUC) をリアルタイムに実行します。CameraLink Base / GenICam 準拠のスマート制御に対応しています。</li>
-        </ul>
-
-        <table>
-            <tbody>
-                <tr>
-                    <th>センサー / ピクセル</th>
-                    <td>NSC2301T-SI (InGaAs) / 2048 × 1 pixels (8µm × 14µm)</td>
-                </tr>
-                <tr>
-                    <th>最大フレームレート</th>
-                    <td>&gt; 110 kHz (フル解像度時) / 最短露光時間: 1 µs</td>
-                </tr>
-                <tr>
-                    <th>感度波長帯 (SWIR)</th>
-                    <td>0.9µm ～ 1.7µm (Peak QE &gt; 80%)</td>
-                </tr>
-                <tr>
-                    <th>リードアウトノイズ</th>
-                    <td>&lt; 90e- (High Gain), &lt; 370e- (Medium Gain), &lt; 2200e- (Low Gain)</td>
-                </tr>
-                <tr>
-                    <th>インターフェース</th>
-                    <td>CameraLink Base / GenCP (GenICam)準拠</td>
-                </tr>
-                <tr>
-                    <th>外形寸法 / 重量</th>
-                    <td>35.4 × 75 × 68 mm / 280g (動作温度: -40℃～+71℃)</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-    <!-- HKA氏の指示を反映したPDFダウンロード導線 -->
-    <div class="download-area">
-        <p style="margin-top:0; color:#4f46e5; font-weight:bold; margin-bottom:1.5rem;">※本レポートの完全版（PDF）はこちらからダウンロードいただけます。</p>
-        <a href="../pdf/swir_inline_vol1.pdf" class="btn-download" download>
-            📄 PDFレポートをダウンロード
-        </a>
-    </div>
-
-</div>
-
-<footer>
-    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
-</footer>
-
-</body>
-</html>
+            <li><strong>波長0.9～1.7µm の広帯域対応:</strong><br>ピーク時80%以上の高い量子効率 (
