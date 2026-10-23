@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>レーザー加工技術と光学計測の最新動向 | クロニクス株式会社</title>
     <style>
-        /* swir_inline_vol1.html と同じスタイルを適用 */
         :root {
             --primary-color: #1a3687;
             --secondary-color: #f4f7f6;
@@ -22,22 +21,34 @@
             margin: 0;
             padding: 0;
         }
+        
+        /* ヘッダー */
         header {
             background-color: var(--primary-color);
             color: white;
             padding: 1.5rem 1rem;
             text-align: center;
         }
-        header h1 { margin: 0; font-size: 1.4rem; }
-        .back-link {
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
             display: inline-block;
-            margin-top: 1rem;
+        }
+        .back-link {
+            display: block;
+            margin-top: 0.8rem;
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.85;
         }
         .back-link:hover { opacity: 1; text-decoration: underline; }
+        
+        /* コンテンツ領域 */
         .container {
             max-width: 800px;
             margin: 2.5rem auto;
@@ -84,6 +95,16 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
+        h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        h3 a:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
         .news-box {
             background-color: #ffffff;
             border: 1px solid var(--border-color);
@@ -102,35 +123,35 @@
             margin-bottom: 0.8rem;
             display: inline-block;
         }
-        .download-area {
-            background-color: var(--tag-bg);
-            padding: 2.5rem;
+        
+        /* 製品画像 */
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 最下部アドレスロゴ */
+        .footer-address {
             text-align: center;
-            border-top: 1px solid #c7d2fe;
+            padding: 2.5rem 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
             margin-top: 2rem;
+            background-color: #fafbfc;
         }
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 6px rgba(217, 56, 41, 0.3);
-            transition: all 0.2s ease;
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
         }
-        .btn-download:hover {
-            background-color: #b92b1d;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(217, 56, 41, 0.4);
-        }
+
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             font-size: 0.85rem;
             color: #64748b;
         }
@@ -139,7 +160,9 @@
 <body>
 
 <header>
-    <h1>CHRONIX 最新トレンドレポート</h1>
+    <div>
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
     <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
 </header>
 
@@ -190,18 +213,17 @@
 
         <h2>2. 高度加工を支える光学計測</h2>
         
-        <h3>Tucsen「XTシリーズ」</h3>
+        <h3><a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer">🔗 公式サイト：Tucsen「XTシリーズ」</a></h3>
         <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">【2026年9月発表】</p>
+        
+        <img src="xt_beam.jpg" alt="Tucsen XTシリーズ" class="product-img">
+
         <p>Tucsen社製レーザービームプロファイラー「XTシリーズ」は、UV (240nm)からLWIR (14µm)まで幅広く対応します。ビーム幅測定精度±2%未満の高精度な定量分析と、最小29mm角の超小型筐体により、各種産業機器や現場への組み込みを容易にします。</p>
 
     </div>
 
-    <!-- ダウンロード導線 -->
-    <div class="download-area">
-        <p style="margin-top:0; color:#4f46e5; font-weight:bold; margin-bottom:1.5rem;">※本レポートの完全版（PDF）はこちらからダウンロードいただけます。</p>
-        <a href="../pdf/laser_vol1.pdf" class="btn-download" download>
-            📄 PDFレポートをダウンロード
-        </a>
+    <div class="footer-address">
+        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
     </div>
 
 </div>
