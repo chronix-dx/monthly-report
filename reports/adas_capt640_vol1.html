@@ -90,17 +90,6 @@
             margin: 2.5rem 0 1.5rem;
             background: #f8fafc;
         }
-        h3 {
-            font-size: 1.15rem;
-            color: #334155;
-            margin: 2rem 0 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-        a {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
 
         .summary-box {
             background-color: #f8fafc;
@@ -127,6 +116,7 @@
             color: var(--primary-color);
             text-decoration: none;
             border-bottom: 1px solid var(--primary-color);
+            transition: color 0.2s ease, border-color 0.2s ease;
         }
         .trend-title a:hover {
             color: var(--accent-color);
@@ -140,7 +130,11 @@
             padding-top: 0.6rem;
             border-top: 1px dashed var(--border-color);
             font-size: 0.85rem;
-            color: #64748b;
+            word-break: break-all;
+        }
+        .ref-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
         }
 
         .product-img {
@@ -214,7 +208,7 @@
             <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>外光やヘッドライトグレアの影響を受けにくい熱画像により、可視カメラが苦手とする夜間や悪天候下での歩行者検知を強力に補完するためです。</div>
             <div class="trend-section"><strong>■技術要点</strong><br>VGA解像度(640×480)のベアダイ車載サーマルセンサー。車載品質規格AEC-Q100 Grade 3および自動車品質管理規格IATF 16949を取得し、自動車産業の品質管理基準であるP-PAP (生産部品承認プロセス)に対応。</div>
             <div class="trend-section"><strong>★インパクト</strong><br>暗闇や悪天候下でも最大228m先の歩行者を検知し、夜間自動ブレーキの死角を解消。</div>
-            <div class="ref-text">参照URL: <a href="https://www.lynred.com/products/capt640-02" target="_blank" rel="noopener noreferrer">[LYNRED CAPT640]</a></div>
+            <div class="ref-text">参照URL:<br><a href="https://www.lynred.com/products/capt640-02" target="_blank" rel="noopener noreferrer">https://www.lynred.com/products/capt640-02</a> [LYNRED CAPT640]</div>
         </div>
 
         <!-- 2. 車載LIDAR市場 -->
@@ -223,16 +217,16 @@
             <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>小型統合やソリッドステート化が進み、量産価格の低下によって自動運転の実用化と開発コスト削減が劇的に加速するためです。</div>
             <div class="trend-section"><strong>■技術要点</strong><br>小型統合・ソリッドステート化の進行と、主要サプライヤー間の量産競争の激化。</div>
             <div class="trend-section"><strong>★インパクト</strong><br>2026年の17億ドルから2033年に112.6億ドルへ拡大 (CAGR 31.0%)。</div>
-            <div class="ref-text">参照URL: [ex-press.jp]</div>
+            <div class="ref-text">参照URL:<br><a href="https://ex-press.jp/" target="_blank" rel="noopener noreferrer">https://ex-press.jp/</a></div>
         </div>
 
         <!-- 3. TIER IV -->
         <div class="trend-box">
             <div class="trend-title">3. TIER IVが120°広角の車載MPカメラを発表</div>
-            <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>交差点の死角を削減し、市街地走行の認識冗長性を大幅向上させつつ、必要カメラ台数を最適化できるためです。</div>
+            <div class="trend-section"><strong>なぜそれが重要か?</strong><br>交差点の死角を削減し、市街地走行の認識冗長性を大幅向上させつつ、必要カメラ台数を最適化できるためです。</div>
             <div class="trend-section"><strong>■技術要点</strong><br>120°広角カメラを追加。近距離周辺を広角、遠方を狭角カメラで役割分担する車載システム構成。</div>
             <div class="trend-section"><strong>★インパクト</strong><br>車両周囲の死角低減と、必要カメラ台数の最適化を実現。</div>
-            <div class="ref-text">参照URL: [TIER IV]</div>
+            <div class="ref-text">参照URL:<br><a href="https://tier4.jp/" target="_blank" rel="noopener noreferrer">https://tier4.jp/</a></div>
         </div>
 
         <!-- 4. 現代自動車 -->
@@ -241,7 +235,7 @@
             <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>実走行データ収集から学習、検証、再展開を自動循環させ、膨大なデータを効率よく還元して開発・検証プロセスを効率化するためです。</div>
             <div class="trend-section"><strong>■技術要点</strong><br>難例抽出、継続学習、仮想検証を組み合わせたData Flywheelによるデータ自動循環・学習開発基盤。</div>
             <div class="trend-section"><strong>★インパクト</strong><br>自動学習サイクルにより、開発・検証コストを半減以下に抑制し、認識性能を持続的に改善。</div>
-            <div class="ref-text">参照URL: [Unite.AI]</div>
+            <div class="ref-text">参照URL:<br><a href="https://www.unite.ai/" target="_blank" rel="noopener noreferrer">https://www.unite.ai/</a></div>
         </div>
 
         <!-- 5. 車載AI市場 -->
@@ -250,20 +244,12 @@
             <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>単一センサーの性能競争ではなく、複数センサーを最適に組み合わせるセンサーフュージョンおよびSDV化の需要が急増しているためです。</div>
             <div class="trend-section"><strong>■技術要点</strong><br>ADAS、コネクテッドカー、SDVの拡大に対応する車載統合およびデータ循環アーキテクチャ。</div>
             <div class="trend-section"><strong>★インパクト</strong><br>センサーフュージョン需要の急増により、2036年に2,444億ドル規模へ成長 (CAGR 27%)。</div>
-            <div class="ref-text">参照URL: [OpenPR]</div>
+            <div class="ref-text">参照URL:<br><a href="https://www.openpr.com/" target="_blank" rel="noopener noreferrer">https://www.openpr.com/</a></div>
         </div>
-
-        <h2>さらに知る(関連ソース・動向)</h2>
-        <ul style="margin: 0 0 2rem 0; padding-left: 1.5rem;">
-            <li>LYNRED CAPT640 紹介動画 - 車載サーマルイメージングの最新実演</li>
-            <li>車載LiDAR市場動向レポートーコスト低減とソリッドステート化の展望</li>
-            <li>TIER IV 広角カメラ公式発表——次世代自律走行ビジョンシステム構成</li>
-            <li>現代自動車 Data Flywheel ニュース- 実走行ビッグデータの自律学習ループ</li>
-            <li>車載AI市場 関連動向 ― センサーフュージョンと車載コンピュートの未来</li>
-        </ul>
 
     </div>
 
+    <!-- 最下部アドレスロゴ -->
     <div class="footer-address">
         <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
     </div>
