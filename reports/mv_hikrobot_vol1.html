@@ -22,7 +22,6 @@
             padding: 0;
         }
         
-        /* ヘッダー */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -48,7 +47,6 @@
         }
         .back-link:hover { opacity: 1; text-decoration: underline; }
         
-        /* コンテンツ領域 */
         .container {
             max-width: 800px;
             margin: 2.5rem auto;
@@ -84,7 +82,6 @@
             padding: 2rem 2.5rem;
         }
         
-        /* 見出し */
         h2 {
             font-size: 1.3rem;
             color: var(--primary-color);
@@ -147,7 +144,16 @@
             text-decoration: underline;
         }
 
-        /* 表スタイル */
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -165,7 +171,6 @@
             width: 30%;
         }
 
-        /* 最下部アドレスロゴ */
         .footer-address {
             text-align: center;
             padding: 2.5rem 1rem 1.5rem;
@@ -244,7 +249,9 @@
         </div>
 
         <h2>ピックアップ製品・ソリューション</h2>
-        <h3>Hikrobot「ID3000シリーズ」:<br>3.1MP高解像度×16mm液体レンズ×Deep Learningが実現する「止めない」超高速コード読取</h3>
+        <h3><a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer">🔗 公式サイト：Hikrobot「ID3000シリーズ」</a><br>3.1MP高解像度×16mm液体レンズ×Deep Learningが実現する「止めない」超高速コード読取</h3>
+        
+        <img src="id3000.jpg" alt="Hikrobot ID3000" class="product-img">
         
         <p><strong>なぜ重要か:</strong><br>市場の深刻な課題である「環境光やワーク姿勢変化による誤認識(チョコ停)」と「多品種ラインでの段取り工数」を、液体レンズによる電気的オートフォーカスと組み込みディープラーニングの融合によって1台で根本解決し、ラインを止めない全数自動トレーサビリティを現実にする。</p>
 
