@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向 | クロニクス株式会社</title>
+    <style>
+        :root {
+            --primary-color: #1a3687;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+            --accent-color: #d93829;
+            --tag-bg: #e8eef9;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        .back-link {
+            display: block;
+            margin-top: 0.8rem;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        
+        /* コンテンツ領域 */
+        .container {
+            max-width: 800px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .report-header {
+            padding: 2.5rem 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fcfcfc;
+        }
+        .report-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.8rem;
+        }
+        .report-title {
+            font-size: 1.6rem;
+            color: #1e293b;
+            margin: 0 0 0.5rem;
+            line-height: 1.4;
+        }
+        .report-subtitle {
+            font-size: 1.05rem;
+            color: #475569;
+            margin: 0 0 1rem;
+            font-weight: normal;
+        }
+        .report-body {
+            padding: 2rem 2.5rem;
+        }
+        
+        /* 見出し */
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+            background: #f8fafc;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        h3 a:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .summary-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trend-box {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .trend-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        .trend-section {
+            margin-bottom: 0.6rem;
+        }
+        .ref-text {
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        .ref-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* 表スタイル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            width: 30%;
+        }
+
+        /* 最下部アドレスロゴ */
+        .footer-address {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            background-color: #fafbfc;
+        }
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
+    <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
+</header>
+
+<div class="container">
+    <div class="report-header">
+        <div class="report-meta">
+            <span>2445文字</span> | <span>読了時間:約5分</span>
+        </div>
+        <h1 class="report-title">【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h1>
+    </div>
+
+    <div class="report-body">
+        
+        <h2>エグゼクティブサマリー</h2>
+        <div class="summary-box">
+            <p style="margin-top:0; font-weight:bold;">環境規制の厳格化と先端半導体・超解像観察での高精度化が相まって、適応光学およびピエゾ駆動技術の重要性が急増している。</p>
+            <ul style="margin:0; padding-left:1.5rem;">
+                <li>欧州RoHS指令の鉛免除規定見直しを受け、非鉛圧電体の実用化が加速すると同時に、適応光学(AO)市場は2034年に94.4億ドル規模へ急拡大する見込みである。</li>
+                <li>半導体露光・検査や生体深部観察、高出力レーザー加工において、熱歪みや大気揺らぎ、幾何学的収差がナノメートル級精度の向上を阻む構造的課題となっている。</li>
+                <li>大手M&amp;Aによる超精密制御基盤の強化とともに、電磁駆動や画像計算を駆使した可変型ミラー・計算適応光学が、次世代の製造・検査・解析装置の核となる。</li>
+            </ul>
+        </div>
+
+        <h2>セレクトニュース(3選)</h2>
+
+        <!-- 1. 業界再編・M&A -->
+        <div class="trend-box">
+            <div class="trend-title">【業界再編・M&amp;A】 HOERBIGERグループが超精密ナノポジショニング最大手Physik Instrumente (PI)を買収 (2026/05)</div>
+            <p style="margin: 0 0 0.8rem 0;">HOERBIGERがピエゾステージ・ナノポジショニングの世界的最大手であるPIの買収手続きを完了した。</p>
+            <div class="trend-section"><strong>なぜ重要か:</strong><br>半導体露光・検査や超解像顕微鏡分野におけるサブナノメートル制御のグローバル供給網を一元強化し、精密制御市場の競争環境を大きく変化させる。</div>
+            <div class="ref-text">参照URL:<br><a href="https://www.pi-japan.jp/ja/about/news" target="_blank" rel="noopener noreferrer">https://www.pi-japan.jp/ja/about/news</a></div>
+        </div>
+
+        <!-- 2. 市場動向 -->
+        <div class="trend-box">
+            <div class="trend-title">【市場動向】 Straits Research: 世界の適応光学(AO)市場、2034年に94.4億ドル規模へ成長 (2026/09)</div>
+            <p style="margin: 0 0 0.8rem 0;">適応光学市場が2025年の8.1億ドルから年率23%で急成長し、2034年には94.4億ドル規模へ達する見通しが発表された。</p>
+            <div class="trend-section"><strong>なぜ重要か:</strong><br>空間光通信の大気揺らぎ補正や超解像顕微鏡、高出力レーザー加工での採用拡大が市場を強力に牽引し、高精度光学システムの必須基盤技術へと昇華する。</div>
+            <div class="ref-text">参照URL:<br><a href="https://straitsresearch.com/jp/report/adaptive-optics-market" target="_blank" rel="noopener noreferrer">https://straitsresearch.com/jp/report/adaptive-optics-market</a><br>※別途まとめた資料を添付します</div>
+        </div>
+
+        <!-- 3. 新技術・課題解決 -->
+        <div class="trend-box">
+            <div class="trend-title">【新技術・課題解決】 NICT: 高価な変形鏡なしで光学歪みを画像計算で補正する「計算適応光学」 (2026/03)</div>
+            <p style="margin: 0 0 0.8rem 0;">情報通信研究機構(NICT)が、撮影後の計算処理のみで深部観察の波面歪みを打ち消す「計算適応光学」を開発した。</p>
+            <div class="trend-section"><strong>なぜ重要か:</strong><br>高価なハードウェアを導入することなく既存顕微鏡の解像度を劇的に向上させ、ライフサイエンスや検査機器分野における高精細観察の民主化を促進する。</div>
+            <div class="ref-text">参照URL:<br><a href="https://www.nict.go.jp/press/2026/03/16-1.html" target="_blank" rel="noopener noreferrer">https://www.nict.go.jp/press/2026/03/16-1.html</a></div>
+        </div>
+
+        <h2>ピックアップ製品・ソリューション</h2>
+        <h3><a href="https://www.alpao.com/" target="_blank" rel="noopener noreferrer">🔗 公式サイト：Bertin Alpao「可変型ミラー(Deformable Mirrors / DMシリーズ)」<br>電磁アクチュエータ駆動による高速・大ストローク波面補正</a></h3>
+        
+        <p><strong>なぜ重要か:</strong><br>大気揺らぎや光学系の高次収差、高出力レーザー加工時の熱歪みをリアルタイムに補正し、超解像イメージングや空間光通信の損失低減を強力に後押しする。</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>項目</th>
+                    <th>仕様・詳細内容</th>
+                </tr>
+                <tr>
+                    <td>メーカー名</td>
+                    <td>Bertin Alpao</td>
+                </tr>
+                <tr>
+                    <td>型式・シリーズ</td>
+                    <td>スマート可変型ミラー(sDM)、埋め込み型(eDM)、小型DM、大型DM、大口径(DMX)</td>
+                </tr>
+                <tr>
+                    <td>解像度/性能</td>
+                    <td>アクチュエータ数: 37～13,107個<br>整準時間: 最短0.5ms以下(高応答)</td>
+                </tr>
+                <tr>
+                    <td>レンズ/光学仕様</td>
+                    <td>・瞳径(開口径): 5.6mm～190mm (DMXは最大170mm以上)<br>・Tip/Tilt変形ストローク: 最大80µm PV以上</td>
+                </tr>
+                <tr>
+                    <td>光学・照明機能</td>
+                    <td>・アクティブベストフラット: 最良7nm RMS<br>・ヒステリシス: 低ヒステリシス(最大2%～3%)</td>
+                </tr>
+                <tr>
+                    <td>対応ワーク/コーティング</td>
+                    <td>標準コーティング: Protected Silver(保護銀)<br>オプション: 金、アルミニウム、誘電体多層膜</td>
+                </tr>
+                <tr>
+                    <td>処理アルゴリズム/SDK</td>
+                    <td>専用SDK提供(C++、Python、Matlab、LabVIEW等に対応)</td>
+                </tr>
+                <tr>
+                    <td>構造・インターフェース</td>
+                    <td>・駆動構造: 電磁アクチュエータ構造<br>・対応システム: 標準エレクトロニクス、OEM、PCIeカード対応<br>・通信規格: USB2.0、Ethernet、Gigabit対応</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- 最下部アドレスロゴ -->
+    <div class="footer-address">
+        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+</body>
+</html>
