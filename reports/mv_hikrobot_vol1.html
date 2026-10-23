@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人手不足を打破する「全数自動検査」と「現場適応型AI」の新展開 | クロニクス株式会社</title>
+    <style>
+        :root {
+            --primary-color: #1a3687;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+            --accent-color: #d93829;
+            --tag-bg: #e8eef9;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        .back-link {
+            display: block;
+            margin-top: 0.8rem;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        
+        .container {
+            max-width: 800px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .report-header {
+            padding: 2.5rem 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fcfcfc;
+        }
+        .report-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.8rem;
+        }
+        .report-title {
+            font-size: 1.6rem;
+            color: #1e293b;
+            margin: 0 0 0.5rem;
+            line-height: 1.4;
+        }
+        .report-subtitle {
+            font-size: 1.05rem;
+            color: #475569;
+            margin: 0 0 1rem;
+            font-weight: normal;
+        }
+        .report-body {
+            padding: 2rem 2.5rem;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+            background: #f8fafc;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        h3 a:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .summary-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trend-box {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .trend-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        .trend-section {
+            margin-bottom: 0.6rem;
+        }
+        .ref-text {
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        .ref-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            width: 30%;
+        }
+
+        .footer-address {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            background-color: #fafbfc;
+        }
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
+    <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
+</header>
+
+<div class="container">
+    <div class="report-header">
+        <div class="report-meta">
+            <span>2496文字</span> | <span>読了時間:約5分</span>
+        </div>
+        <h1 class="report-title">人手不足を打破する「全数自動検査」と「現場適応型AI」の新展開</h1>
+        <div class="report-subtitle">チョコ停回避と段取り削減マシンビジョンの未来</div>
+    </div>
+
+    <div class="report-body">
+        
+        <h2>エグゼクティブサマリー</h2>
+        <div class="summary-box">
+            <p style="margin-top:0; font-weight:bold;">自動全数検査への移行が進む一方、環境変化に伴う「チョコ停」や「品種切替時のセットアップ負荷」が現場運用の最大のボトルネックとなっている。</p>
+            <ul style="margin:0; padding-left:1.5rem;">
+                <li>新JIS規格の制定や機器への標準組み込み(OEM化)により、製造ラインにおける全数品質保証の標準化が急ピッチで進んでいる。</li>
+                <li>実ラインにおける照明変動やワークの姿勢変化による過多検出(チョコ停)が頻発し、目視検査へ後退する失敗事例が深刻化している。</li>
+                <li>課題解決のカギとして、液体レンズによる高速自動合焦と組み込みAI(ディープラーニング)を融合させた「現場適応型・省力化技術」への注目が集まっている。</li>
+            </ul>
+        </div>
+
+        <h2>セレクトニュース(3選)</h2>
+
+        <!-- 1. 法規制・標準化 -->
+        <div class="trend-box">
+            <div class="trend-title">1.【法規制・標準化】 人手不足下の自動全数検査の信頼性を担保する新JIS制定 (2026/03)</div>
+            <p style="margin: 0 0 0.8rem 0;">一般財団法人日本規格協会より、産業用ロボットと非接触カメラ/センサーを組み合わせた自動三次元座標測定システムの精度評価方法を定めた日本産業規格(JIS B 7446-1:2026)が制定された。</p>
+            <div class="trend-section"><strong>なぜ重要か:</strong><br>人手不足に伴い抜き取り目視から自動全数検査への転換が加速する中、導入するロボット検査システムの精度と信頼性を第三者視点で評価・客観証明できる統一尺度が確立され、ユーザー企業の導入ハードルが大きく下がる。</div>
+            <div class="ref-text">参照URL:<br><a href="https://prtimes.jp/main/html/rd/p/000000524.000004052.html" target="_blank" rel="noopener noreferrer">https://prtimes.jp/main/html/rd/p/000000524.000004052.html</a></div>
+        </div>
+
+        <!-- 2. 現場課題 -->
+        <div class="trend-box">
+            <div class="trend-title">2.【現場課題】 AI外観検査導入における「過多検出(チョコ停)」と目視への逆戻り事例 (2025/06)</div>
+            <p style="margin: 0 0 0.8rem 0;">日本AI技術普及開発機構(JAIX)の実態レポートにて、AI外観検査導入後に良品を誤って不良判定する過多検出が多発し、頻繁なライン停止から目視検査へ戻ってしまう現場事例が公表された。</p>
+            <div class="trend-section"><strong>なぜ重要か:</strong><br>PoC(実証実験)での高精度と実ラインでの堅牢性のギャップを鮮明に示しており、単なるAIモデルの精度競い合いから「外来光やワークのブレなど環境変化に耐えうる現場適応型のシステム設計」へ投資判断の視点を転換させる警鐘となる。</div>
+            <div class="ref-text">参照URL:<br><a href="https://www.phoxter.co.jp/useful/cause-of-overdetection" target="_blank" rel="noopener noreferrer">https://www.phoxter.co.jp/useful/cause-of-overdetection</a></div>
+        </div>
+
+        <!-- 3. 現場課題・省力化 -->
+        <div class="trend-box">
+            <div class="trend-title">3.【現場課題・省力化】 MENOU: AI×AFによる多品種少量ラインの品種切替自動化(2026/08)</div>
+            <p style="margin: 0 0 0.8rem 0;">株式会社MENOUが、多品種少量生産ラインにおけるピント調整や視点切り替えの手間を、AIとオートフォーカス (AF) 技術の融合によって自動化するソリューションを発表した。</p>
+            <div class="trend-section"><strong>なぜ重要か:</strong><br>多品種少量生産の最大の障壁である「ワーク変更ごとのカメラ位置調整やパラメータ再設定(セットアップコスト)」を自動化で排除し、これまで諦められていた多品種ラインにおける全数自動検査の投資対効果(ROI)を大幅に改善する。</div>
+            <div class="ref-text">参照URL:<br><a href="https://prtimes.jp/main/html/rd/p/000000043.000058407.html" target="_blank" rel="noopener noreferrer">https://prtimes.jp/main/html/rd/p/000000043.000058407.html</a></div>
+        </div>
+
+        <h2>ピックアップ製品・ソリューション</h2>
+        <h3><a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer">🔗 公式サイト：Hikrobot「ID3000シリーズ」</a><br>3.1MP高解像度×16mm液体レンズ×Deep Learningが実現する「止めない」超高速コード読取</h3>
+        
+        <img src="id3000.jpg" alt="Hikrobot ID3000" class="product-img">
+        
+        <p><strong>なぜ重要か:</strong><br>市場の深刻な課題である「環境光やワーク姿勢変化による誤認識(チョコ停)」と「多品種ラインでの段取り工数」を、液体レンズによる電気的オートフォーカスと組み込みディープラーニングの融合によって1台で根本解決し、ラインを止めない全数自動トレーサビリティを現実にする。</p>
+
+        <p style="font-weight: bold; margin-bottom: 0.5rem;">ニュースとのシナジー:</p>
+        <ul style="margin: 0 0 2rem 0; padding-left: 1.5rem;">
+            <li><strong>●過多検出・チョコ停課題との連動:</strong><br>組み込みディープラーニングSoCと自動偏光・照明コントロール機能により、擦れ・反射・歪みのある難読コードやDPM(直接刻印)コードも安定判定し、環境変化に起因する読み取りエラー(チョコ停)を防ぐ。</li>
+            <li><strong>●品種切替・セットアップ調整課題との連動:</strong><br>16mm液体レンズ (Liquid Focal Length)の採用によりメカ的な駆動部なしで電気的に瞬時合焦。ワークの距離や高さが変動する多品種少量ラインでも手動調整なしで追従する</li>
+            <li><strong>●自動全数検査・標準化背景との連動:</strong><br>3.1MP (310万画素)の高解像度センサーとコンパクトなモジュール設計により、製造ラインや各種装置へのOEM組み込みが容易で、信頼性の高い全数トレーサビリティ管理を支える。</li>
+        </ul>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>項目</th>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <td>メーカー名</td>
+                    <td>Hikrobot(ハイクロボット)</td>
+                </tr>
+                <tr>
+                    <td>型式・シリーズ</td>
+                    <td>ID3000 シリーズ Smart Code Reader (スマートコードリーダー)</td>
+                </tr>
+                <tr>
+                    <td>解像度/性能</td>
+                    <td>3.1MP(310万画素/最大2048 × 1536 ピクセル)</td>
+                </tr>
+                <tr>
+                    <td>レンズ/光学仕様</td>
+                    <td>16mm 液体レンズ (Liquid Focal Length)搭載、高速オートフォーカス対応</td>
+                </tr>
+                <tr>
+                    <td>処理アルゴリズム</td>
+                    <td>ディープラーニング (Deep Learning)アルゴリズム内蔵の専用SoCチップ搭載</td>
+                </tr>
+                <tr>
+                    <td>光学・照明機能</td>
+                    <td>モジュール式照明、自動偏光機能(Automatic Polarization)、調光・ブランチ制御機能</td>
+                </tr>
+                <tr>
+                    <td>構造・インターフェース</td>
+                    <td>超小型コンパクト設計、単一配線用の航空コネクタ(Aviation Connector)採用</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- 最下部アドレスロゴ -->
+    <div class="footer-address">
+        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+</body>
+</html>
