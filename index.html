@@ -113,7 +113,7 @@
 
         .report-content {
             flex-grow: 1;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         .report-content h3 {
             font-size: 0.9rem;
@@ -125,23 +125,6 @@
             color: #334155;
             margin: 0;
             line-height: 1.6;
-        }
-
-        /* 音声プレイヤー枠 */
-        .audio-section {
-            background-color: var(--secondary-color);
-            padding: 0.8rem 1rem;
-            border-radius: 6px;
-            margin: 1rem 0;
-        }
-        .audio-section h3 {
-            margin: 0 0 0.4rem 0;
-            font-size: 0.85rem;
-            color: #475569;
-        }
-        audio {
-            width: 100%;
-            height: 36px;
         }
 
         /* アクションリンク・ボタン */
@@ -203,7 +186,8 @@
 
 <header>
     <div class="header-logo-container">
-        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+        <!-- ロゴ画像のプレースホルダー（実際のパスに置き換えてください） -->
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo" onerror="this.src='https://placehold.co/220x50/ffffff/1a3687?text=CHRONIX'">
     </div>
     <h1>最新トレンドレポート アーカイブ</h1>
     <p>クロニクスがマンスリーで配信している最新技術・市場動向レポートのバックナンバーです。</p>
@@ -225,20 +209,12 @@
                 <p>先端半導体（3Dパッケージ）の内部欠陥検査、資源循環法に伴う廃プラ選別、食品全数検査などを背景に需要が急増するSWIR検査。シリコン透過や樹脂分光を活かし、搬送速度を維持したままリアルタイム選別を実現する技術動向を解説します。</p>
             </div>
 
-            <div class="audio-section">
-                <h3>🎧 音声解説を聴く (約3分)</h3>
-                <audio controls preload="metadata">
-                    <source src="mp3/swir_vol1.mp3" type="audio/mpeg">
-                    お使いのブラウザは音声再生をサポートしていません。
-                </audio>
-            </div>
-
             <div class="action-links">
-                <a href="pdf/swir-inline-vol1.pdf" class="btn btn-pdf" download>
-                    📄 PDFレポートをダウンロード
+                <a href="swir-inline-vol1.html" class="btn btn-pdf">
+                    📖 レポート詳細を見る
                 </a>
-                <a href="pdf/lisa_v2.pdf" target="_blank" class="btn btn-link">
-                    📄 関連製品資料: NIT LiSaSWIR (PDF)
+                <a href="https://www.chronix.co.jp/products/nit-lisaswir/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
+                    🔗 関連製品紹介：NIT LiSaSWIR
                 </a>
             </div>
         </article>
@@ -256,20 +232,12 @@
                 <p>ガラス基板の超高速微細穴あけや青色レーザーによる高反射金属溶接、可搬型レーザークリーニングなど国内の先端加工事例を紹介。あわせて高精度加工の品質保証を担うビームプロファイラーによる光学計測技術を解説します。</p>
             </div>
 
-            <div class="audio-section">
-                <h3>🎧 音声解説を聴く</h3>
-                <audio controls preload="metadata">
-                    <source src="mp3/laser_vol1.mp3" type="audio/mpeg">
-                    お使いのブラウザは音声再生をサポートしていません。
-                </audio>
-            </div>
-
             <div class="action-links">
-                <a href="pdf/laser-xt-vol1.pdf" class="btn btn-pdf" download>
-                    📄 PDFレポートをダウンロード
+                <a href="laser-xt-vol1.html" class="btn btn-pdf">
+                    📖 レポート詳細を見る
                 </a>
-                <a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" class="btn btn-link">
-                    🔗 関連製品: Tucsen XTシリーズ
+                <a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
+                    🔗 関連製品紹介：Tucsen XTシリーズ
                 </a>
             </div>
         </article>
@@ -287,20 +255,12 @@
                 <p>アンモニア・メタン事故の多発や米EPA・EU環境規制の厳格化を受け、プラント等の巡回点検から定置型IoT/AIやドローンによる「24時間常時モニタリング」への移行が進む光学ガス検知（OGI）の最新技術トレンドを解説します。</p>
             </div>
 
-            <div class="audio-section">
-                <h3>🎧 音声解説を聴く (約3分)</h3>
-                <audio controls preload="metadata">
-                    <source src="mp3/ogi_vol1.mp3" type="audio/mpeg">
-                    お使いのブラウザは音声再生をサポートしていません。
-                </audio>
-            </div>
-
             <div class="action-links">
-                <a href="pdf/ogi-sensing-vol1.pdf" class="btn btn-pdf" download>
-                    📄 PDFレポートをダウンロード
+                <a href="ogi-sensing-vol1.html" class="btn btn-pdf">
+                    📖 レポート詳細を見る
                 </a>
-                <a href="pdf/ait_640.pdf" target="_blank" class="btn btn-link">
-                    📄 関連製品資料: LYNRED ATI 640 (PDF)
+                <a href="https://www.chronix.co.jp/products/lynred-ati640/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
+                    🔗 関連製品紹介：LYNRED ATI 640
                 </a>
             </div>
         </article>
@@ -310,7 +270,8 @@
 
 <footer>
     <div class="footer-logo-container">
-        <img src="logo2.jpg" alt="CHRONIX ロゴ" class="footer-logo">
+        <!-- ロゴ画像のプレースホルダー（実際のパスに置き換えてください） -->
+        <img src="logo2.jpg" alt="CHRONIX ロゴ" class="footer-logo" onerror="this.src='https://placehold.co/170x40/ffffff/1a3687?text=CHRONIX'">
     </div>
     <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
 </footer>
