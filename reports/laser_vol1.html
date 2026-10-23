@@ -66,9 +66,7 @@
         .report-meta {
             font-size: 0.85rem;
             color: #64748b;
-            margin-bottom: 1rem;
-            display: flex;
-            gap: 1rem;
+            margin-bottom: 0.8rem;
         }
         .report-title {
             font-size: 1.6rem;
@@ -79,6 +77,8 @@
         .report-body {
             padding: 2rem 2.5rem;
         }
+        
+        /* 見出し */
         h2 {
             font-size: 1.3rem;
             color: var(--primary-color);
@@ -89,7 +89,7 @@
             padding: 0.8rem;
         }
         h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #334155;
             margin: 2rem 0 1rem;
             border-bottom: 2px solid #e2e8f0;
@@ -105,23 +105,28 @@
             color: var(--accent-color);
             border-color: var(--accent-color);
         }
-        .news-box {
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 4px;
+
+        /* ニュース記事枠 */
+        .news-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
         }
-        .news-box h4 {
-            margin: 0 0 0.5rem 0;
-            color: var(--primary-color);
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+        .news-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
         }
         .news-date {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 0.8rem;
-            display: inline-block;
+            color: #0284c7;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
         
         /* 製品画像 */
@@ -169,8 +174,7 @@
 <div class="container">
     <div class="report-header">
         <div class="report-meta">
-            <span>vol.1</span>
-            <span>レーザー加工・溶接品質</span>
+            <span>vol.1</span> | <span>レーザー加工・溶接品質</span>
         </div>
         <h1 class="report-title">レーザー加工技術と光学計測の最新動向</h1>
     </div>
@@ -179,42 +183,37 @@
         
         <p>本資料では、国内の最新レーザー加工技術と、その品質を支える光学計測技術(ビームアナライザー)の関係について簡潔にまとめます。</p>
 
-        <h2>1. 分野説明文 (関連動向)</h2>
+        <h2>1. 分野説明文(関連動向)</h2>
 
-        <div class="news-box">
-            <h4>ガラス基板加工</h4>
-            <span class="news-date">【2025年6月12日】</span>
-            <p style="margin:0;">東京大学とAGCが、ガラスの微細穴あけを従来比100万倍高速化する技術を発表。レーザーの時間波形・空間波形を制御することで、20µsで直径3µm、深さ1mmの穴を形成し、半導体パッケージ用ガラス基板などへの応用が期待されています。</p>
+        <div class="news-item">
+            <div class="news-title">・【2025年6月12日】 ガラス基板加工:</div>
+            <p style="margin: 0;">東京大学とAGCが、ガラスの微細穴あけを従来比100万倍高速化する技術を発表。レーザーの時間波形・空間波形を制御することで、20µsで直径3µm、深さ1mmの穴を形成し、半導体パッケージ用ガラス基板などへの応用が期待されています。</p>
         </div>
 
-        <div class="news-box">
-            <h4>青色レーザー</h4>
-            <span class="news-date">【2022年11月4日】</span>
-            <p style="margin:0;">京都大学とスタンレー電気が、青色GaN系フォトニック結晶レーザーでワット級出力と高ビーム品質を実現。銅などの高反射金属やCFRPの加工に適した光源として、EV部品の溶接・接合や軽量化への応用が期待されています。</p>
+        <div class="news-item">
+            <div class="news-title">・【2022年11月4日】 青色レーザー:</div>
+            <p style="margin: 0;">京都大学とスタンレー電気が、青色GaN系フォトニック結晶レーザーでワット級出力と高ビーム品質を実現。銅などの高反射金属やCFRPの加工に適した光源として、EV部品の溶接・接合や軽量化への応用が期待されています。</p>
         </div>
 
-        <div class="news-box">
-            <h4>レーザークリーニング</h4>
-            <span class="news-date">【2025年5月13日発表 / 5月23日受注開始】</span>
-            <p style="margin:0;">古河電工が、橋梁・船舶・鉄道車両などの錆や劣化塗膜を除去する小型可搬型レーザーシステムを製品化。ブラスト工法に伴う粉じんや廃棄物の削減を目指し、現場作業の効率化が期待されています。</p>
+        <div class="news-item">
+            <div class="news-title">・【2025年5月13日発表/5月23日受注開始】 レーザークリーニング:</div>
+            <p style="margin: 0;">古河電工が、橋梁・船舶・鉄道車両などの錆や劣化塗膜を除去する小型可搬型レーザーシステムを製品化。ブラスト工法に伴う粉じんや廃棄物の削減を目指し、現場作業の効率化が期待されています。</p>
         </div>
 
-        <div class="news-box">
-            <h4>小型加工機</h4>
-            <span class="news-date">【近年増加傾向】</span>
-            <p style="margin:0;">数十万円から100万円台で導入できる小型レーザーマーカーやレーザー溶接機が登場しています。試作、補修、刻印、少量生産などの内製化を通じて、中小製造業の短納期対応を支援する装置として注目されています。</p>
+        <div class="news-item">
+            <div class="news-title">・【近年増加傾向(特定日なし)】 小型加工機:</div>
+            <p style="margin: 0;">数十万円から100万円台で導入できる小型レーザーマーカーやレーザー溶接機が登場しています。試作、補修、刻印、少量生産などの内製化を通じて、中小製造業の短納期対応を支援する装置として注目されています。</p>
         </div>
 
-        <div class="news-box">
-            <h4>ホログラフィック加工</h4>
-            <span class="news-date">【2017年頃から研究進展】</span>
-            <p style="margin:0;">SLMでレーザー光を複数の集光点に分岐し、微細形状を多点同時に加工できる技術です。フェムト秒レーザーと組み合わせた透明材料の三次元加工や、医療・光学部品などへの生産性向上への応用が期待されています。</p>
+        <div class="news-item">
+            <div class="news-title">・【2017年頃から研究進展】 ホログラフィック加工:</div>
+            <p style="margin: 0;">SLMでレーザー光を複数の集光点に分岐し、微細形状を多点同時に加工できる技術です。フェムト秒レーザーと組み合わせた透明材料の三次元加工や、医療・光学部品などへの生産性向上への応用が期待されています。</p>
         </div>
 
-        <h2>2. 高度加工を支える光学計測</h2>
+        <h2>2. 高度加工を支える光学計測: Tucsen「XTシリーズ」</h2>
         
+        <p style="font-weight: bold; margin-bottom: 0.5rem;">【2026年9月発表】</p>
         <h3><a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer">🔗 公式サイト：Tucsen「XTシリーズ」</a></h3>
-        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">【2026年9月発表】</p>
         
         <img src="xt_beam.jpg" alt="Tucsen XTシリーズ" class="product-img">
 
@@ -222,6 +221,7 @@
 
     </div>
 
+    <!-- 最下部アドレスロゴ -->
     <div class="footer-address">
         <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
     </div>
