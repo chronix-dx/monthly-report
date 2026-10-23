@@ -98,6 +98,16 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
+        h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        h3 a:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
         
         .summary-box {
             background-color: #f8fafc;
@@ -170,10 +180,8 @@
 
 <header>
     <div>
-        <!-- 同じフォルダ内を参照 -->
         <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
     </div>
-    <!-- 一覧ページ(index.html)は上のフォルダにあるので ../ のまま -->
     <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
 </header>
 
@@ -226,9 +234,9 @@
         <p><strong>インパクト:</strong><br>製品の傷みや異物混入によるクレームリスクを未然に防ぎ、搬送ラインを止めることなく高水準な品質管理を自動化します。</p>
 
         <h2>さらに知る：最先端SWIR ラインスキャンカメラ</h2>
-        <h3>NIT (New Imaging Technologies) - LiSaSWIR 2048</h3>
+        <!-- リンクを設定した見出し -->
+        <h3><a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer">🔗 NIT (New Imaging Technologies) - LiSaSWIR 2048</a></h3>
         
-        <!-- 同じフォルダ内の画像を参照 -->
         <img src="lisaswir_2048.jpg" alt="NIT LiSaSWIR 2048" class="product-img">
 
         <ul>
@@ -268,7 +276,7 @@
 
     </div>
 
-    <!-- 同じフォルダ内のアドレスロゴを参照 -->
+    <!-- 最下部アドレスロゴ -->
     <div class="footer-address">
         <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
     </div>
