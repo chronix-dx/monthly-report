@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レーザー加工技術と光学計測の最新動向 | クロニクス株式会社</title>
+    <style>
+        /* swir_inline_vol1.html と同じスタイルを適用 */
+        :root {
+            --primary-color: #1a3687;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+            --accent-color: #d93829;
+            --tag-bg: #e8eef9;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 1.4rem; }
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        .container {
+            max-width: 800px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .report-header {
+            padding: 2.5rem 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fcfcfc;
+        }
+        .report-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .report-title {
+            font-size: 1.6rem;
+            color: #1e293b;
+            margin: 0 0 1rem;
+            line-height: 1.4;
+        }
+        .report-body {
+            padding: 2rem 2.5rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+            background: #f8fafc;
+            padding: 0.8rem;
+        }
+        h3 {
+            font-size: 1.1rem;
+            color: #334155;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .news-box {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        .news-box h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-color);
+        }
+        .news-date {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+        .download-area {
+            background-color: var(--tag-bg);
+            padding: 2.5rem;
+            text-align: center;
+            border-top: 1px solid #c7d2fe;
+            margin-top: 2rem;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(217, 56, 41, 0.3);
+            transition: all 0.2s ease;
+        }
+        .btn-download:hover {
+            background-color: #b92b1d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(217, 56, 41, 0.4);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CHRONIX 最新トレンドレポート</h1>
+    <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
+</header>
+
+<div class="container">
+    <div class="report-header">
+        <div class="report-meta">
+            <span>vol.1</span>
+            <span>レーザー加工・溶接品質</span>
+        </div>
+        <h1 class="report-title">レーザー加工技術と光学計測の最新動向</h1>
+    </div>
+
+    <div class="report-body">
+        
+        <p>本資料では、国内の最新レーザー加工技術と、その品質を支える光学計測技術(ビームアナライザー)の関係について簡潔にまとめます。</p>
+
+        <h2>1. 分野説明文 (関連動向)</h2>
+
+        <div class="news-box">
+            <h4>ガラス基板加工</h4>
+            <span class="news-date">【2025年6月12日】</span>
+            <p style="margin:0;">東京大学とAGCが、ガラスの微細穴あけを従来比100万倍高速化する技術を発表。レーザーの時間波形・空間波形を制御することで、20µsで直径3µm、深さ1mmの穴を形成し、半導体パッケージ用ガラス基板などへの応用が期待されています。</p>
+        </div>
+
+        <div class="news-box">
+            <h4>青色レーザー</h4>
+            <span class="news-date">【2022年11月4日】</span>
+            <p style="margin:0;">京都大学とスタンレー電気が、青色GaN系フォトニック結晶レーザーでワット級出力と高ビーム品質を実現。銅などの高反射金属やCFRPの加工に適した光源として、EV部品の溶接・接合や軽量化への応用が期待されています。</p>
+        </div>
+
+        <div class="news-box">
+            <h4>レーザークリーニング</h4>
+            <span class="news-date">【2025年5月13日発表 / 5月23日受注開始】</span>
+            <p style="margin:0;">古河電工が、橋梁・船舶・鉄道車両などの錆や劣化塗膜を除去する小型可搬型レーザーシステムを製品化。ブラスト工法に伴う粉じんや廃棄物の削減を目指し、現場作業の効率化が期待されています。</p>
+        </div>
+
+        <div class="news-box">
+            <h4>小型加工機</h4>
+            <span class="news-date">【近年増加傾向】</span>
+            <p style="margin:0;">数十万円から100万円台で導入できる小型レーザーマーカーやレーザー溶接機が登場しています。試作、補修、刻印、少量生産などの内製化を通じて、中小製造業の短納期対応を支援する装置として注目されています。</p>
+        </div>
+
+        <div class="news-box">
+            <h4>ホログラフィック加工</h4>
+            <span class="news-date">【2017年頃から研究進展】</span>
+            <p style="margin:0;">SLMでレーザー光を複数の集光点に分岐し、微細形状を多点同時に加工できる技術です。フェムト秒レーザーと組み合わせた透明材料の三次元加工や、医療・光学部品などへの生産性向上への応用が期待されています。</p>
+        </div>
+
+        <h2>2. 高度加工を支える光学計測</h2>
+        
+        <h3>Tucsen「XTシリーズ」</h3>
+        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem;">【2026年9月発表】</p>
+        <p>Tucsen社製レーザービームプロファイラー「XTシリーズ」は、UV (240nm)からLWIR (14µm)まで幅広く対応します。ビーム幅測定精度±2%未満の高精度な定量分析と、最小29mm角の超小型筐体により、各種産業機器や現場への組み込みを容易にします。</p>
+
+    </div>
+
+    <!-- ダウンロード導線 -->
+    <div class="download-area">
+        <p style="margin-top:0; color:#4f46e5; font-weight:bold; margin-bottom:1.5rem;">※本レポートの完全版（PDF）はこちらからダウンロードいただけます。</p>
+        <a href="../pdf/laser_vol1.pdf" class="btn-download" download>
+            📄 PDFレポートをダウンロード
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+</body>
+</html>
