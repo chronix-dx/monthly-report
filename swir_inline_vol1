@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIRマシンビジョンによるインライン検査の最新動向 | クロニクス株式会社</title>
+    <style>
+        :root {
+            --primary-color: #1a3687;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+            --accent-color: #d93829;
+            --bg-color: #f8fafc;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .header-logo {
+            height: 40px;
+            width: auto;
+        }
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* メインコンテンツ */
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .article-wrapper {
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            border-top: 5px solid var(--primary-color);
+            overflow: hidden;
+        }
+
+        .article-header {
+            padding: 2.5rem 2.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+        .article-header h1 {
+            color: #1e293b;
+            font-size: 1.7rem;
+            margin: 0 0 1rem 0;
+            line-height: 1.4;
+        }
+        .meta {
+            color: #64748b;
+            font-size: 0.85rem;
+            display: flex;
+            gap: 1.5rem;
+            font-weight: 500;
+        }
+
+        .article-body {
+            padding: 2.5rem;
+        }
+        .article-body h2 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 0.8rem;
+            margin: 2.5rem 0 1.2rem;
+            background-color: #f8fafc;
+            padding: 0.8rem 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+        .article-body h3 {
+            color: #334155;
+            font-size: 1.15rem;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        .article-body p {
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+        .article-body ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+        .article-body li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .highlight-box {
+            background-color: #f0f4f8;
+            border: 1px solid #d9e2ec;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .highlight-box h4 {
+            margin: 0 0 1rem 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .case-study {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .case-study h4 {
+            color: var(--primary-color);
+            margin: 0 0 1rem 0;
+            font-size: 1.05rem;
+        }
+        .case-study strong {
+            color: #1e293b;
+        }
+
+        /* テーブル */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            text-align: left;
+            line-height: 1.5;
+        }
+        th {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            width: 35%;
+            font-weight: bold;
+        }
+        td {
+            color: #475569;
+        }
+
+        /* ダウンロードセクション */
+        .download-section {
+            background-color: #f1f5f9;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+        .download-section p {
+            margin: 0 0 1.5rem 0;
+            color: #475569;
+            font-weight: 500;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+        }
+        .btn-pdf {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 6px rgba(217, 56, 41, 0.2);
+        }
+        .btn-pdf:hover {
+            background-color: #b92b1d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(217, 56, 41, 0.3);
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX" class="header-logo" onerror="this.src='https://placehold.co/220x50/ffffff/1a3687?text=CHRONIX'">
+    </a>
+    <a href="index.html" class="back-link">
+        <span>←</span> アーカイブ一覧に戻る
+    </a>
+</header>
+
+<main class="container">
+    <div class="article-wrapper">
+        <div class="article-header">
+            <h1>SWIRマシンビジョンによるインライン検査の最新動向 vol_01</h1>
+            <div class="meta">
+                <span>🕒 読了目安時間: 約3分</span>
+                <span>📅 発行年月: 2026年10月</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <h2>全体像</h2>
+            <ul>
+                <li>先端半導体(3Dパッケージ)、プラ資源循環規制、食品全数検査を背景に「SWIR(短波長赤外)検査」の需要が急増</li>
+                <li>製造ラインの搬送スピードを落とさずリアルタイム選別を行うため、「超高速SWIRラインスキャンカメラ」の導入が加速</li>
+                <li>可視光では不可能なシリコン透過、樹脂分光、含水率検出を非破壊・インラインで実現</li>
+            </ul>
+
+            <h2>なぜ重要か</h2>
+            <p>搬送スピードを維持したまま高精度な欠陥検知ができるかが、製造・選別ラインの生産性と競争力を左右する</p>
+            
+            <div class="highlight-box">
+                <h4>主な波長と特性</h4>
+                <p style="margin-bottom: 0.5rem;"><strong>波長領域: 900nm～1,700nm</strong></p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>シリコン透過:</strong> 先端半導体の内部欠陥を検査</li>
+                    <li><strong>1.7µm(樹脂吸収):</strong> 廃プラスチックを高精度に材質判別・選別</li>
+                    <li><strong>1.5µm(水分吸収):</strong> 食品などの含水率測定・非破壊検査</li>
+                </ul>
+            </div>
+
+            <h2>1. 導入アプリケーション: 各業界における活用トピックス</h2>
+            
+            <div class="case-study">
+                <h4>事例1: 半導体3Dパッケージング・先進実装の非破壊検査 (2026/02)</h4>
+                <p><strong>• なぜ重要か:</strong><br>
+                半導体の高密度化や3D積層化 (2.5D/3D) の進展に伴い、シリコン基板を透過して内部マイクロクラックや接合面の剥離・ボイドをインラインで非破壊検知する技術が急務となっています。</p>
+                <p><strong>• 技術要点:</strong><br>
+                シリコンの透過特性(900～1700nm波長域)を活用し、自動搬送されるシリコンウェハや封止内部の構造をブレなく高解像度に撮像・計測します。</p>
+                <p style="margin-bottom:0;"><strong>• インパクト:</strong><br>
+                後工程での不良流出を防止するとともに、装置の搬送速度を落とさずに全数検査を可能にし、製造タクトタイム短縮と歩留まり向上に直結します。</p>
+            </div>
+
+            <div class="case-study">
+                <h4>事例2: プラ新法・資源循環規制に伴うリサイクルプラ高速光学選別 (2026/09)</h4>
+                <p><strong>• なぜ重要か:</strong><br>
+                プラスチック資源循環促進法の実装に伴い、高速コンベア上を流れる多種類の樹脂(PET、PP、PE等)を高純度に自動選別する技術の重要性が増しています。</p>
+                <p><strong>• 技術要点:</strong><br>
+                1.7µm付近のポリマー固有の光吸収帯を利用した分光イメージングにより、見た目が同様の透明・黒色樹脂であってもリアルタイムに素材識別を行います。</p>
+                <p style="margin-bottom:0;"><strong>• インパクト:</strong><br>
+                再生樹脂の高純度化と選別ラインの全自動化を達成し、異物混入ロス率の低減とリサイクル材の安定供給に大きく貢献します。</p>
+            </div>
+
+            <div class="case-study">
+                <h4>事例3: 食品・農産物ラインのインライン全数非破壊検査と異物検知 (2026/02)</h4>
+                <p><strong>• なぜ重要か:</strong><br>
+                食品・農産物(茶葉、穀物、果物等)において、品質保証の強化やフードロス削減に向け、抜き取り検査から搬送ライン上での全数非破壊検査への移行が進んでいます。</p>
+                <p><strong>• 技術要点:</strong><br>
+                水分の吸収波長(約1.5µm)における吸収特性の違いを応用し、内部の傷み・含水量異常や、可視光では判定が難しい透明樹脂片等の異物を抽出します。</p>
+                <p style="margin-bottom:0;"><strong>• インパクト:</strong><br>
+                製品の傷みや異物混入によるクレームリスクを未然に防ぎ、搬送ラインを止めることなく高水準な品質管理を自動化します。</p>
+            </div>
+
+            <h2>さらに知る</h2>
+            <h3>最先端SWIR ラインスキャンカメラ<br>NIT (New Imaging Technologies) - LiSaSWIR 2048</h3>
+            <ul>
+                <li><strong>超高速110kHz フル解像度と高感度 InGaAs センサ:</strong><br>自社開発「NSC2301T-SI」 センサを搭載。2048×1ピクセルの高解像度で110kHz以上の高速駆動を実現し、ウェハ検査やOCT(光干渉断層計)などの高度なインライン処理に最適です。</li>
+                <li><strong>波長0.9～1.7µm の広帯域対応:</strong><br>ピーク時80%以上の高い量子効率 (QE)を誇ります。半導体検査をはじめ、ソーラーパネル、熱ガラス、食品・廃棄物選別など多彩な用途に対応します。</li>
+                <li><strong>オンボード処理と柔軟な統合:</strong><br>カメラ本体内で欠陥画素補正 (BPR) や不均一性補正 (NUC) をリアルタイムに実行します。CameraLink Base / GenICam 準拠のスマート制御に対応しています。</li>
+            </ul>
+
+            <div class="table-responsive">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>センサー/ピクセル</th>
+                            <td>NSC2301T-SI (InGaAs) / 2048 × 1 pixels (8µm × 14µm)</td>
+                        </tr>
+                        <tr>
+                            <th>最大フレームレート</th>
+                            <td>> 110 kHz (フル解像度時) / 最短露光時間: 1 µs</td>
+                        </tr>
+                        <tr>
+                            <th>感度波長帯 (SWIR)<br>リードアウトノイズ</th>
+                            <td>0.9µm～1.7µm (Peak QE > 80%)<br>&lt; 90e- (High Gain), &lt; 370e- (Medium Gain), &lt; 2200e- (Low Gain)</td>
+                        </tr>
+                        <tr>
+                            <th>インターフェース</th>
+                            <td>CameraLink Base / GenCP (GenICam)準拠</td>
+                        </tr>
+                        <tr>
+                            <th>外形寸法/重量</th>
+                            <td>35.4 × 75 × 68 mm / 280g (動作温度: -40℃～+71℃)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <p>※本レポートの完全版（印刷用レイアウト）はPDFでダウンロードいただけます。</p>
+            <a href="pdf/swir-inline-vol1.pdf" class="btn btn-pdf" download>
+                📄 PDFレポートをダウンロード
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 CHRONIX. クロニクス株式会社
+</footer>
+
+</body>
+</html>
