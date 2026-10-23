@@ -66,9 +66,7 @@
         .report-meta {
             font-size: 0.85rem;
             color: #64748b;
-            margin-bottom: 1rem;
-            display: flex;
-            gap: 1rem;
+            margin-bottom: 0.8rem;
         }
         .report-title {
             font-size: 1.6rem;
@@ -76,12 +74,11 @@
             margin: 0 0 1rem;
             line-height: 1.4;
         }
-        
         .report-body {
             padding: 2rem 2.5rem;
         }
         
-        /* 見出しスタイル */
+        /* 見出し */
         h2 {
             font-size: 1.3rem;
             color: var(--primary-color);
@@ -92,7 +89,7 @@
             padding: 0.8rem;
         }
         h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #334155;
             margin: 2rem 0 1rem;
             border-bottom: 2px solid #e2e8f0;
@@ -108,7 +105,7 @@
             color: var(--accent-color);
             border-color: var(--accent-color);
         }
-        
+
         .summary-box {
             background-color: #f8fafc;
             border: 1px solid var(--border-color);
@@ -116,14 +113,31 @@
             padding: 1.5rem;
             margin-bottom: 2rem;
         }
-        .summary-box ul {
-            margin: 0;
-            padding-left: 1.5rem;
-        }
-        .summary-box li {
-            margin-bottom: 0.5rem;
-        }
         
+        .trend-box {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .trend-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        .trend-section {
+            margin-bottom: 0.6rem;
+        }
+        .ref-text {
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+
         /* 製品画像 */
         .product-img {
             max-width: 100%;
@@ -166,8 +180,7 @@
             height: auto;
             max-height: 80px;
         }
-        
-        /* コピーライト */
+
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -188,18 +201,16 @@
 <div class="container">
     <div class="report-header">
         <div class="report-meta">
-            <span>vol.01</span>
-            <span>読了目安時間: 約3分</span>
-            <span>発行年月: 2026年10月</span>
+            <span>読了目安時間:約3分</span> | <span>発行年月:2026年10月</span>
         </div>
-        <h1 class="report-title">SWIRマシンビジョンによるインライン検査の最新動向</h1>
+        <h1 class="report-title">SWIRマシンビジョンによるインライン検査の最新動向vol_01</h1>
     </div>
 
     <div class="report-body">
         
+        <h2>全体像</h2>
         <div class="summary-box">
-            <h3 style="margin-top:0; border:none; padding:0;">全体像</h3>
-            <ul>
+            <ul style="margin: 0; padding-left: 1.5rem;">
                 <li>先端半導体(3Dパッケージ)、プラ資源循環規制、食品全数検査を背景に「SWIR(短波長赤外)検査」の需要が急増</li>
                 <li>製造ラインの搬送スピードを落とさずリアルタイム選別を行うため、「超高速SWIRラインスキャンカメラ」の導入が加速</li>
                 <li>可視光では不可能なシリコン透過、樹脂分光、含水率検出を非破壊・インラインで実現</li>
@@ -207,69 +218,84 @@
         </div>
 
         <h2>なぜ重要か</h2>
-        <p>搬送スピードを維持したまま高精度な欠陥検知ができるかが、製造・選別ラインの生産性と競争力を左右します。</p>
+        <ul style="margin: 0 0 1.5rem 0; padding-left: 1.5rem;">
+            <li>搬送スピードを維持したまま高精度な欠陥検知ができるかが、製造・選別ラインの生産性と競争力を左右する</li>
+        </ul>
         
-        <h3>主な波長と特性（波長領域: 900nm～1,700nm）</h3>
-        <ul>
-            <li><strong>シリコン透過:</strong> 先端半導体の内部欠陥を検査</li>
-            <li><strong>1.7µm(樹脂吸収):</strong> 廃プラスチックを高精度に材質判別・選別</li>
-            <li><strong>1.5µm(水分吸収):</strong> 食品などの含水率測定・非破壊検査</li>
+        <p style="font-weight: bold; margin-bottom: 0.5rem;">主な波長と特性</p>
+        <p style="margin-top: 0; margin-bottom: 0.5rem;">・波長領域:900nm~1,700nm</p>
+        <ul style="margin: 0 0 2rem 0; padding-left: 1.5rem;">
+            <li>シリコン透過: 先端半導体の内部欠陥を検査</li>
+            <li>1.7µm(樹脂吸収): 廃プラスチックを高精度に材質判別・選別</li>
+            <li>1.5µm(水分吸収): 食品などの含水率測定・非破壊検査</li>
         </ul>
 
         <h2>1. 導入アプリケーション: 各業界における活用トピックス</h2>
 
-        <h3>事例1: 半導体3Dパッケージング・先進実装の非破壊検査 (2026/02)</h3>
-        <p><strong>なぜ重要か:</strong><br>半導体の高密度化や3D積層化(2.5D/3D)の進展に伴い、シリコン基板を透過して内部マイクロクラックや接合面の剥離・ボイドをインラインで非破壊検知する技術が急務となっています。</p>
-        <p><strong>技術要点:</strong><br>シリコンの透過特性(900～1700nm波長域)を活用し、自動搬送されるシリコンウェハや封止内部の構造をブレなく高解像度に撮像・計測します。</p>
-        <p><strong>インパクト:</strong><br>後工程での不良流出を防止するとともに、装置の搬送速度を落とさずに全数検査を可能にし、製造タクトタイム短縮と歩留まり向上に直結します。</p>
-        
-        <h3>事例2: プラ新法・資源循環規制に伴うリサイクルプラ高速光学選別 (2026/09)</h3>
-        <p><strong>なぜ重要か:</strong><br>プラスチック資源循環促進法の実装に伴い、高速コンベア上を流れる多種類の樹脂(PET、PP、PE等)を高純度に自動選別する技術の重要性が増しています。</p>
-        <p><strong>技術要点:</strong><br>1.7µm付近のポリマー固有の光吸収帯を利用した分光イメージングにより、見た目が同様の透明・黒色樹脂であってもリアルタイムに素材識別を行います。</p>
-        <p><strong>インパクト:</strong><br>再生樹脂の高純度化と選別ラインの全自動化を達成し、異物混入ロス率の低減とリサイクル材の安定供給に大きく貢献します。</p>
+        <div class="trend-box">
+            <div class="trend-title">事例1: 半導体3Dパッケージング・先進実装の非破壊検査(2026/02)</div>
+            <div class="trend-section"><strong>• なぜ重要か:</strong><br>半導体の高密度化や3D積層化 (2.5D/3D) の進展に伴い、シリコン基板を透過して内部マイ クロクラックや接合面の剥離・ボイドをインラインで非破壊検知する技術が急務となっています</div>
+            <div class="trend-section"><strong>• 技術要点:</strong><br>シリコンの透過特性(900~1700nm波長域)を活用し、自動搬送されるシリコンウェハや封止内 部の構造をブレなく高解像度に撮像・計測します。</div>
+            <div class="trend-section"><strong>• インパクト:</strong><br>後工程での不良流出を防止するとともに、装置の搬送速度を落とさずに全数検査を可能に し、製造タクトタイム短縮と歩留まり向上に直結します。</div>
+            <div class="ref-text">参URL:<br><a href="https://www.semiconjapan.org/jp/news-press/blogs/semiconjapan2025-perspectives-on-the-future-12" target="_blank" rel="noopener noreferrer">https://www.semiconjapan.org/jp/news-press/blogs/semiconjapan2025-perspectives-on-the-future-12</a></div>
+        </div>
 
-        <h3>事例3: 食品・農産物ラインのインライン全数非破壊検査と異物検知 (2026/02)</h3>
-        <p><strong>なぜ重要か:</strong><br>食品・農産物(茶葉、穀物、果物等)において、品質保証の強化やフードロス削減に向け、抜き取り検査から搬送ライン上での全数非破壊検査への移行が進んでいます。</p>
-        <p><strong>技術要点:</strong><br>水分の吸収波長(約1.5µm)における吸収特性の違いを応用し、内部の傷み・含水量異常や、可視光では判定が難しい透明樹脂片等の異物を抽出します。</p>
-        <p><strong>インパクト:</strong><br>製品の傷みや異物混入によるクレームリスクを未然に防ぎ、搬送ラインを止めることなく高水準な品質管理を自動化します。</p>
+        <div class="trend-box">
+            <div class="trend-title">事例2: プラ新法・資源循環規制に伴うリサイクルプラ高速光学選別 (2026/09)</div>
+            <div class="trend-section"><strong>• なぜ重要か:</strong><br>プラスチック資源循環促進法の実装に伴い、高速コンベア上を流れる多種類の樹脂(PET、PP、PE等)を高純度に自動選別する技術の重要性が増しています。</div>
+            <div class="trend-section"><strong>• 技術要点:</strong><br>1.7µm付近のポリマー固有の光吸収帯を利用した分光イメージングにより、見た目が同様の 透明・黒色樹脂であってもリアルタイムに素材識別を行います。</div>
+            <div class="trend-section"><strong>• インパクト:</strong><br>再生樹脂の高純度化と選別ラインの全自動化を達成し、異物混入ロス率の低減とリサイクル 材の安定供給に大きく貢献します。</div>
+            <div class="ref-text">参照URL: <a href="https://www.fareastnetwork.co.jp/plapedia/03-shikyo/theme24271/" target="_blank" rel="noopener noreferrer">https://www.fareastnetwork.co.jp/plapedia/03-shikyo/theme24271/</a></div>
+        </div>
 
-        <h2>さらに知る：最先端SWIR ラインスキャンカメラ</h2>
-<!-- リンクを設定した見出し -->
-<h3><a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer">🔗 公式サイト：NIT (New Imaging Technologies) - LiSaSWIR 2048</a></h3>
+        <div class="trend-box">
+            <div class="trend-title">事例3: 食品・農産物ラインのインライン全数非破壊検査と異物検知 (2026/02)</div>
+            <div class="trend-section"><strong>• なぜ重要か:</strong><br>食品・農産物(茶葉、穀物、果物等)において、品質保証の強化やフードロス削減に向け、抜き取り検査から搬送ライン上での全数非破壊検査への移行が進んでいます。</div>
+            <div class="trend-section"><strong>• 技術要点:</strong><br>水分の吸収波長(約1.5µm)における吸収特性の違いを応用し、内部の傷み・含水量異常や、可視光では判定が難しい透明樹脂片等の異物を抽出します。</div>
+            <div class="trend-section"><strong>• インパクト:</strong><br>製品の傷みや異物混入によるクレームリスクを未然に防ぎ、搬送ラインを止めることなく高水 準な品質管理を自動化します。</div>
+            <div class="ref-text">参照URL:<br><a href="https://www.anritsu.com/ja-jp/about-anritsu/news/news-releases/2026/2026-02-03-jp01" target="_blank" rel="noopener noreferrer">https://www.anritsu.com/ja-jp/about-anritsu/news/news-releases/2026/2026-02-03-jp01</a></div>
+        </div>
+
+        <h2>さらに知る</h2>
+        <h3><a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer">🔗 公式サイト：最先端SWIR ラインスキャンカメラ<br>NIT (New Imaging Technologies) - LiSaSWIR 2048</a></h3>
         
         <img src="lisaswir_2048.jpg" alt="NIT LiSaSWIR 2048" class="product-img">
 
-        <ul>
-            <li><strong>超高速110kHz フル解像度と高感度 InGaAs センサ:</strong><br>自社開発「NSC2301T-SI」センサを搭載。2048×1ピクセルの高解像度で110kHz以上の高速駆動を実現し、ウェハ検査やOCTなどの高度なインライン処理に最適です。</li>
-            <li><strong>波長0.9～1.7µm の広帯域対応:</strong><br>ピーク時80%以上の高い量子効率 (QE)を誇ります。半導体検査をはじめ、ソーラーパネル、熱ガラス、食品・廃棄物選別など多彩な用途に対応します。</li>
-            <li><strong>オンボード処理と柔軟な統合:</strong><br>カメラ本体内で欠陥画素補正 (BPR) や不均一性補正 (NUC) をリアルタイムに実行します。CameraLink Base / GenICam 準拠のスマート制御に対応しています。</li>
+        <ul style="margin: 0 0 2rem 0; padding-left: 1.5rem;">
+            <li><strong>• 超高速110kHz フル解像度と高感度 InGaAs センサ:</strong><br>自社開発「NSC2301T-SI」 センサを搭載。2048×1ピクセルの高解像度で110kHz以上の高速駆動を実現し、ウェハ検査やOCT(光干渉断層計)などの高度なインライン処理に最適です。</li>
+            <li><strong>• 波長0.9~1.7µm の広帯域対応:</strong><br>ピーク時80%以上の高い量子効率 (QE)を誇ります。半導体検査をはじめ、ソーラーパネル、熱ガラス、食品・廃棄物選別など多彩な用途に対応します。</li>
+            <li><strong>• オンボード処理と柔軟な統合:</strong><br>カメラ本体内で欠陥画素補正 (BPR) や不均一性補正 (NUC) をリアルタイムに実行します。CameraLink Base / GenlCam 準拠のスマート制御に対応しています。</li>
         </ul>
 
         <table>
             <tbody>
                 <tr>
-                    <th>センサー / ピクセル</th>
-                    <td>NSC2301T-SI (InGaAs) / 2048 × 1 pixels (8µm × 14µm)</td>
+                    <th>項目</th>
+                    <th>仕様・詳細</th>
                 </tr>
                 <tr>
-                    <th>最大フレームレート</th>
-                    <td>&gt; 110 kHz (フル解像度時) / 最短露光時間: 1 µs</td>
+                    <td>センサー/ピクセル</td>
+                    <td>NSC2301T-SI (InGaAs) / 2048 × 1 pixels (8μm × 14µm)</td>
                 </tr>
                 <tr>
-                    <th>感度波長帯 (SWIR)</th>
-                    <td>0.9µm ～ 1.7µm (Peak QE &gt; 80%)</td>
+                    <td>最大フレームレート</td>
+                    <td>&gt; 110 kHz (フル解像度時)/最短露光時間: 1 με</td>
                 </tr>
                 <tr>
-                    <th>リードアウトノイズ</th>
+                    <td>感度波長帯 (SWIR)</td>
+                    <td>0.9µm～1.7µm (Peak QE &gt; 80%)</td>
+                </tr>
+                <tr>
+                    <td>リードアウトノイズ</td>
                     <td>&lt; 90e- (High Gain), &lt; 370e- (Medium Gain), &lt; 2200e- (Low Gain)</td>
                 </tr>
                 <tr>
-                    <th>インターフェース</th>
-                    <td>CameraLink Base / GenCP (GenICam)準拠</td>
+                    <td>インターフェース</td>
+                    <td>CameraLink Base / GenCP (GenICam)準 拠</td>
                 </tr>
                 <tr>
-                    <th>外形寸法 / 重量</th>
-                    <td>35.4 × 75 × 68 mm / 280g (動作温度: -40℃～+71℃)</td>
+                    <td>外形寸法/重量</td>
+                    <td>35.4×75×68 mm/280g(動作温度: -40℃～+71℃)</td>
                 </tr>
             </tbody>
         </table>
