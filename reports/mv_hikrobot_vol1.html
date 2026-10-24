@@ -57,7 +57,7 @@
             overflow: hidden;
         }
         
-        /* ヘッダー画像エリア（余白をすっきり調整） */
+        /* ヘッダー画像エリア */
         .report-header {
             padding: 1.5rem 1.5rem 0.5rem;
             border-bottom: 1px solid var(--border-color);
@@ -94,17 +94,8 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
-        h3 a {
-            color: var(--primary-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--primary-color);
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        h3 a:hover {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-        
+
+        /* ニュースカード */
         .trend-box {
             border: 1px solid var(--border-color);
             padding: 1.5rem;
@@ -126,11 +117,11 @@
             padding-top: 0.6rem;
             border-top: 1px dashed var(--border-color);
             font-size: 0.85rem;
-            word-break: break-all;
         }
         .ref-text a {
             color: var(--primary-color);
             text-decoration: underline;
+            font-weight: 600;
         }
 
         .product-img {
@@ -157,7 +148,7 @@
         th {
             background-color: #f1f5f9;
             color: #334155;
-            width: 30%;
+            width: 32%;
         }
 
         /* お問い合わせリンクエリア */
@@ -214,7 +205,7 @@
 
 <div class="container">
     <div class="report-header">
-        <!-- テキスト表示を削除し、画像のalt属性にタイトル・要約を集約 -->
+        <!-- 画像内にタイトル・文字数・読了時間を集約 -->
         <img src="hik_vol1.jpg" alt="1,600文字 読了時間:約3分 | もうラインを止めない。「チョコ停ゼロ」の全数自動検査 - 液体レンズ×エッジAIで、品種切替の段取りと誤検知を根絶する。" class="hero-img">
     </div>
 
@@ -224,34 +215,126 @@
 
         <!-- 1. 法規制・標準化 -->
         <div class="trend-box">
-            <div class="trend-title">1.【法規制・標準化】 人手不足下の自動全数検査の信頼性を担保する新JIS制定 (2026/03)</div>
-            <p style="margin: 0 0 0.8rem 0;">一般財団法人日本規格協会より、産業用ロボットと非接触カメラ/センサーを組み合わせた自動三次元座標測定システムの精度評価方法を定めた日本産業規格(JIS B 7446-1:2026)が制定された。</p>
-            <div class="trend-section"><strong>なぜ重要か:</strong><br>人手不足に伴い抜き取り目視から自動全数検査への転換が加速する中、導入するロボット検査システムの精度と信頼性を第三者視点で評価・客観証明できる統一尺度が確立され、ユーザー企業の導入ハードルが大きく下がる。</div>
-            <div class="ref-text">参照URL:<br><a href="https://prtimes.jp/main/html/rd/p/000000524.000004052.html" target="_blank" rel="noopener noreferrer">https://prtimes.jp/main/html/rd/p/000000524.000004052.html</a></div>
+            <div class="trend-title">1.【標準化】 ロボット×非接触カメラの「新JIS規格」が制定 (2026/03)</div>
+            <p style="margin: 0 0 0.8rem 0;">日本規格協会は、産業用ロボットとカメラを組み合わせた「自動三次元測定システム」の精度評価規格（JIS B 7446-1）を新設しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>導入の「共通ものさし」が誕生：</strong> 検査精度を第三者視点で客観評価できるようになり、現場の自動化シフトを後押しします。</li>
+                    <li><strong>投資判断のハードルが低下：</strong> 人手不足を背景とした「目視から全数自動検査への移行」において、設備選定のリスクを最小化できます。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://prtimes.jp/main/html/rd/p/000000524.000004052.html" target="_blank" rel="noopener noreferrer">日本規格協会 プレスリリース（PR TIMES）</a>
+            </div>
         </div>
 
         <!-- 2. 現場課題 -->
         <div class="trend-box">
-            <div class="trend-title">2.【現場課題】 AI外観検査導入における「過多検出(チョコ停)」と目視への逆戻り事例 (2025/06)</div>
-            <p style="margin: 0 0 0.8rem 0;">日本AI技術普及開発機構(JAIX)の実態レポートにて、AI外観検査導入後に良品を誤って不良判定する過多検出が多発し、頻繁なライン停止から目視検査へ戻ってしまう現場事例が公表された。</p>
-            <div class="trend-section"><strong>なぜ重要か:</strong><br>PoC(実証実験)での高精度と実ラインでの堅牢性のギャップを鮮明に示しており、単なるAIモデルの精度競い合いから「外来光やワークのブレなど環境変化に耐えうる現場適応型のシステム設計」へ投資判断の視点を転換させる警鐘となる。</div>
-            <div class="ref-text">参照URL:<br><a href="https://www.phoxter.co.jp/useful/cause-of-overdetection" target="_blank" rel="noopener noreferrer">https://www.phoxter.co.jp/useful/cause-of-overdetection</a></div>
+            <div class="trend-title">2.【現場課題】 AI検査の落とし穴：過多検出による「目視への逆戻り」 (2025/06)</div>
+            <p style="margin: 0 0 0.8rem 0;">日本AI技術普及開発機構（JAIX）の調査で、AI導入後に良品の誤判定（過多検出）が頻発し、度重なるチョコ停に耐えかねて目視検査へ戻る現場の実態が判明しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>PoCと実ラインのギャップ：</strong> 実験室で高精度でも、現場の「外来光」や「ワークの姿勢ブレ」に耐えられない現実を示しています。</li>
+                    <li><strong>投資判断の視点を転換：</strong> モデル単体の精度ではなく、環境変化を吸収できる「現場適応型のシステム設計」こそが成否を分ける警鐘です。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.phoxter.co.jp/useful/cause-of-overdetection" target="_blank" rel="noopener noreferrer">PhoXter コラム：過多検出の原因と対策</a>
+            </div>
         </div>
 
         <!-- 3. 現場課題・省力化 -->
         <div class="trend-box">
-            <div class="trend-title">3.【現場課題・省力化】 MENOU: AI×AFによる多品種少量ラインの品種切替自動化(2026/08)</div>
-            <p style="margin: 0 0 0.8rem 0;">株式会社MENOUが、多品種少量生産ラインにおけるピント調整や視点切り替えの手間を、AIとオートフォーカス (AF) 技術の融合によって自動化するソリューションを発表した。</p>
-            <div class="trend-section"><strong>なぜ重要か:</strong><br>多品種少量生産の最大の障壁である「ワーク変更ごとのカメラ位置調整やパラメータ再設定(セットアップコスト)」を自動化で排除し、これまで諦められていた多品種ラインにおける全数自動検査の投資対効果(ROI)を大幅に改善する。</div>
-            <div class="ref-text">参照URL:<br><a href="https://prtimes.jp/main/html/rd/p/000000043.000058407.html" target="_blank" rel="noopener noreferrer">https://prtimes.jp/main/html/rd/p/000000043.000058407.html</a></div>
+            <div class="trend-title">3.【現場課題・省力化】 MENOU：AI×AFで「品種切替の段取り」を自動化 (2026/08)</div>
+            <p style="margin: 0 0 0.8rem 0;">株式会社MENOUは、多品種少量ラインで発生するピント調整や視点切り替えの手間を、AIとオートフォーカス（AF）の融合により自動化する技術を発表しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>最大のボトルネックを排除：</strong> ワーク変更ごとの「カメラ位置調整」や「パラメータ再設定」の手間を自動化します。</li>
+                    <li><strong>多品種ラインのROIを劇的改善：</strong> 段取り負荷を理由に全数自動検査を諦めていた現場でも、費用対効果に見合う導入が可能になります。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://prtimes.jp/main/html/rd/p/000000043.000058407.html" target="_blank" rel="noopener noreferrer">株式会社MENOU プレスリリース（PR TIMES）</a>
+            </div>
         </div>
 
         <h2>ピックアップ製品・ソリューション</h2>
-        <h3><a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer">🔗 公式サイト：Hikrobot「ID3000シリーズ」</a><br>3.1MP高解像度×16mm液体レンズ×Deep Learningが実現する「止めない」超高速コード読取</h3>
+        <h3 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 0.6rem;">
+            Hikrobot ID3000シリーズ<br>
+            <span style="font-size: 0.95rem; font-weight: normal; color: #64748b;">
+                3.1MP × 液体レンズ × Deep Learningが実現する「止めない」超高速コード読取
+            </span>
+        </h3>
         
         <img src="id3000.jpg" alt="Hikrobot ID3000" class="product-img">
         
-        <p><strong>なぜ重要か:</strong><br>市場の深刻な課題である「環境光やワーク姿勢変化による誤認識(チョコ停)」と「多品種ラインでの段取り工数」を、液体レンズによる電気的オートフォーカスと組み込みディープラーニングの融合によって1台で根本解決し、ラインを止めない全数自動トレーサビリティを現実にする。</p>
+        <div class="trend-section" style="margin-top: 1.5rem;">
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">なぜ重要か：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>チョコ停と段取り替えを同時にゼロ化：</strong> 液体レンズの超高速AFとエッジAIを統合。環境光の変動や多品種混流によるライン停止を根本から解決します。</li>
+            </ul>
 
-        <p style="font-weight: bold; margin-bottom: 0.5rem;">ニュースとのシナジー:</p>
-        <ul style="margin: 0
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">現場課題への解決アプローチ：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>難読・反射コードの誤検知を根絶：</strong> 自動偏光と組み込みAIにより、DPM（直接刻印）や擦れ・歪みのあるコードも安定判定。</li>
+                <li><strong>高さ変動にも瞬時合焦：</strong> メカ駆動部を持たない16mm液体レンズが電気的にピントを追従。品種切替の手動セットアップを全廃。</li>
+                <li><strong>全数トレーサビリティの標準化：</strong> 3.1MP高解像度とコンパクト設計で、新JISを見据えた装置・ロボットへのOEM組み込みが容易。</li>
+            </ul>
+        </div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>メーカー / 型式</th>
+                    <td>Hikrobot / ID3000 シリーズ Smart Code Reader</td>
+                </tr>
+                <tr>
+                    <th>解像度 / センサ</th>
+                    <td>3.1MP（最大2048 × 1536 ピクセル）</td>
+                </tr>
+                <tr>
+                    <th>光学 / レンズ</th>
+                    <td>16mm 液体レンズ（電気的・超高速オートフォーカス対応）</td>
+                </tr>
+                <tr>
+                    <th>処理アルゴリズム</th>
+                    <td>ディープラーニング（Deep Learning）専用SoC内蔵</td>
+                </tr>
+                <tr>
+                    <th>照明・光学制御</th>
+                    <td>モジュール式照明、自動偏光（Auto Polarization）、調光制御</td>
+                </tr>
+                <tr>
+                    <th>機構 / 接続</th>
+                    <td>超小型設計、単一配線対応の航空コネクタ採用</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ref-text" style="margin-bottom: 2rem;">
+            🔗 <strong>製品詳細：</strong> <a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer">Hikrobot 公式製品ページ（英語）</a>
+        </div>
+
+        <!-- 製品お問い合わせエリア -->
+        <div class="contact-cta">
+            製品仕様のご確認・デモ機のご相談は<a href="https://www.chronix.co.jp/chronixjp/contact/index.html" target="_blank" rel="noopener noreferrer">こちら（お問い合わせ）</a>まで
+        </div>
+
+    </div>
+
+    <!-- 最下部アドレスロゴ -->
+    <div class="footer-address">
+        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+</body>
+</html>
