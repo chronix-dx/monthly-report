@@ -169,6 +169,15 @@
         .btn-page:hover {
             background-color: #b92b1d;
         }
+        /* 追加された製品リンクボタン用スタイル */
+        .btn-product {
+            border: 1px solid var(--primary-color);
+            background-color: white;
+            color: var(--primary-color);
+        }
+        .btn-product:hover {
+            background-color: #f1f5f9;
+        }
 
         /* アコーディオン・トグル用 (過去レポート用) */
         .past-reports-wrapper {
@@ -263,6 +272,7 @@
                 </a>
                 <div class="action-links">
                     <a href="reports/mv_hikrobot_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: Hikrobot ID3000</a>
                 </div>
             </article>
         </div>
@@ -293,6 +303,7 @@
                 </a>
                 <div class="action-links">
                     <a href="reports/adas_capt640_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.lynred.com/products/capt640" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: LYNRED CAPT640</a>
                 </div>
             </article>
         </div>
@@ -322,6 +333,7 @@
                 </a>
                 <div class="action-links">
                     <a href="reports/ao_piezo_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.alpao.com/" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: Bertin Alpao DM</a>
                 </div>
             </article>
         </div>
@@ -351,6 +363,7 @@
                 </a>
                 <div class="action-links">
                     <a href="reports/swir_inline_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: NIT LiSaSWIR</a>
                 </div>
             </article>
         </div>
@@ -380,6 +393,7 @@
                 </a>
                 <div class="action-links">
                     <a href="reports/laser_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: Tucsen XTシリーズ</a>
                 </div>
             </article>
         </div>
@@ -396,4 +410,60 @@
 
     <!-- 【カテゴリー6: 赤外線・ガス検知 (OGI)】 -->
     <section class="category-section">
-        <h2 class="
+        <h2 class="category-title">赤外線・ガス検知 (OGI)</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">OGI・ガス検知</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/ogi_vol1.html" class="card-thumb-link">
+                    <img src="ogi_vol1.jpg" alt="人的巡回から「常時監視」へ。「赤外線OGI」センシング革命" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/ogi_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.lynred.com/products/ati640" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: LYNRED ATI 640</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-ogi')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-ogi" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- 最下部アドレスロゴ -->
+<div class="footer-address">
+    <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+<script>
+    // アコーディオン開閉スクリプト
+    function toggleReports(targetId) {
+        const wrapper = document.getElementById(targetId);
+        const btn = event.target;
+        
+        if (wrapper.classList.contains('is-open')) {
+            wrapper.classList.remove('is-open');
+            btn.innerText = '▼ 過去のレポートを見る';
+        } else {
+            wrapper.classList.add('is-open');
+            btn.innerText = '▲ 閉じる';
+        }
+    }
+</script>
+
+</body>
+</html>
