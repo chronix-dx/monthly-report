@@ -22,43 +22,72 @@
             padding: 0;
         }
         
-        /* ヘッダー */
-        header {
+        /* 企業情報トップバー */
+        .header-topbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+        }
+        .header-topbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .topbar-logo {
+            max-width: 220px;
+            height: auto;
+            display: block;
+        }
+        .company-info-area {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .company-info-area strong {
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+        .company-info-area a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .company-info-area a:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            margin: 0 0.4rem;
+            color: #cbd5e1;
+        }
+
+        /* メインタイトルバナー */
+        .main-header {
             background-color: var(--primary-color);
             color: white;
             padding: 2.5rem 1rem;
             text-align: center;
         }
-        .header-logo-container {
-            margin-bottom: 1.2rem;
-        }
-        .header-logo {
-            max-width: 220px;
-            height: auto;
-            background-color: #ffffff;
-            padding: 6px 16px;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            display: inline-block;
-        }
-        header h1 {
+        .main-header h1 {
             margin: 0;
             font-size: 1.8rem;
             letter-spacing: 0.03em;
         }
-        header p {
+        .main-header p {
             margin-top: 0.8rem;
             font-size: 0.95rem;
             opacity: 0.9;
         }
 
+        /* コンテナ・レイアウト */
         .container {
             max-width: 1200px;
             margin: 2.5rem auto;
             padding: 0 1.5rem;
         }
-
-        /* カテゴリーセクション */
         .category-section {
             margin-bottom: 4rem;
         }
@@ -73,8 +102,6 @@
             align-items: center;
             justify-content: space-between;
         }
-
-        /* グリッドレイアウト */
         .report-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -169,7 +196,7 @@
         .btn-page:hover {
             background-color: #b92b1d;
         }
-        /* 追加された製品リンクボタン用スタイル */
+        /* 製品リンクボタン用スタイル */
         .btn-product {
             border: 1px solid var(--primary-color);
             background-color: white;
@@ -223,7 +250,7 @@
             text-align: center;
         }
 
-        /* フッター */
+        /* フッターアドレス（画像からテキストへ変更） */
         .footer-address {
             text-align: center;
             padding: 3rem 1rem 2rem;
@@ -231,10 +258,23 @@
             margin-top: 4rem;
             background-color: white;
         }
-        .footer-address img {
-            max-width: 100%;
-            height: auto;
-            max-height: 80px;
+        .footer-address strong {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        .footer-address p {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.8;
+            margin: 0.5rem 0 0;
+        }
+        .footer-address a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer-address a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
@@ -243,14 +283,48 @@
             color: #64748b;
             background-color: white;
         }
+
+        /* モバイル対応レスポンシブ */
+        @media (max-width: 768px) {
+            .header-topbar-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .company-info-area {
+                text-align: center;
+            }
+            .divider {
+                display: none;
+            }
+            .company-info-area br {
+                display: none;
+            }
+            .company-info-area span.mobile-block {
+                display: block;
+                margin-top: 0.2rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-logo-container">
-        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+<!-- 企業情報トップバー -->
+<div class="header-topbar">
+    <div class="header-topbar-inner">
+        <div class="logo-area">
+            <img src="logo_CHRONIX.jpg" alt="クロニクス株式会社" class="topbar-logo">
+        </div>
+        <div class="company-info-area">
+            <strong>クロニクス株式会社</strong><br>
+            <span class="mobile-block">〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</span><br>
+            <span class="mobile-block">TEL: 03-5322-7191 <span class="divider">|</span> FAX: 03-5322-7790 <span class="divider">|</span> <a href="mailto:sales@chronix.co.jp">sales@chronix.co.jp</a></span>
+        </div>
     </div>
+</div>
+
+<!-- メインタイトル -->
+<header class="main-header">
     <h1>トレンドレポート アーカイブ</h1>
     <p>先端現場のブレークスルーを導く、最新技術・市場動向を一挙公開。</p>
 </header>
@@ -307,7 +381,7 @@
                 </div>
             </article>
         </div>
-
+        
         <div class="toggle-btn-container" style="display: none;">
             <button class="toggle-btn" onclick="toggleReports('past-adas')">▼ 過去のレポートを見る</button>
         </div>
@@ -440,9 +514,12 @@
 
 </div>
 
-<!-- 最下部アドレスロゴ -->
+<!-- ページ最下部 企業情報（画像からテキスト化） -->
 <div class="footer-address">
-    <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+    <strong>クロニクス株式会社</strong>
+    <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室<br>
+    TEL: 03-5322-7191 / FAX: 03-5322-7790<br>
+    <a href="mailto:sales@chronix.co.jp">sales@chronix.co.jp</a></p>
 </div>
 
 <footer>
