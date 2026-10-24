@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>危険ガス漏洩対策と赤外線OGIセンシングの最新動向 | クロニクス株式会社</title>
+    <title>人的巡回から「常時監視」へ。「赤外線OGI」センシング革命 | クロニクス株式会社</title>
     <style>
         :root {
             --primary-color: #1a3687;
@@ -56,22 +56,22 @@
             border-radius: 10px;
             overflow: hidden;
         }
+        
+        /* ヘッダー画像エリア */
         .report-header {
-            padding: 2.5rem 2.5rem 1.5rem;
+            padding: 1.5rem 1.5rem 0.5rem;
             border-bottom: 1px solid var(--border-color);
             background-color: #fcfcfc;
         }
-        .report-meta {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 0.8rem;
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            margin: 0 auto;
         }
-        .report-title {
-            font-size: 1.6rem;
-            color: #1e293b;
-            margin: 0 0 1rem;
-            line-height: 1.4;
-        }
+
         .report-body {
             padding: 2rem 2.5rem;
         }
@@ -84,6 +84,9 @@
             margin: 2.5rem 0 1.5rem;
             background: #f8fafc;
         }
+        h2:first-of-type {
+            margin-top: 1rem;
+        }
         h3 {
             font-size: 1.15rem;
             color: #334155;
@@ -91,25 +94,8 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
-        h3 a {
-            color: var(--primary-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--primary-color);
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        h3 a:hover {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
 
-        .summary-box {
-            background-color: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
+        /* ニュースカード */
         .trend-box {
             border: 1px solid var(--border-color);
             padding: 1.5rem;
@@ -131,7 +117,11 @@
             padding-top: 0.6rem;
             border-top: 1px dashed var(--border-color);
             font-size: 0.85rem;
-            color: #64748b;
+        }
+        .ref-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-weight: 600;
         }
 
         .product-img {
@@ -142,6 +132,45 @@
             margin: 1.5rem auto;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            width: 32%;
+        }
+
+        /* お問い合わせリンクエリア */
+        .contact-cta {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            padding: 1.2rem;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .contact-cta a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 0 0.2rem;
+            transition: color 0.2s ease;
+        }
+        .contact-cta a:hover {
+            color: #b92b1d;
         }
 
         .footer-address {
@@ -176,59 +205,133 @@
 
 <div class="container">
     <div class="report-header">
-        <div class="report-meta">
-            <span>産業技術トレンド速報レポート</span> | <span>読了目安時間:約3分</span>
-        </div>
-        <h1 class="report-title">危険ガス漏洩対策と赤外線OGIセンシングの最新動向</h1>
+        <!-- 画像内にタイトル・文字数・読了時間を集約 -->
+        <img src="ogi_vol1.jpg" alt="1,100文字 読了時間:約2分 | 人的巡回から「常時監視」へ。「赤外線OGI」センシング革命 - 目に見えないガス漏洩をリアルタイム可視化。ドローン×定置型AIでプラント保安を無人化。" class="hero-img">
     </div>
 
     <div class="report-body">
-        
-        <div class="summary-box">
-            <h3 style="margin-top:0; border:none; padding:0; color:#1e293b;">【エグゼクティブ・サマリー】</h3>
-            <p style="margin:0;">新興国を中心とした化学・水産プラントや炭鉱における致命的なアンモニア・メタン漏洩事故の多発と、米EPAやEUにおける環境規制の厳格化を受け、産業現場での光学ガス検知 (OGI) 需要が急増しています。従来の作業員による手持ち巡回点検から、ドローン連携や定置型IoT/AIによる「24時間常時モニタリング」への移行が進んでおり、低コストな非冷却型センサや高感度な冷却型SWaP対応モジュールの導入がインフラ保安における競争優位を決定づけています。</p>
-        </div>
 
-        <h2>業界の最新ニュースと技術トレンド</h2>
+        <h2>業界の最新ニュースと保安トレンド (3選)</h2>
 
+        <!-- 1. 安全動向 -->
         <div class="trend-box">
-            <div class="trend-title">1.【安全動向】世界的な危険ガス (アンモニア・メタン) 漏洩事故の頻発と監視基準の厳格化</div>
-            <div class="trend-section"><strong>▼ なぜそれが重要か?:</strong> 水産加工施設やトンネル掘削現場、炭鉱等において数十人規模の死亡者を出すガス漏洩・爆発事故が相次いでおり、当局による安全基準違反の摘発や防災体制の再構築が急務となっています。</div>
-            <div class="trend-section"><strong>■技術要点:</strong> 次世代燃料として注視される液化アンモニア等を含め、目視不可能な毒性・可燃性ガスの拡散を早期に検知・局所化するため、熱画像技術を活用した遠隔可視化アプローチが導入されています。</div>
-            <div class="trend-section"><strong>★インパクト:</strong> 点式警報器に依存する従来の管理から、現場から離れた安全な場所でガス雲の広がりをリアルタイム視認できる光学ガス検知 (OGI) の標準化が加速しています。</div>
-            <div class="ref-text">参照URL: The Hindu / NDTV/ 乗りものニュース等の報道より</div>
+            <div class="trend-title">1.【安全動向】 危険ガス（アンモニア・メタン）漏洩事故の頻発と保安の遠隔化</div>
+            <p style="margin: 0 0 0.8rem 0;">化学・水産プラントや鉱山において重大なガス漏洩・爆発事故が相次ぎ、目視不能な毒性・可燃性ガスを遠隔から安全に可視化する「光学ガス検知（OGI）」の義務化・標準化が世界的に加速しています。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>「点」から「面」の検知へシフト：</strong> 風向きの影響を受けやすい定点型ガス検知器と異なり、赤外線熱画像によりガス雲（プルーム）の広がりをリアルタイムに直視できます。</li>
+                    <li><strong>二次災害と人命被害を未然防止：</strong> 作業員が危険エリアに立ち入ることなく遠隔から漏洩箇所を即座に特定でき、重大事故を水際で食い止めます。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> 産業保安・化学プラント事故事例ニュース（NDTV / The Hindu等の国際報道より）
+            </div>
         </div>
 
+        <!-- 2. 規制動向 -->
         <div class="trend-box">
-            <div class="trend-title">2.【規制動向】米EPA・EUメタン規制を受けた定置型IoT/AIによる「常時監視」への全面移行</div>
-            <div class="trend-section"><strong>なぜそれが重要か?:</strong> 各国の環境規制強化を受け、エネルギー大手を中心に、従来の年数回の作業員による定期点検から、24時間365日体制での「連続モニタリング (Continuous Monitoring)」への移行が迫られています。</div>
-            <div class="trend-section"><strong>■技術要点:</strong> 環境センサー企業によるOGIソリューション企業のM&Aに象徴されるように、固定型カメラとAI画像解析を連携させ、無人で漏洩を検知・監視する統合プラットフォームの構築が進んでいます。</div>
-            <div class="trend-section"><strong>★インパクト:</strong> 点検の隙を突いた微量な逃散排出を確実に把握することで、厳格化する規制への適合と製品ガス損失の低減を同時に達成します。</div>
-            <div class="ref-text">参照URL: 業界各社プレスリリース (Sensirion, TotalEnergies等の事例)より</div>
+            <div class="trend-title">2.【規制動向】 米EPA・EUメタン規制：定置型IoT/AIによる「24時間常時監視」へ</div>
+            <p style="margin: 0 0 0.8rem 0;">米EPA（環境保護庁）やEUによる温室効果ガス排出規制の強化を受け、従来の年数回の手動巡回点検から、定置カメラとAI画像解析を組み合わせた「24時間365日の連続監視」への移行が進んでいます。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>定期点検の「見落とし期間」を排除：</strong> 巡回の合間に発生する微量な逃散排出（Fugitive Emissions）をAIが常時検知し、即時アラートを発信します。</li>
+                    <li><strong>巨額ペナルティの回避と資源ロス削減：</strong> 厳罰化される環境罰則を確実に回避すると同時に、貴重な製品ガスの漏洩損失を最小化して採算性を守ります。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> 米EPA Clean Air Act（メタン排出削減規制）および欧州エネルギーメタン規則動向
+            </div>
         </div>
 
+        <!-- 3. 導入動向 -->
         <div class="trend-box">
-            <div class="trend-title">3. 【導入動向】 ドローン代替テスト承認と非冷却型OGIのインフラ大量導入</div>
-            <div class="trend-section"><strong>なぜそれが重要か?:</strong> 広大な油田・ガス田や下流プラントにおける点検業務を効率化するため、高額な冷却型機器を用いた徒歩点検に代わる、低コストかつ広域を網羅できる新たなテスト手法が求められています。</div>
-            <div class="trend-section"><strong>■ 技術要点:</strong> 米EPAによるドローン/LiDARベースの代替テスト手法(Alt-Tech)正式承認や、低コストで運用可能な「非冷却型(Uncooled)」OGIとAIを組み合わせたスマート保安へのリプレースが進展しています。</div>
-            <div class="trend-section"><strong>★インパクト:</strong> 高所のドローン空撮と地上の手持ち点検を一元化するモジュール活用などで点検コストを30～40%削減し、これまで導入が難しかった中規模施設への一括導入商談を牽引しています。</div>
-            <div class="ref-text">参照URL: 米EPA規定改正/業界事例 (LNG公社など)より</div>
+            <div class="trend-title">3.【導入動向】 ドローン代替テスト承認と非冷却型OGIによる大量配備</div>
+            <p style="margin: 0 0 0.8rem 0;">米EPAによるドローン搭載型OGIの代替テスト（Alt-Tech）正式承認や、低コストな非冷却型センサーの台頭により、広大なエネルギーインフラでの保安DXが急速に普及しています。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>点検コストを30〜40%削減：</strong> 高所配管や広大サイトをドローン空撮と定置センサーで自動網羅し、高額な徒歩巡回の手間と危険作業を全廃します。</li>
+                    <li><strong>中規模プラントへの一括導入を実現：</strong> 冷却器を持たないメンテナンスフリーな非冷却コアにより、導入・維持費用のハードルを大幅に引き下げます。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> 米EPA OOOOb/c 代替漏洩検知技術（Alt-Tech）規定ガイドライン
+            </div>
         </div>
 
-        <h2>さらに知る(製品情報)</h2>
-        <h3><a href="https://www.lynred.com/products/ati640" target="_blank" rel="noopener noreferrer">🔗 公式サイト：LYNRED (リンレッド) - ATIシリーズ (ATI 320 / ATI 640 / ATI EOLE MW)</a></h3>
+        <!-- ピックアップ製品 -->
+        <h2>ピックアップ製品・ソリューション</h2>
+        <h3 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 0.6rem;">
+            LYNRED「ATIシリーズ」赤外線OGIセンシングモジュール<br>
+            <span style="font-size: 0.95rem; font-weight: normal; color: #64748b;">
+                冷却型MWIR「ATI EOLE MW」＆ 非冷却型「ATI 320/640」が実現する全天候ガス保安
+            </span>
+        </h3>
         
         <img src="ati_640.jpg" alt="LYNRED ATI 640" class="product-img">
+        
+        <div class="trend-section" style="margin-top: 1.5rem;">
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">なぜ重要か：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>高感度ガス視認と大量配備を1社で完結：</strong> 微量メタンを遠方から捉える「冷却型MWIR」と、メンテフリーで定置監視を低コスト化する「非冷却型」を両立。手持ち端末からドローン・固定監視まで、現場に最適なOGI網を柔軟に構築できます。</li>
+            </ul>
 
-        <ul style="margin: 0 0 2rem 0; padding-left: 1.5rem;">
-            <li><strong>• 高感度MWIR冷却モジュール 「ATI EOLE MW」による微量ガス漏れ即時可視化:</strong><br>メタンや炭化水素系のガス検出に特化した高感度センサを搭載。広大なプラント設備における微量のガス漏洩を遠方から高コントラストでリアルタイムに視認化し、厳格化するEPA等の排出規制や保安基準への適合を強力に支援します。</li>
-            <li><strong>• SWaP設計によるドローン・ポータブル機器への自在な展開:</strong><br>冷却型でありながら超小型・軽量かつ低消費電力 (SWaP) を実現。高所配管網を一括点検するドローン (UxS) 搭載から、作業員の手持ち端末、常設監視用途まで、多様なOGIシステムの開発期間(Time-to-Market) を大幅に短縮します。</li>
-            <li><strong>• 低コスト・メンテフリーを実現する非冷却赤外コア 「ATI 320/ATI 640」:</strong><br>12µmピクセルピッチ採用の非冷却マイクロボロメータにより、冷却クーラーが不要で長寿命かつ低コストな赤外線撮像環境を提供します。中流・下流プラントへの定置式モニタリングカメラの大量一括導入において圧倒的な費用対効果を発揮します。</li>
-            <li><strong>• オンボード画像前処理によるシステム負荷の最小化:</strong><br>モジュール内部で感度不均一補正 (NUC) や自動ゲイン制御 (AGC)を自動実行。ホスト側デバイスの処理負荷をゼロに抑えるため、エッジAIによる異常検知アルゴリズムとのスムーズな連携や高速なアラート制御を可能にします。</li>
-        </ul>
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">現場課題への解決アプローチ：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>微量メタン・炭化水素を即座に可視化（ATI EOLE MW）：</strong> 炭化水素の光吸収帯（3〜5µm）に特化した高感度冷却モジュールにより、かすかな漏洩も高コントラストで遠隔特定。</li>
+                <li><strong>SWaP設計でドローン搭載・手持ち端末に最適：</strong> 冷却型でありながら超小型・軽量・低消費電力を達成し、飛行時間への影響を抑えてドローン巡回の実用性を最大化。</li>
+                <li><strong>冷却器不要で長寿命・低コスト（ATI 320/640）：</strong> 12µm非冷却マイクロボロメータを採用。スターリングクーラーの寿命制約がなく、24時間365日の常設監視カメラに最適。</li>
+                <li><strong>オンボード画像補正でエッジAIと即時連携：</strong> 不均一性補正（NUC）や自動ゲイン制御（AGC）を内蔵チップで自動処理。ホスト端末に負荷をかけずAI異常検知を高速実行。</li>
+            </ul>
+        </div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>メーカー / シリーズ</th>
+                    <td>LYNRED（リンレッド） / ATIシリーズ（ATI 320 / ATI 640 / ATI EOLE MW）</td>
+                </tr>
+                <tr>
+                    <th>検出方式 / センサー</th>
+                    <td>非冷却マイクロボロメータ（320/640） / 冷却型MWIR（ATI EOLE MW）</td>
+                </tr>
+                <tr>
+                    <th>解像度 / 画素ピッチ</th>
+                    <td>QVGA（320 × 240） / VGA（640 × 480） / 12µmピクセルピッチ</td>
+                </tr>
+                <tr>
+                    <th>感度波長帯</th>
+                    <td>LWIR 8〜14µm（非冷却） / MWIR 3〜5µm（ガス検知特化型 冷却モジュール）</td>
+                </tr>
+                <tr>
+                    <th>NETD（温度分解能）</th>
+                    <td>&lt; 40mK（非冷却モデル） / &lt; 20mK（冷却型 超高感度モデル）</td>
+                </tr>
+                <tr>
+                    <th>オンボード処理機能</th>
+                    <td>感度不均一補正（NUC）、自動ゲイン制御（AGC）、不良画素置換内蔵</td>
+                </tr>
+                <tr>
+                    <th>適用プラットフォーム</th>
+                    <td>産業用ドローン（UxS）、手持ちサーモグラフィ、定置式24時間防爆カメラ</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ref-text" style="margin-bottom: 2rem;">
+            🔗 <strong>製品詳細：</strong> <a href="https://www.lynred.com/products/ati640" target="_blank" rel="noopener noreferrer">LYNRED 公式製品ページ：ATIシリーズ（英語）</a>
+        </div>
+
+        <!-- 製品お問い合わせエリア -->
+        <div class="contact-cta">
+            製品仕様のご確認・デモ機のご相談は<a href="https://www.chronix.co.jp/chronixjp/contact/index.html" target="_blank" rel="noopener noreferrer">こちら（お問い合わせ）</a>まで
+        </div>
 
     </div>
 
+    <!-- 最下部アドレスロゴ -->
     <div class="footer-address">
         <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
     </div>
