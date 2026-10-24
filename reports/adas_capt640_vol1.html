@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自動運転マルチモーダル冗長センシング 最新トレンドレポート | クロニクス株式会社</title>
+    <title>悪天候の死角をなくす。「全天候型」自動運転センシング | クロニクス株式会社</title>
     <style>
         :root {
             --primary-color: #1a3687;
@@ -56,28 +56,22 @@
             border-radius: 10px;
             overflow: hidden;
         }
+        
+        /* ヘッダー画像エリア */
         .report-header {
-            padding: 2.5rem 2.5rem 1.5rem;
+            padding: 1.5rem 1.5rem 0.5rem;
             border-bottom: 1px solid var(--border-color);
             background-color: #fcfcfc;
         }
-        .report-meta {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 0.8rem;
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            margin: 0 auto;
         }
-        .report-title {
-            font-size: 1.6rem;
-            color: #1e293b;
-            margin: 0 0 0.5rem;
-            line-height: 1.4;
-        }
-        .report-subtitle {
-            font-size: 1.05rem;
-            color: #475569;
-            margin: 0 0 1rem;
-            font-weight: normal;
-        }
+
         .report-body {
             padding: 2rem 2.5rem;
         }
@@ -90,15 +84,18 @@
             margin: 2.5rem 0 1.5rem;
             background: #f8fafc;
         }
-
-        .summary-box {
-            background-color: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+        h2:first-of-type {
+            margin-top: 1rem;
         }
-        
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        /* ニュースカード */
         .trend-box {
             border: 1px solid var(--border-color);
             padding: 1.5rem;
@@ -112,16 +109,6 @@
             color: var(--primary-color);
             margin-bottom: 0.8rem;
         }
-        .trend-title a {
-            color: var(--primary-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--primary-color);
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        .trend-title a:hover {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
         .trend-section {
             margin-bottom: 0.6rem;
         }
@@ -130,16 +117,11 @@
             padding-top: 0.6rem;
             border-top: 1px dashed var(--border-color);
             font-size: 0.85rem;
-            word-break: break-all;
-            color: #64748b;
         }
         .ref-text a {
             color: var(--primary-color);
             text-decoration: underline;
-        }
-        .ref-title {
-            display: block;
-            margin-top: 0.2rem;
+            font-weight: 600;
         }
 
         .product-img {
@@ -147,9 +129,48 @@
             height: auto;
             max-height: 380px;
             display: block;
-            margin: 1.2rem auto;
+            margin: 1.5rem auto;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            width: 32%;
+        }
+
+        /* お問い合わせリンクエリア */
+        .contact-cta {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            padding: 1.2rem;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .contact-cta a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 0 0.2rem;
+            transition: color 0.2s ease;
+        }
+        .contact-cta a:hover {
+            color: #b92b1d;
         }
 
         .footer-address {
@@ -184,101 +205,79 @@
 
 <div class="container">
     <div class="report-header">
-        <div class="report-meta">
-            <span>発行区分: モビリティ技術速報/SDVトレンド分析</span> | <span>読了目安:約1,230字/約123秒(約2分)</span>
-        </div>
-        <h1 class="report-title">自動運転マルチモーダル冗長センシング 最新トレンドレポート</h1>
-        <div class="report-subtitle">車載統合アーキテクチャと全天候型冗長性の最前線 (厳選5ニュース)</div>
+        <!-- 画像内にタイトル・文字数・読了時間を集約 -->
+        <img src="adas_vol1.jpg" alt="1,200文字 読了時間:約2分 | 悪天候の死角をなくす。「全天候型」自動運転センシング - サーマル×LiDAR×カメラ統合で、過酷環境下の認識冗長性を極める。" class="hero-img">
     </div>
 
     <div class="report-body">
-        
-        <div class="summary-box">
-            <h3 style="margin-top:0; border:none; padding:0; color:#1e293b;">【エグゼクティブ・サマリー】</h3>
-            <p style="margin:0;">完全な自動運転の実現に向け、全天候型の検知冗長性確保とセンサーの小型・低コスト化を伴う車両統合アーキテクチャへのシフトがモビリティ業界の主戦場となっています。本レポートでは、センシングの限界拡張とデータ循環基盤の最新動向を整理・報告します。</p>
-        </div>
 
         <h2>厳選ニュース (5選)</h2>
 
         <!-- 1. LYNRED CAPT640 -->
         <div class="trend-box">
-            <div class="trend-title">
-                <a href="https://www.lynred.com/products/capt640-02" target="_blank" rel="noopener noreferrer">
-                    🔗 1. LYNREDが車載サーマルセンサー 「CAPT640」を展開
-                </a>
+            <div class="trend-title">1.【夜間・全天候】 LYNREDが車載サーマルセンサー「CAPT640」を展開</div>
+            <p style="margin: 0 0 0.8rem 0;">仏赤外線センサー大手のLYNREDは、可視光カメラが苦手とする夜間や悪天候下での歩行者検知を補完する、車載品質規格対応のサーマルセンサー「CAPT640-02」を発表しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>「暗闇」と「悪天候」の死角を解消：</strong> 外光変化やヘッドライトグレアに影響されない熱画像により、最大228m先までの歩行者を確実に捉えます。</li>
+                    <li><strong>厳しい車載品質に対応：</strong> AEC-Q100 Grade 3およびIATF 16949に準拠。量産車の自動ブレーキ（AEB）や自動運転レベル3以上での冗長性確保に即応する仕様です。</li>
+                </ul>
             </div>
-            
-            <img src="capt640.jpg" alt="LYNRED CAPT640" class="product-img">
-
-            <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>外光やヘッドライトグレアの影響を受けにくい熱画像により、可視カメラが苦手とする夜間や悪天候下での歩行者検知を強力に補完するためです。</div>
-            <div class="trend-section"><strong>■技術要点</strong><br>VGA解像度(640×480)のベアダイ車載サーマルセンサー。車載品質規格AEC-Q100 Grade 3および自動車品質管理規格IATF 16949を取得し、自動車産業の品質管理基準であるP-PAP (生産部品承認プロセス)に対応。</div>
-            <div class="trend-section"><strong>★インパクト</strong><br>暗闇や悪天候下でも最大228m先の歩行者を検知し、夜間自動ブレーキの死角を解消。</div>
             <div class="ref-text">
-                参照URL:<br><a href="https://www.lynred.com/products/capt640-02" target="_blank" rel="noopener noreferrer">https://www.lynred.com/products/capt640-02</a>
-                <span class="ref-title">（公式製品ページ）</span>
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.lynred.com/products/capt640-02" target="_blank" rel="noopener noreferrer">LYNRED 公式製品ページ（英語）</a>
             </div>
         </div>
 
         <!-- 2. 車載LIDAR市場 -->
         <div class="trend-box">
-            <div class="trend-title">2. 車載LIDAR市場が2033年に112億ドルへ拡大</div>
-            <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>小型統合やソリッドステート化が進み、量産価格の低下によって自動運転の実用化と開発コスト削減が劇的に加速するためです。</div>
-            <div class="trend-section"><strong>■技術要点</strong><br>小型統合・ソリッドステート化の進行と、主要サプライヤー間の量産競争の激化。</div>
-            <div class="trend-section"><strong>★インパクト</strong><br>2026年の17億ドルから2033年に112.6億ドルへ拡大 (CAGR 31.0%)。</div>
+            <div class="trend-title">2.【市場】 車載LiDAR世界市場、2033年までに約112億ドル規模へ急拡大</div>
+            <p style="margin: 0 0 0.8rem 0;">市場調査レポートによると、世界の車載LiDAR市場は2026年の17億ドルから、2033年には112.6億ドルへと年平均成長率（CAGR）31%で爆発的に拡大する見通しです。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>ソリッドステート化による量産と低価格化：</strong> 小型化・半導体化（ソリッドステート化）やサプライヤーの量産競争により、部品単価が急降下しています。</li>
+                    <li><strong>AD/ADASの「必須センサー」に定着：</strong> カメラ単独の限界を補う3D認識手段として、自動運転レベル3/4の実装に欠かせないインフラへと昇格しています。</li>
+                </ul>
+            </div>
             <div class="ref-text">
-                参照URL:<br><a href="https://ex-press.jp/vsdj/vsdj-news/vsdj-biz-market/77489/" target="_blank" rel="noopener noreferrer">https://ex-press.jp/vsdj/vsdj-news/vsdj-biz-market/77489/</a>
-                <span class="ref-title">（記事名：「自動車LiDAR市場規模、2033年までに112億6000万ドル」）</span>
+                🔗 <strong>詳しく見る：</strong> <a href="https://ex-press.jp/vsdj/vsdj-news/vsdj-biz-market/77489/" target="_blank" rel="noopener noreferrer">「自動車LiDAR市場規模、2033年までに112億6000万ドル」（プレスリリース掲載記事）</a>
             </div>
         </div>
 
         <!-- 3. TIER IV -->
         <div class="trend-box">
-            <div class="trend-title">3. TIER IVが120°広角の車載MPカメラを発表</div>
-            <div class="trend-section"><strong>なぜそれが重要か?</strong><br>交差点の死角を削減し、市街地走行の認識冗長性を大幅向上させつつ、必要カメラ台数を最適化できるためです。</div>
-            <div class="trend-section"><strong>■技術要点</strong><br>120°広角カメラを追加。近距離周辺を広角、遠方を狭角カメラで役割分担する車載システム構成。</div>
-            <div class="trend-section"><strong>★インパクト</strong><br>車両周囲の死角低減と、必要カメラ台数の最適化を実現。</div>
+            <div class="trend-title">3.【周辺認識】 ティアフォーが120°広角の車載カメラを追加、死角を削減</div>
+            <p style="margin: 0 0 0.8rem 0;">自動運転スタートアップのティアフォーは、レベル4運行に最適化したカメラ「MPシリーズ」に、画角120度の新モデル「C1 120° / C2 120°」を追加しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>交差点や狭い道路での「見落とし」を防ぐ：</strong> 死角になりやすい自車周辺の広角視野を確保。複数センサーの重複カバレッジにより、市街地走行の認識冗長性が向上します。</li>
+                    <li><strong>カメラ台数と配線の最適化：</strong> 近距離は広角、遠方は狭角カメラと役割を分担。認識力を保ったまま、車両全体の艤装コストを抑えます。</li>
+                </ul>
+            </div>
             <div class="ref-text">
-                参照URL:<br><a href="https://tier4.co.jp/updates/press-release/20260930-tieriv-expands-mp-camera-series-c1c2" target="_blank" rel="noopener noreferrer">https://tier4.co.jp/updates/press-release/20260930-tieriv-expands-mp-camera-series-c1c2</a>
-                <span class="ref-title">（プレスリリース：「自動運転レベル4に最適化した車載カメラ『MPシリーズ』に120度画角の新モデルを追加」）</span>
+                🔗 <strong>詳しく見る：</strong> <a href="https://tier4.co.jp/updates/press-release/20260930-tieriv-expands-mp-camera-series-c1c2" target="_blank" rel="noopener noreferrer">ティアフォー プレスリリース：車載カメラ「MPシリーズ」に120度画角の新モデル</a>
             </div>
         </div>
 
         <!-- 4. 現代自動車 -->
         <div class="trend-box">
-            <div class="trend-title">4. 現代自動車がAIデータフライホイールを本格稼働</div>
-            <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>実走行データ収集から学習、検証、再展開を自動循環させ、膨大なデータを効率よく還元して開発・検証プロセスを効率化するためです。</div>
-            <div class="trend-section"><strong>■技術要点</strong><br>難例抽出、継続学習、仮想検証を組み合わせたData Flywheelによるデータ自動循環・学習開発基盤。</div>
-            <div class="trend-section"><strong>★インパクト</strong><br>自動学習サイクルにより、開発・検証コストを半減以下に抑制し、認識性能を持続的に改善。</div>
+            <div class="trend-title">4.【データ循環】 現代自動車が「AIデータフライホイール」を本格稼働、開発を高速化</div>
+            <p style="margin: 0 0 0.8rem 0;">現代自動車グループは、実走行データ収集から学習、仮想検証、車両への再展開までを全自動化する「データフライホイール」の本格稼働を開始しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>自動学習による「進化の高速化」：</strong> 現場のレアケース（難例）を自動で抽出してAIに継続学習させ、認識精度を自律的に高め続けます。</li>
+                    <li><strong>開発・検証コストを半減以下に：</strong> 人的なアノテーション（ラベル付け）やテスト走行のプロセスをデジタルツイン（仮想空間）上で自動化し、SDV開発スピードを劇的に高めます。</li>
+                </ul>
+            </div>
             <div class="ref-text">
-                参照URL:<br><a href="https://www.unite.ai/ja/hyundai-motor-group-puts-data-flywheel-into-full-operation/" target="_blank" rel="noopener noreferrer">https://www.unite.ai/ja/hyundai-motor-group-puts-data-flywheel-into-full-operation/</a>
-                <span class="ref-title">（記事名：「Hyundai Motor Group、データフライホイールを本格稼働」）</span>
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.unite.ai/ja/hyundai-motor-group-puts-data-flywheel-into-full-operation/" target="_blank" rel="noopener noreferrer">Unite.ai 記事：Hyundai Motor Group、データフライホイールを本格稼働</a>
             </div>
         </div>
 
         <!-- 5. 車載AI市場 -->
         <div class="trend-box">
-            <div class="trend-title">5. 車載AI市場が2036年に2,444億ドル規模へ到達</div>
-            <div class="trend-section"><strong>▼なぜそれが重要か?</strong><br>単一センサーの性能競争ではなく、複数センサーを最適に組み合わせるセンサーフュージョンおよびSDV化の需要が急増しているためです。</div>
-            <div class="trend-section"><strong>■技術要点</strong><br>ADAS、コネクテッドカー、SDVの拡大に対応する車載統合およびデータ循環アーキテクチャ。</div>
-            <div class="trend-section"><strong>★インパクト</strong><br>センサーフュージョン需要の急増により、2036年に2,444億ドル規模へ成長 (CAGR 27%)。</div>
-            <div class="ref-text">
-                参照URL:<br><a href="https://www.openpr.com/news/4646378/ai-in-automotive-market-to-reach-usd-244-4-billion-by-2036-driven" target="_blank" rel="noopener noreferrer">https://www.openpr.com/news/4646378/ai-in-automotive-market-to-reach-usd-244-4-billion-by-2036-driven</a>
-                <span class="ref-title">（プレスリリース：「AI in Automotive Market to Reach USD 244.4 Billion by 2036」）</span>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- 最下部アドレスロゴ -->
-    <div class="footer-address">
-        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
-    </div>
-
-</div>
-
-<footer>
-    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
-</footer>
-
-</body>
-</html>
+            <div class="trend-title">5.【SDV】 車載AI世界市場、2036年までに2,444億ドル規模到達へ</div>
+            <p style="margin: 0 0 0.8
