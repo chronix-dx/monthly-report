@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>最新トレンドレポート アーカイブ | クロニクス株式会社</title>
+    <title>トレンドレポート アーカイブ | クロニクス株式会社</title>
     <style>
         :root {
             --primary-color: #1a3687;
@@ -126,6 +126,12 @@
             margin: 0;
             line-height: 1.6;
         }
+        /* 追加: ハイライト部分の装飾調整 */
+        .report-content p strong {
+            color: #1e293b;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
 
         /* アクションリンク・ボタン */
         .action-links {
@@ -155,8 +161,6 @@
             background-color: #b92b1d;
         }
         .btn-link {
-            background-color: var(--primary-color);
-            color: white;
             border: 1px solid var(--primary-color);
             background-color: white;
             color: var(--primary-color);
@@ -193,8 +197,8 @@
     <div class="header-logo-container">
         <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
     </div>
-    <h1>最新トレンドレポート アーカイブ</h1>
-    <p>クロニクスが配信している最新技術・市場動向レポートのバックナンバーです。</p>
+    <h1>トレンドレポート アーカイブ</h1>
+    <p>先端現場のブレークスルーを導く、最新技術・市場動向を一挙公開。</p>
 </header>
 
 <div class="container">
@@ -210,7 +214,7 @@
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
-                <p>自動全数検査への移行が進む一方、環境変化に伴う「チョコ停」や「品種切替時のセットアップ負荷」が課題となっています。液体レンズによる高速自動合焦と組み込みAIを融合させた省力化技術の最新動向を解説します。</p>
+                <p><strong>現場を止める「チョコ停」と「段取り替え負荷」をゼロへ。</strong><br>液体レンズの超高速AFとエッジAIを統合し、ラインを無停止化する「現場即応型・全数検査」の実装ポイントを凝縮。</p>
             </div>
 
             <div class="action-links">
@@ -233,7 +237,7 @@
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
-                <p>完全な自動運転の実現に向け、全天候型の検知冗長性確保とセンサーの小型・低コスト化を伴う車両統合アーキテクチャへのシフトが進んでいます。センシングの限界拡張とデータ循環基盤の最新動向を整理しました。</p>
+                <p><strong>悪天候の死角をなくし、車両全体のセンサーコストを抑える。</strong><br>カメラ・LiDAR・赤外線を束ねるマルチモーダル冗長設計と、SDV量産化に向けたデータ基盤の最前線。</p>
             </div>
 
             <div class="action-links">
@@ -256,7 +260,7 @@
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
-                <p>先端半導体・超解像観察での高精度化が相まり、適応光学(AO)とピエゾ駆動技術の重要性が急増。熱歪みや大気揺らぎを克服する電磁駆動・画像計算を用いた可変型ミラーの最新動向を解説します。</p>
+                <p><strong>ナノ領域の観測を阻む「熱歪み」と「大気揺らぎ」をリアルタイム補正。</strong><br>先端半導体・超解像顕微鏡の限界精度を引き出す、電磁駆動ピエゾと可変形ミラー（AO）の最新制御技術。</p>
             </div>
 
             <div class="action-links">
@@ -279,7 +283,7 @@
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
-                <p>先端半導体（3Dパッケージ）の内部欠陥検査、資源循環法に伴う廃プラ選別、食品全数検査などを背景に需要が急増するSWIR検査。シリコン透過や樹脂分光を活かし、搬送速度を維持したままリアルタイム選別を実現する技術動向を解説します。</p>
+                <p><strong>ライン速度を落とさず、シリコン透過・樹脂選別をインライン化。</strong><br>3D半導体の内部欠陥から廃プラ・食品選別まで、SWIR分光を活かした高速リアルタイム検査の実装ポイント。</p>
             </div>
 
             <div class="action-links">
@@ -302,7 +306,7 @@
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
-                <p>ガラス基板の超高速微細穴あけや青色レーザーによる高反射金属溶接、可搬型レーザークリーニングなど国内の先端加工事例を紹介。あわせて高精度加工の品質保証を担うビームプロファイラーによる光学計測技術を解説します。</p>
+                <p><strong>微細穴あけから高反射金属の溶接まで、難加工の品質保証を確立。</strong><br>青色レーザー等の国内先端事例と、加工精度をリアルタイムに担保するビームプロファイラー計測の最前線。</p>
             </div>
 
             <div class="action-links">
@@ -325,7 +329,7 @@
             
             <div class="report-content">
                 <h3>📝 レポート解説</h3>
-                <p>アンモニア・メタン事故の多発や米EPA・EU環境規制の厳格化を受け、プラント等の巡回点検から定置型IoT/AIやドローンによる「24時間常時モニタリング」への移行が進む光学ガス検知（OGI）の最新技術トレンドを解説します。</p>
+                <p><strong>人的な巡回点検から、ドローン・定置型AIによる24時間常時監視へ。</strong><br>メタン・アンモニア漏洩や環境規制の厳格化に先回りする、光学ガス検知（OGI）センシングの最新トレンド。</p>
             </div>
 
             <div class="action-links">
