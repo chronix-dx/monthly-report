@@ -56,31 +56,13 @@
             border-radius: 10px;
             overflow: hidden;
         }
+        
+        /* ヘッダー画像エリア（余白をすっきり調整） */
         .report-header {
-            padding: 2.5rem 2.5rem 1.8rem;
+            padding: 1.5rem 1.5rem 0.5rem;
             border-bottom: 1px solid var(--border-color);
             background-color: #fcfcfc;
         }
-        .report-meta {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 0.8rem;
-        }
-        .report-title {
-            font-size: 1.7rem;
-            font-weight: 800;
-            color: #1e293b;
-            margin: 0 0 0.5rem;
-            line-height: 1.35;
-        }
-        .report-subtitle {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #d93829;
-            margin: 0 0 1.2rem;
-        }
-        
-        /* メインアイキャッチ画像 */
         .hero-img {
             max-width: 100%;
             height: auto;
@@ -101,6 +83,9 @@
             padding: 0.8rem;
             margin: 2.5rem 0 1.5rem;
             background: #f8fafc;
+        }
+        h2:first-of-type {
+            margin-top: 1rem;
         }
         h3 {
             font-size: 1.15rem;
@@ -229,14 +214,8 @@
 
 <div class="container">
     <div class="report-header">
-        <div class="report-meta">
-            <span>1,600文字</span> | <span>読了時間:約3分</span>
-        </div>
-        <h1 class="report-title">もうラインを止めない。「チョコ停ゼロ」の全数自動検査</h1>
-        <div class="report-subtitle">液体レンズ×エッジAIで、品種切替の段取りと誤検知を根絶する。</div>
-        
-        <!-- メインアイキャッチ画像 -->
-        <img src="hik_vol1.jpg" alt="もうラインを止めない。「チョコ停ゼロ」の全数自動検査" class="hero-img">
+        <!-- テキスト表示を削除し、画像のalt属性にタイトル・要約を集約 -->
+        <img src="hik_vol1.jpg" alt="1,600文字 読了時間:約3分 | もうラインを止めない。「チョコ停ゼロ」の全数自動検査 - 液体レンズ×エッジAIで、品種切替の段取りと誤検知を根絶する。" class="hero-img">
     </div>
 
     <div class="report-body">
@@ -275,66 +254,4 @@
         <p><strong>なぜ重要か:</strong><br>市場の深刻な課題である「環境光やワーク姿勢変化による誤認識(チョコ停)」と「多品種ラインでの段取り工数」を、液体レンズによる電気的オートフォーカスと組み込みディープラーニングの融合によって1台で根本解決し、ラインを止めない全数自動トレーサビリティを現実にする。</p>
 
         <p style="font-weight: bold; margin-bottom: 0.5rem;">ニュースとのシナジー:</p>
-        <ul style="margin: 0 0 2rem 0; padding-left: 1.5rem;">
-            <li><strong>●過多検出・チョコ停課題との連動:</strong><br>組み込みディープラーニングSoCと自動偏光・照明コントロール機能により、擦れ・反射・歪みのある難読コードやDPM(直接刻印)コードも安定判定し、環境変化に起因する読み取りエラー(チョコ停)を防ぐ。</li>
-            <li><strong>●品種切替・セットアップ調整課題との連動:</strong><br>16mm液体レンズ (Liquid Focal Length)の採用によりメカ的な駆動部なしで電気的に瞬時合焦。ワークの距離や高さが変動する多品種少量ラインでも手動調整なしで追従する</li>
-            <li><strong>●自動全数検査・標準化背景との連動:</strong><br>3.1MP (310万画素)の高解像度センサーとコンパクトなモジュール設計により、製造ラインや各種装置へのOEM組み込みが容易で、信頼性の高い全数トレーサビリティ管理を支える。</li>
-        </ul>
-
-        <table>
-            <tbody>
-                <tr>
-                    <th>項目</th>
-                    <th>内容</th>
-                </tr>
-                <tr>
-                    <td>メーカー名</td>
-                    <td>Hikrobot(ハイクロボット)</td>
-                </tr>
-                <tr>
-                    <td>型式・シリーズ</td>
-                    <td>ID3000 シリーズ Smart Code Reader (スマートコードリーダー)</td>
-                </tr>
-                <tr>
-                    <td>解像度/性能</td>
-                    <td>3.1MP(310万画素/最大2048 × 1536 ピクセル)</td>
-                </tr>
-                <tr>
-                    <td>レンズ/光学仕様</td>
-                    <td>16mm 液体レンズ (Liquid Focal Length)搭載、高速オートフォーカス対応</td>
-                </tr>
-                <tr>
-                    <td>処理アルゴリズム</td>
-                    <td>ディープラーニング (Deep Learning)アルゴリズム内蔵の専用SoCチップ搭載</td>
-                </tr>
-                <tr>
-                    <td>光学・照明機能</td>
-                    <td>モジュール式照明、自動偏光機能(Automatic Polarization)、調光・ブランチ制御機能</td>
-                </tr>
-                <tr>
-                    <td>構造・インターフェース</td>
-                    <td>超小型コンパクト設計、単一配線用の航空コネクタ(Aviation Connector)採用</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- 製品お問い合わせエリア -->
-        <div class="contact-cta">
-            製品に関するお問い合わせは<a href="https://www.chronix.co.jp/chronixjp/contact/index.html" target="_blank" rel="noopener noreferrer">こちら</a>まで
-        </div>
-
-    </div>
-
-    <!-- 最下部アドレスロゴ -->
-    <div class="footer-address">
-        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
-    </div>
-
-</div>
-
-<footer>
-    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
-</footer>
-
-</body>
-</html>
+        <ul style="margin: 0
