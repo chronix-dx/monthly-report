@@ -341,3 +341,117 @@
     <!-- 【カテゴリー4: SWIRインライン検査】 -->
     <section class="category-section">
         <h2 class="category-title">SWIRインライン検査</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">SWIR検査</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/swir_inline_vol1.html" class="card-thumb-link">
+                    <img src="swir_vol1_3.jpg" alt="ライン速度を落とさず、不可視を暴く。「超高速SWIR」インライン検査" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/swir_inline_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-swir')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-swir" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 【カテゴリー5: レーザー加工 / 光学計測】 -->
+    <section class="category-section">
+        <h2 class="category-title">レーザー加工 / 光学計測</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">レーザー加工</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/laser_vol1.html" class="card-thumb-link">
+                    <img src="laser_vol1_2.jpg" alt="難加工の限界を突破する。「次世代レーザー」とビーム計測" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/laser_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-laser')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-laser" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【カテゴリー6: 赤外線・ガス検知 (OGI)】 -->
+    <section class="category-section">
+        <h2 class="category-title">赤外線・ガス検知 (OGI)</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">OGI・ガス検知</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/ogi_vol1.html" class="card-thumb-link">
+                    <img src="ogi_vol1_2.jpg" alt="人的巡回から「常時監視」へ。「赤外線OGI」センシング革命" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/ogi_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-ogi')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-ogi" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- 最下部アドレスロゴ -->
+<div class="footer-address">
+    <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+<script>
+    // アコーディオン開閉スクリプト
+    // 記事が増えて、toggle-btn-container の display: none; を外せば機能します。
+    function toggleReports(targetId) {
+        const wrapper = document.getElementById(targetId);
+        const btn = event.target;
+        
+        if (wrapper.classList.contains('is-open')) {
+            wrapper.classList.remove('is-open');
+            btn.innerText = '▼ 過去のレポートを見る';
+        } else {
+            wrapper.classList.add('is-open');
+            btn.innerText = '▲ 閉じる';
+        }
+    }
+</script>
+
+</body>
+</html>
