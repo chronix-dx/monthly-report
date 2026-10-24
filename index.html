@@ -58,7 +58,23 @@
             padding: 0 1.5rem;
         }
 
-        /* 3列/2列レスポンシブグリッド */
+        /* カテゴリーセクション */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+        .category-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* グリッドレイアウト */
         .report-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -66,16 +82,66 @@
             align-items: stretch;
         }
 
-        /* レポートカード */
+        /* アコーディオン・トグル用 (過去レポート) */
+        .past-reports-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s ease-out;
+            overflow: hidden;
+        }
+        .past-reports-inner {
+            min-height: 0; /* 内包要素の高さを0にするため必須 */
+            transition: visibility 0.4s;
+            visibility: hidden;
+            padding-top: 2rem;
+        }
+        /* JSで付与する展開用クラス */
+        .past-reports-wrapper.is-open {
+            grid-template-rows: 1fr;
+        }
+        .past-reports-wrapper.is-open .past-reports-inner {
+            visibility: visible;
+        }
+
+        /* もっと見るトグルボタン */
+        .toggle-btn {
+            display: inline-block;
+            background: none;
+            border: 1px dashed var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 2rem auto 0;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .toggle-btn:hover {
+            background-color: var(--tag-bg);
+            border-style: solid;
+        }
+        .toggle-btn-container {
+            text-align: center;
+        }
+
+        /* レポートカード (画像メイン) */
         .report-card {
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid var(--border-color);
-            border-top: 4px solid var(--primary-color);
-            padding: 1.5rem;
+            padding: 1.2rem;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .report-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
         }
         
         .badge-container {
@@ -93,47 +159,33 @@
             font-weight: 700;
         }
         .vol-badge {
-            background-color: #475569;
+            background-color: #64748b;
             color: white;
             padding: 0.2rem 0.6rem;
             border-radius: 4px;
             font-size: 0.75rem;
             font-weight: 700;
         }
-
-        .report-card h2 {
-            font-size: 1.15rem;
-            color: #1e293b;
-            margin: 0 0 1rem 0;
-            line-height: 1.45;
-            min-height: 2.9em;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.8rem;
+        .vol-badge.latest {
+            background-color: var(--accent-color);
         }
 
-        .report-content {
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
+        /* 画像サムネイルリンク */
+        .card-thumb-link {
+            display: block;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-bottom: 1.2rem;
+            position: relative;
         }
-        
-        /* Axiosスタイル: なぜ重要か */
-        .report-content .why-matters {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin: 0 0 0.5rem 0;
-            letter-spacing: 0.02em;
+        .card-thumb {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
         }
-        .report-content p {
-            font-size: 0.88rem;
-            color: #334155;
-            margin: 0;
-            line-height: 1.6;
-        }
-        .report-content p strong {
-            color: #0f172a;
-            display: inline-block;
-            margin-bottom: 0.35rem;
+        .card-thumb-link:hover .card-thumb {
+            transform: scale(1.03);
         }
 
         /* アクションリンク・ボタン */
@@ -147,11 +199,11 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1rem;
+            padding: 0.85rem 1rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-weight: bold;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
             text-align: center;
             box-sizing: border-box;
@@ -162,14 +214,6 @@
         }
         .btn-page:hover {
             background-color: #b92b1d;
-        }
-        .btn-link {
-            border: 1px solid var(--primary-color);
-            background-color: white;
-            color: var(--primary-color);
-        }
-        .btn-link:hover {
-            background-color: #f1f5f9;
         }
 
         /* フッター */
@@ -205,149 +249,167 @@
 </header>
 
 <div class="container">
-    <div class="report-grid">
 
-        <!-- 1. マシンビジョン・自動全数検査 -->
-        <article class="report-card">
-            <div class="badge-container">
-                <span class="cat-badge">マシンビジョン/FA</span>
-                <span class="vol-badge">vol.01</span>
-            </div>
-            <h2>人手不足を打破する「全数自動検査」と「現場適応型AI」の新展開</h2>
-            
-            <div class="report-content">
-                <h3 class="why-matters">なぜ重要か</h3>
-                <p><strong>現場を止める「チョコ停」と「段取り替え負荷」をゼロへ。</strong><br>液体レンズの超高速AFとエッジAIを統合し、ラインを無停止化する「現場即応型・全数検査」の実装ポイントを凝縮。</p>
-            </div>
-
-            <div class="action-links">
-                <a href="reports/mv_hikrobot_vol1.html" class="btn btn-page">
-                    📖 レポート詳細を見る
+    <!-- 【カテゴリー1: マシンビジョン / FA】 -->
+    <section class="category-section">
+        <h2 class="category-title">マシンビジョン / FA</h2>
+        
+        <!-- 最新2件を常時表示（vol.03, vol.02） -->
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">マシンビジョン</span>
+                    <span class="vol-badge latest">vol.03</span>
+                </div>
+                <a href="#" class="card-thumb-link">
+                    <!-- ★ここに最新の画像を配置 -->
+                    <img src="hik_vol1_2.jpg" alt="[vol.03タイトル]" class="card-thumb">
                 </a>
-                <a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 製品: Hikrobot ID3000
-                </a>
-            </div>
-        </article>
+                <div class="action-links">
+                    <a href="#" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
 
-        <!-- 2. 自動運転ADAS・マルチモーダル -->
-        <article class="report-card">
-            <div class="badge-container">
-                <span class="cat-badge">モビリティ/SDV</span>
-                <span class="vol-badge">vol.01</span>
-            </div>
-            <h2>自動運転マルチモーダル冗長センシング 最新トレンドレポート</h2>
-            
-            <div class="report-content">
-                <h3 class="why-matters">なぜ重要か</h3>
-                <p><strong>悪天候の死角をなくし、車両全体のセンサーコストを抑える。</strong><br>カメラ・LiDAR・赤外線を束ねるマルチモーダル冗長設計と、SDV量産化に向けたデータ基盤の最前線。</p>
-            </div>
-
-            <div class="action-links">
-                <a href="reports/adas_capt640_vol1.html" class="btn btn-page">
-                    📖 レポート詳細を見る
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">マシンビジョン</span>
+                    <span class="vol-badge">vol.02</span>
+                </div>
+                <a href="#" class="card-thumb-link">
+                    <!-- ★ここに次点の画像を配置 -->
+                    <img src="hik_vol1_2.jpg" alt="[vol.02タイトル]" class="card-thumb">
                 </a>
-                <a href="https://www.lynred.com/products/capt640" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 製品: LYNRED CAPT640
-                </a>
-            </div>
-        </article>
+                <div class="action-links">
+                    <a href="#" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
 
-        <!-- 3. 適応光学・ピエゾ -->
-        <article class="report-card">
-            <div class="badge-container">
-                <span class="cat-badge">適応光学/ナノポジショニング</span>
-                <span class="vol-badge">vol.01</span>
-            </div>
-            <h2>【適応光学・超精密ピエゾ】次世代光学制御と環境対応の最新動向</h2>
-            
-            <div class="report-content">
-                <h3 class="why-matters">なぜ重要か</h3>
-                <p><strong>ナノ領域の観測を阻む「熱歪み」と「大気揺らぎ」をリアルタイム補正。</strong><br>先端半導体・超解像顕微鏡の限界精度を引き出す、電磁駆動ピエゾと可変形ミラー（AO）の最新制御技術。</p>
-            </div>
+        <!-- トグルボタン -->
+        <div class="toggle-btn-container">
+            <button class="toggle-btn" onclick="toggleReports('past-mv')">▼ 過去のレポートを見る (vol.01)</button>
+        </div>
 
-            <div class="action-links">
-                <a href="reports/ao_piezo_vol1.html" class="btn btn-page">
-                    📖 レポート詳細を見る
-                </a>
-                <a href="https://www.alpao.com/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 製品: Bertin Alpao DMシリーズ
-                </a>
+        <!-- 過去レポート (アコーディオン開閉) -->
+        <div id="past-mv" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid">
+                    <!-- 過去のレポート（vol.01） -->
+                    <article class="report-card">
+                        <div class="badge-container">
+                            <span class="cat-badge">マシンビジョン</span>
+                            <span class="vol-badge">vol.01</span>
+                        </div>
+                        <a href="reports/mv_hikrobot_vol1.html" class="card-thumb-link">
+                            <img src="hik_vol1_2.jpg" alt="もうラインを止めない。「チョコ停ゼロ」の全数自動検査" class="card-thumb">
+                        </a>
+                        <div class="action-links">
+                            <a href="reports/mv_hikrobot_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </article>
+        </div>
+    </section>
 
-        <!-- 4. SWIRマシンビジョン -->
-        <article class="report-card">
-            <div class="badge-container">
-                <span class="cat-badge">SWIRインライン検査</span>
-                <span class="vol-badge">vol.01</span>
-            </div>
-            <h2>SWIRマシンビジョンによるインライン検査の最新動向</h2>
-            
-            <div class="report-content">
-                <h3 class="why-matters">なぜ重要か</h3>
-                <p><strong>ライン速度を落とさず、シリコン透過・樹脂選別をインライン化。</strong><br>3D半導体の内部欠陥から廃プラ・食品選別まで、SWIR分光を活かした高速リアルタイム検査の実装ポイント。</p>
-            </div>
-
-            <div class="action-links">
-                <a href="reports/swir_inline_vol1.html" class="btn btn-page">
-                    📖 レポート詳細を見る
+    <!-- 【カテゴリー2: モビリティ / SDV】 -->
+    <section class="category-section">
+        <h2 class="category-title">モビリティ / SDV</h2>
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">モビリティ/SDV</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/adas_capt640_vol1.html" class="card-thumb-link">
+                    <img src="adas_capt_3.jpg" alt="悪天候の死角をなくす。「全天候型」自動運転センシング" class="card-thumb">
                 </a>
-                <a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 製品: NIT LiSaSWIR
-                </a>
-            </div>
-        </article>
+                <div class="action-links">
+                    <a href="reports/adas_capt640_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
-        <!-- 5. レーザー加工・光学計測 -->
-        <article class="report-card">
-            <div class="badge-container">
-                <span class="cat-badge">レーザー加工・溶接品質</span>
-                <span class="vol-badge">vol.01</span>
-            </div>
-            <h2>レーザー加工技術と光学計測の最新動向</h2>
-            
-            <div class="report-content">
-                <h3 class="why-matters">なぜ重要か</h3>
-                <p><strong>微細穴あけから高反射金属の溶接まで、難加工の品質保証を確立。</strong><br>青色レーザー等の国内先端事例と、加工精度をリアルタイムに担保するビームプロファイラー計測の最前線。</p>
-            </div>
-
-            <div class="action-links">
-                <a href="reports/laser_vol1.html" class="btn btn-page">
-                    📖 レポート詳細を見る
+    <!-- 【カテゴリー3: 適応光学 / ナノポジショニング】 -->
+    <section class="category-section">
+        <h2 class="category-title">適応光学 / ナノポジショニング</h2>
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">適応光学</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/ao_piezo_vol1.html" class="card-thumb-link">
+                    <img src="ao_vol1.jpg" alt="光の歪みをねじ伏せる。次世代の波面・ナノ制御" class="card-thumb">
                 </a>
-                <a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 製品: Tucsen XTシリーズ
-                </a>
-            </div>
-        </article>
+                <div class="action-links">
+                    <a href="reports/ao_piezo_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
-        <!-- 6. 赤外線・OGIセンシング -->
-        <article class="report-card">
-            <div class="badge-container">
-                <span class="cat-badge">赤外線・ガス検知(OGI)</span>
-                <span class="vol-badge">vol.01</span>
-            </div>
-            <h2>危険ガス漏洩対策と赤外線OGIセンシングの最新動向</h2>
-            
-            <div class="report-content">
-                <h3 class="why-matters">なぜ重要か</h3>
-                <p><strong>人的な巡回点検から、ドローン・定置型AIによる24時間常時監視へ。</strong><br>メタン・アンモニア漏洩や環境規制の厳格化に先回りする、光学ガス検知（OGI）センシングの最新トレンド。</p>
-            </div>
-
-            <div class="action-links">
-                <a href="reports/ogi_vol1.html" class="btn btn-page">
-                    📖 レポート詳細を見る
+    <!-- 【カテゴリー4: SWIRインライン検査】 -->
+    <section class="category-section">
+        <h2 class="category-title">SWIRインライン検査</h2>
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">SWIR検査</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/swir_inline_vol1.html" class="card-thumb-link">
+                    <img src="swir_vol1_2.jpg" alt="ライン速度を落とさず、不可視を暴く。「超高速SWIR」インライン検査" class="card-thumb">
                 </a>
-                <a href="https://www.lynred.com/products/ati640" target="_blank" rel="noopener noreferrer" class="btn btn-link">
-                    🔗 製品: LYNRED ATI 640
+                <div class="action-links">
+                    <a href="reports/swir_inline_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- 【カテゴリー5: レーザー加工 / 光学計測】 -->
+    <section class="category-section">
+        <h2 class="category-title">レーザー加工 / 光学計測</h2>
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">レーザー加工</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/laser_vol1.html" class="card-thumb-link">
+                    <img src="laser_vol1.jpg" alt="難加工の限界を突破する。「次世代レーザー」とビーム計測" class="card-thumb">
                 </a>
-            </div>
-        </article>
+                <div class="action-links">
+                    <a href="reports/laser_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
-    </div>
+    <!-- 【カテゴリー6: 赤外線・ガス検知 (OGI)】 -->
+    <section class="category-section">
+        <h2 class="category-title">赤外線・ガス検知 (OGI)</h2>
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">OGI・ガス検知</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/ogi_vol1.html" class="card-thumb-link">
+                    <img src="ogi_vol1.jpg" alt="人的巡回から「常時監視」へ。「赤外線OGI」センシング革命" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/ogi_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
 </div>
 
+<!-- 最下部アドレスロゴ -->
 <div class="footer-address">
     <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
 </div>
@@ -355,6 +417,24 @@
 <footer>
     <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
 </footer>
+
+<script>
+    // アコーディオン開閉スクリプト
+    function toggleReports(targetId) {
+        const wrapper = document.getElementById(targetId);
+        const btn = event.target;
+        
+        if (wrapper.classList.contains('is-open')) {
+            // 開いている場合は閉じる
+            wrapper.classList.remove('is-open');
+            btn.innerText = '▼ 過去のレポートを見る';
+        } else {
+            // 閉じている場合は開く
+            wrapper.classList.add('is-open');
+            btn.innerText = '▲ 閉じる';
+        }
+    }
+</script>
 
 </body>
 </html>
