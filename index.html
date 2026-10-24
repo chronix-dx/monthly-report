@@ -22,72 +22,43 @@
             padding: 0;
         }
         
-        /* 企業情報トップバー */
-        .header-topbar {
-            background-color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 1.5rem;
-        }
-        .header-topbar-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .topbar-logo {
-            max-width: 220px;
-            height: auto;
-            display: block;
-        }
-        .company-info-area {
-            text-align: right;
-            font-size: 0.85rem;
-            color: #475569;
-            line-height: 1.6;
-        }
-        .company-info-area strong {
-            color: var(--primary-color);
-            font-size: 1rem;
-        }
-        .company-info-area a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .company-info-area a:hover {
-            text-decoration: underline;
-        }
-        .divider {
-            margin: 0 0.4rem;
-            color: #cbd5e1;
-        }
-
-        /* メインタイトルバナー */
-        .main-header {
+        /* ヘッダー */
+        header {
             background-color: var(--primary-color);
             color: white;
             padding: 2.5rem 1rem;
             text-align: center;
         }
-        .main-header h1 {
+        .header-logo-container {
+            margin-bottom: 1.2rem;
+        }
+        .header-logo {
+            max-width: 220px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        header h1 {
             margin: 0;
             font-size: 1.8rem;
             letter-spacing: 0.03em;
         }
-        .main-header p {
+        header p {
             margin-top: 0.8rem;
             font-size: 0.95rem;
             opacity: 0.9;
         }
 
-        /* コンテナ・レイアウト */
         .container {
             max-width: 1200px;
             margin: 2.5rem auto;
             padding: 0 1.5rem;
         }
+
+        /* カテゴリーセクション */
         .category-section {
             margin-bottom: 4rem;
         }
@@ -102,6 +73,8 @@
             align-items: center;
             justify-content: space-between;
         }
+
+        /* グリッドレイアウト */
         .report-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -109,7 +82,7 @@
             align-items: stretch;
         }
 
-        /* レポートカード */
+        /* レポートカード (画像メイン) */
         .report-card {
             background-color: white;
             border-radius: 10px;
@@ -124,6 +97,7 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.1);
             transform: translateY(-2px);
         }
+        
         .badge-container {
             display: flex;
             gap: 0.5rem;
@@ -150,7 +124,7 @@
             background-color: var(--accent-color);
         }
 
-        /* サムネイル */
+        /* 画像サムネイルリンク */
         .card-thumb-link {
             display: block;
             overflow: hidden;
@@ -168,7 +142,7 @@
             transform: scale(1.03);
         }
 
-        /* アクションボタン */
+        /* アクションリンク・ボタン */
         .action-links {
             display: flex;
             flex-direction: column;
@@ -195,6 +169,7 @@
         .btn-page:hover {
             background-color: #b92b1d;
         }
+        /* 追加された製品リンクボタン用スタイル */
         .btn-product {
             border: 1px solid var(--primary-color);
             background-color: white;
@@ -204,7 +179,7 @@
             background-color: #f1f5f9;
         }
 
-        /* アコーディオン・過去レポート */
+        /* アコーディオン・トグル用 (過去レポート用) */
         .past-reports-wrapper {
             display: grid;
             grid-template-rows: 0fr;
@@ -223,6 +198,7 @@
         .past-reports-wrapper.is-open .past-reports-inner {
             visibility: visible;
         }
+
         .toggle-btn {
             display: inline-block;
             background: none;
@@ -247,7 +223,7 @@
             text-align: center;
         }
 
-        /* フッターアドレス（画像からテキストへ変更） */
+        /* フッター */
         .footer-address {
             text-align: center;
             padding: 3rem 1rem 2rem;
@@ -255,23 +231,10 @@
             margin-top: 4rem;
             background-color: white;
         }
-        .footer-address strong {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-        }
-        .footer-address p {
-            font-size: 0.9rem;
-            color: #475569;
-            line-height: 1.8;
-            margin: 0.5rem 0 0;
-        }
-        .footer-address a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .footer-address a:hover {
-            text-decoration: underline;
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
         }
         footer {
             text-align: center;
@@ -280,39 +243,227 @@
             color: #64748b;
             background-color: white;
         }
-
-        /* モバイル対応レスポンシブ */
-        @media (max-width: 768px) {
-            .header-topbar-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            .company-info-area {
-                text-align: center;
-            }
-            .divider {
-                display: none;
-            }
-            .company-info-area br {
-                display: none;
-            }
-            .company-info-area span.mobile-block {
-                display: block;
-                margin-top: 0.2rem;
-            }
-        }
     </style>
 </head>
 <body>
 
-<!-- 企業情報トップバー -->
-<div class="header-topbar">
-    <div class="header-topbar-inner">
-        <div class="logo-area">
-            <img src="logo_CHRONIX.jpg" alt="クロニクス株式会社" class="topbar-logo">
+<header>
+    <div class="header-logo-container">
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
+    <h1>トレンドレポート アーカイブ</h1>
+    <p>先端現場のブレークスルーを導く、最新技術・市場動向を一挙公開。</p>
+</header>
+
+<div class="container">
+
+    <!-- 【カテゴリー1: マシンビジョン / FA】 -->
+    <section class="category-section">
+        <h2 class="category-title">マシンビジョン / FA</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">マシンビジョン</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/mv_hikrobot_vol1.html" class="card-thumb-link">
+                    <img src="hik_vol1.jpg" alt="もうラインを止めない。「チョコ停ゼロ」の全数自動検査" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/mv_hikrobot_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.hikrobotics.com/en/machinevision/visionproduct?typeId=111&id=112&pageNumber=1&pageSize=50&showEol=false" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: Hikrobot ID3000</a>
+                </div>
+            </article>
         </div>
-        <div class="company-info-area">
-            <strong>クロニクス株式会社</strong><br>
-            <span class="mobile-block">〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</span><br>
-            <span class="mobile-block">TEL: 03-5322-7191 <span class="divider">|</span> FAX: 03-5322-7790 <span class="divider">|</span> <a href="mailto:sales@chronix
+        
+        <!-- 記事追加時に備えたアコーディオン領域（初期は非表示） -->
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-mv')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-mv" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【カテゴリー2: モビリティ / SDV】 -->
+    <section class="category-section">
+        <h2 class="category-title">モビリティ / SDV</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">モビリティ/SDV</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/adas_capt640_vol1.html" class="card-thumb-link">
+                    <img src="adas_capt.jpg" alt="悪天候の死角をなくす。「全天候型」自動運転センシング" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/adas_capt640_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.lynred.com/products/capt640" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: LYNRED CAPT640</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-adas')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-adas" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【カテゴリー3: 適応光学 / ナノポジショニング】 -->
+    <section class="category-section">
+        <h2 class="category-title">適応光学 / ナノポジショニング</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">適応光学</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/ao_piezo_vol1.html" class="card-thumb-link">
+                    <img src="ao_vol1.jpg" alt="光の歪みをねじ伏せる。次世代の波面・ナノ制御" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/ao_piezo_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.alpao.com/" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: Bertin Alpao DM</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-ao')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-ao" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【カテゴリー4: SWIRインライン検査】 -->
+    <section class="category-section">
+        <h2 class="category-title">SWIRインライン検査</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">SWIR検査</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/swir_inline_vol1.html" class="card-thumb-link">
+                    <img src="swir_vol1.jpg" alt="ライン速度を落とさず、不可視を暴く。「超高速SWIR」インライン検査" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/swir_inline_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: NIT LiSaSWIR</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-swir')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-swir" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 【カテゴリー5: レーザー加工 / 光学計測】 -->
+    <section class="category-section">
+        <h2 class="category-title">レーザー加工 / 光学計測</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">レーザー加工</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/laser_vol1.html" class="card-thumb-link">
+                    <img src="laser_vol1.jpg" alt="難加工の限界を突破する。「次世代レーザー」とビーム計測" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/laser_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.tucsen.com/news/xt-series-beam-analyzer-for-advanced-optical-measurement/" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: Tucsen XTシリーズ</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-laser')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-laser" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【カテゴリー6: 赤外線・ガス検知 (OGI)】 -->
+    <section class="category-section">
+        <h2 class="category-title">赤外線・ガス検知 (OGI)</h2>
+        
+        <div class="report-grid">
+            <article class="report-card">
+                <div class="badge-container">
+                    <span class="cat-badge">OGI・ガス検知</span>
+                    <span class="vol-badge latest">vol.01</span>
+                </div>
+                <a href="reports/ogi_vol1.html" class="card-thumb-link">
+                    <img src="ogi_vol1.jpg" alt="人的巡回から「常時監視」へ。「赤外線OGI」センシング革命" class="card-thumb">
+                </a>
+                <div class="action-links">
+                    <a href="reports/ogi_vol1.html" class="btn btn-page">📖 レポート詳細を見る</a>
+                    <a href="https://www.lynred.com/products/ati640" target="_blank" rel="noopener noreferrer" class="btn btn-product">🔗 製品: LYNRED ATI 640</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="toggle-btn-container" style="display: none;">
+            <button class="toggle-btn" onclick="toggleReports('past-ogi')">▼ 過去のレポートを見る</button>
+        </div>
+        <div id="past-ogi" class="past-reports-wrapper">
+            <div class="past-reports-inner">
+                <div class="report-grid"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- 最下部アドレスロゴ -->
+<div class="footer-address">
+    <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+<script>
+    // アコーディオン開閉スクリプト
+    function toggleReports(targetId) {
+        const wrapper = document.getElementById(targetId);
+        const btn = event.target;
+        
+        if (wrapper.classList.contains('is-open')) {
+            wrapper.classList.remove('is-open');
+            btn.innerText = '▼ 過去のレポートを見る';
+        } else {
+            wrapper.classList.add('is-open');
+            btn.innerText = '▲ 閉じる';
+        }
+    }
+</script>
+
+</body>
+</html>
