@@ -107,14 +107,6 @@
             color: var(--accent-color);
             border-color: var(--accent-color);
         }
-
-        .summary-box {
-            background-color: #f8fafc;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
         
         .trend-box {
             border: 1px solid var(--border-color);
@@ -171,6 +163,28 @@
             width: 30%;
         }
 
+        /* お問い合わせリンクエリア */
+        .contact-cta {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            padding: 1.2rem;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .contact-cta a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 0 0.2rem;
+            transition: color 0.2s ease;
+        }
+        .contact-cta a:hover {
+            color: #b92b1d;
+        }
+
         .footer-address {
             text-align: center;
             padding: 2.5rem 1rem 1.5rem;
@@ -211,16 +225,6 @@
     </div>
 
     <div class="report-body">
-        
-        <h2>エグゼクティブサマリー</h2>
-        <div class="summary-box">
-            <p style="margin-top:0; font-weight:bold;">自動全数検査への移行が進む一方、環境変化に伴う「チョコ停」や「品種切替時のセットアップ負荷」が現場運用の最大のボトルネックとなっている。</p>
-            <ul style="margin:0; padding-left:1.5rem;">
-                <li>新JIS規格の制定や機器への標準組み込み(OEM化)により、製造ラインにおける全数品質保証の標準化が急ピッチで進んでいる。</li>
-                <li>実ラインにおける照明変動やワークの姿勢変化による過多検出(チョコ停)が頻発し、目視検査へ後退する失敗事例が深刻化している。</li>
-                <li>課題解決のカギとして、液体レンズによる高速自動合焦と組み込みAI(ディープラーニング)を融合させた「現場適応型・省力化技術」への注目が集まっている。</li>
-            </ul>
-        </div>
 
         <h2>セレクトニュース(3選)</h2>
 
@@ -298,6 +302,11 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- 製品お問い合わせエリア -->
+        <div class="contact-cta">
+            製品に関するお問い合わせは<a href="https://www.chronix.co.jp/chronixjp/contact/index.html" target="_blank" rel="noopener noreferrer">こちら</a>まで
+        </div>
 
     </div>
 
