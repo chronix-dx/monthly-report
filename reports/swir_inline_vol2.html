@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タクトタイム遅延と火災損失を断つ『超高速SWIR透過インライン検査』 | クロニクス株式会社</title>
+    <style>
+        :root {
+            --primary-color: #1a3687;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+            --accent-color: #d93829;
+            --tag-bg: #e8eef9;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        .back-link {
+            display: block;
+            margin-top: 0.8rem;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        .container {
+            max-width: 800px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .report-header {
+            padding: 1.5rem 1.5rem 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fcfcfc;
+        }
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+        .report-body {
+            padding: 2rem 2.5rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+            background: #f8fafc;
+        }
+        h2:first-of-type {
+            margin-top: 1rem;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .trend-box {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .trend-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        .trend-section {
+            margin-bottom: 0.6rem;
+        }
+        .ref-text {
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.85rem;
+        }
+        .ref-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            width: 32%;
+        }
+        .contact-cta {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            padding: 1.2rem;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .contact-cta a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 0 0.2rem;
+            transition: color 0.2s ease;
+        }
+        .contact-cta a:hover {
+            color: #b92b1d;
+        }
+        .footer-address {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            background-color: #fafbfc;
+        }
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
+    <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
+</header>
+
+<div class="container">
+    <div class="report-header">
+        <img src="ad_image.jpg" alt="約2,500文字・読了時間約5分 | タクトタイム遅延と火災損失を断つ『超高速SWIR透過インライン検査』 - X線CTが追いつかないHBM積層や電池・異物検知を110kHzで全数透視し微細欠陥をゼロ化" class="hero-img">
+    </div>
+
+    <div class="report-body">
+
+        <h2>厳選ニュース / 活用トピックス</h2>
+
+        <!-- ニュースカード 1 -->
+        <div class="trend-box">
+            <div class="trend-title">1.【廃棄物火災防止】コンベア停止ゼロでリチウム電池を94%検知、PFU・IHIがX線×AI装置を実用化 (2025年11月4日)</div>
+            <p style="margin: 0 0 0.8rem 0;">PFUとIHI検査計測は、廃棄物処理ラインを止めずに袋内部のリチウムイオン電池を瞬時に特定する「Raptor VISION BATTERY」を製品化しました。デュアルエナジーX線と独自AIを組み合わせ、コンベア搬送速度を維持したまま作業員へ電池の位置を照射通知します。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>搬送タクトの完全維持：</strong> 静止撮影と目視に依存していた従来のX線検査と異なり、連続搬送ラインの速度を落とさず検知率94.0%で破砕前スクリーニングを完遂します。</li>
+                    <li><strong>破砕機火災の元凶排除：</strong> 破砕前に発火源となるバッテリーを確実に特定・除去し、施設全焼による数十億円規模の被害と長期操業停止を水際で阻止します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://digitalpr.jp/r/121176" target="_blank" rel="noopener noreferrer">デジタルPRプラットフォーム（株式会社PFU プレスリリース）</a>
+            </div>
+        </div>
+
+        <!-- ニュースカード 2 -->
+        <div class="trend-box">
+            <div class="trend-title">2.【重大事故・自治体被害】リチウム電池混入火災で広域処理施設が全面停止、復旧費は40億円規模へ (2025年6月24日)</div>
+            <p style="margin: 0 0 0.8rem 0;">茨城県の広域処理施設「常総環境センター」で不燃ごみ破砕機内のリチウムイオン電池から出火し、基幹ラインが壊滅的損傷を受け全面停止に追い込まれました。復旧費用は約40億円に達し、近隣自治体への代替処理委託など深刻な財政被害が続いています。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>密閉破砕による延焼加速：</strong> 破砕機内で押し潰されたバッテリーの火花がダクト内粉じんに引火すると初期消火が極めて困難で、設備全体の全焼に直結します。</li>
+                    <li><strong>水際インライン検査の不可避性：</strong> 人力選別のすり抜けによる火災事故が多発しており、破砕前に電池を物理的に検知・排除する自動検査システムの導入が急務です。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://mainichi.jp/articles/20250624/k00/00m/040/295000c" target="_blank" rel="noopener noreferrer">毎日新聞（常総環境センター 火災被害報道）</a>
+            </div>
+        </div>
+
+        <!-- ニュースカード 3 -->
+        <div class="trend-box">
+            <div class="trend-title">3.【先端半導体・3D実装】X線CTの速度限界を打破、HBM積層ラインでSWIR透過インライン検査の採用競争が過熱 (2026年10月20日)</div>
+            <p style="margin: 0 0 0.8rem 0;">Micron等のAIデータセンター向けHBM（広帯域メモリ）量産工程において、X線CTに代わりシリコンを透過するSWIR（短波長赤外）検査装置の採用競争が過熱しています。12〜16層に及ぶ極薄シリコンチップ積層時のTSV接合不良や微小ボイドを、ウエハ搬送速度を落とさずに非破壊全数検査します。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>全数インライン検査の確立：</strong> 1チップの計測に長時間を要し抜き取り検査に留まっていたX線CTの速度限界を突破し、量産ライン上で全数透視を実現します。</li>
+                    <li><strong>非破壊・低ダメージ透視：** シリコンがSWIR光を透過する物理特性を活かし、放射線による素子ダメージを与えずに多層内部の微細欠陥を可視化します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://finance.biggo.jp/news/4be6a91b-ef72-4cc1-b609-b22f13690a99" target="_blank" rel="noopener noreferrer">Biggo Finance / TheElec（HBMインライン赤外透過検査 受注動向）</a>
+            </div>
+        </div>
+
+        <!-- ニュースカード 4 -->
+        <div class="trend-box">
+            <div class="trend-title">4.【食品安全・異物混入】X線が透過する「透明プラスチック」をSWIR分光カメラでインライン自動検出 (2026年8月31日)</div>
+            <p style="margin: 0 0 0.8rem 0;">ニチレイフーズとソニーセミコンダクタソリューションズは、従来のX線や金属探知機では見逃されていた透明樹脂やビニール片をSWIRカメラでインライン自動選別するシステムを導入しました。食品と樹脂の固有な近赤外吸収ピーク差を捉え、同色背景に埋もれた微小異物を瞬時に浮き彫りにします。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>密度差検査の死角を解消：</strong> 金属探知機に反応せずX線が素通りしてしまう軟質透明樹脂（PPやPEフィルムなど）を、光学波長の吸収差によって100%捕捉します。</li>
+                    <li><strong>放射線レスの安全ライン構築：</strong> 厳重な鉛遮蔽や法規制を伴うX線装置を使わず、安全・低コストで高速食品搬送ラインへ直結配置できます。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.nichireifoods.co.jp/news/2026/info_id1001378/</a>
+            </div>
+        </div>
+
+        <!-- ニュースカード 5 -->
+        <div class="trend-box">
+            <div class="trend-title">5.【EVバッテリー重大事故】GMが14万台リコール・20億ドルの損失、製造ラインでのX線全数検査を義務化 (2021年8月20日)</div>
+            <p style="margin: 0 0 0.8rem 0;">GMのEV「Bolt EV」においてバッテリー火災が多発し、全世界で約14万台のリコールと約20億ドルの損失を計上しました。原因となったセル内部の負極タブ裂けやセパレーター折れを防ぐため、事故後は電池製造ラインへ高分解能X線検査装置を導入し、電極積層状態を非破壊で全数自動検査する体制が義務付けられました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>微小内部欠陥の致命的リスク：</strong> 外観検査では検出不能なサブミリ単位の電極ズレが熱暴走を引き起こし、巨額損失とブランド失墜に直結します。</li>
+                    <li><strong>全数スクリーニングの標準化：</strong> 抜き取りサンプリングでは流出を防げず、量産タクト内でセル内部を全数透視するインライン自動検査が必須要件化しました。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://investor.gm.com/news-releases/news-release-details/general-motors-recall-additional-bolt-evs/" target="_blank" rel="noopener noreferrer">General Motors プレスリリース（Bolt EV リコール追加措置）</a>
+            </div>
+        </div>
+
+        <!-- ニュースカード 6 -->
+        <div class="trend-box">
+            <div class="trend-title">6.【非破壊検査・モジュール組立】edevisがX線不要のレーザーサーモグラフィ実用化、EVバスバー溶接を1秒未満で全数検査 (2025年7月25日)</div>
+            <p style="margin: 0 0 0.8rem 0;">非破壊検査大手のedevisは、EVバッテリーのセルタブおよびバスバー溶接部向けにレーザー励起アクティブサーモグラフィ「OTvis」を展開しました。パルスレーザー加熱による熱拡散過渡応答を高速赤外線カメラでミリ秒解析し、内部ボイドや溶け込み深さ不足をインライン非接触・1秒未満で全数判定します。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>1秒未満のタクトタイム短縮：</strong> 長時間を要するX線検査や接触媒質（水・ゲル）が必要な超音波探傷を排除し、完全非接触・ドライ環境でインライン全数検査を実現します。</li>
+                    <li><strong>大電流ラインの溶接品質保証：</strong> バスバーの接合不良による発熱・火災リスクを組立ライン内で即時検出し、電池モジュールの安全性を極限まで高めます。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.edevis.com/en/ressourcen/blog/was-ist-aktive-thermografie" target="_blank" rel="noopener noreferrer">edevis 技術解説（アクティブサーモグラフィによるバッテリー溶接部検査）</a>
+            </div>
+        </div>
+
+        <h2>ピックアップ製品・ソリューション</h2>
+        <h3 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 0.6rem;">
+            NIT LiSa SWIR 2048<br>
+            <span style="font-size: 0.95rem; font-weight: normal; color: #64748b;">110kHz超高速ラインレートと高感度InGaAs透過撮像で、X線の速度限界を打破するインライン検査カメラ</span>
+        </h3>
+        
+        <img src="NIT_LiSa_SWIR_2048.jpg" alt="NIT LiSa SWIR 2048 高速ラインスキャンカメラ" class="product-img">
+        
+        <div class="trend-section" style="margin-top: 1.5rem;">
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">なぜ重要か：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>X線CTが追いつかないインライン全数検査を最高110kHz超の高速ラインスキャンで実現し、製造タクトを一切落とさずに内部欠陥と異物を完全可視化します。</strong></li>
+            </ul>
+
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">現場課題への解決アプローチ：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>半導体HBM・Siウエハ積層の高速透過：</strong> シリコンを透過する900〜1700nm波長帯により、X線CTでは長時間を要した多層積層チップ（TSV）のボイドや接合不良をウエハ搬送速度のまま非破壊全数透視。</li>
+                <li><strong>X線を素通りする透明樹脂・難検知異物の高コントラスト弁別：</strong> 2048画素の高分解能InGaAsリニアセンサーが、X線や可視光カメラでは背景に埋もれる透明プラスチックや食品異物の固有吸収スペクトルをシャープに捕捉。</li>
+                <li><strong>ミリ秒タクトに応える110kHzスキャンと産業用統合性：</strong> 毎秒11万ライン超の高速撮像、Camera Link/GenICam準拠、低暗電流・低ノイズ（&lt;90e-）設計により、EV電池溶接や廃棄物選別ラインへ即座にインライン統合可能。</li>
+            </ul>
+        </div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>製品モデル</th>
+                    <td>LiSa SWIR 2048（New Imaging Technologies社製 / LYNREDグループ）</td>
+                </tr>
+                <tr>
+                    <th>搭載センサー</th>
+                    <td>自社製 高感度InGaAsリニアラインスキャンセンサー（NSC2301）</td>
+                </tr>
+                <tr>
+                    <th>有効画素数 / ピッチ</th>
+                    <td>2048 × 1 画素 / 8 µm × 14 µm（高感度矩形画素）</td>
+                </tr>
+                <tr>
+                    <th>感度波長帯域</th>
+                    <td>短波長赤外（SWIR） 900 nm 〜 1700 nm</td>
+                </tr>
+                <tr>
+                    <th>最大ラインレート</th>
+                    <td>&gt; 110 kHz（フル解像度 2048画素時）</td>
+                </tr>
+                <tr>
+                    <th>読み出しノイズ</th>
+                    <td>&lt; 90 e-（超低ノイズ・高ダイナミックレンジ）</td>
+                </tr>
+                <tr>
+                    <th>読み出しモード</th>
+                    <td>ITR（Integrate-Then-Read） / IWR（Integrate-While-Read）対応</td>
+                </tr>
+                <tr>
+                    <th>画像補正機能</th>
+                    <td>リアルタイムNUC（不均一性補正）、BPR（不良画素置換）オンボード搭載</td>
+                </tr>
+                <tr>
+                    <th>レンズマウント</th>
+                    <td>Cマウント、M42マウント（標準1.1インチ光学系に適合）</td>
+                </tr>
+                <tr>
+                    <th>インターフェース</th>
+                    <td>Camera Link（Base / Medium）、GenICam準拠</td>
+                </tr>
+                <tr>
+                    <th>外形寸法</th>
+                    <td>35.4 mm × 75.0 mm × 68.0 mm（超コンパクト堅牢筐体）</td>
+                </tr>
+                <tr>
+                    <th>主要適用分野</th>
+                    <td>半導体ウエハ・HBM積層透過検査、LiB電極・バスバー溶接検査、透明樹脂異物選別、太陽電池評価、マテリアルリサイクル選別</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ref-text" style="margin-bottom: 2rem;">
+            🔗 <strong>製品詳細：</strong> <a href="https://new-imaging-technologies.com/product/lisaswir-2048/" target="_blank" rel="noopener noreferrer">New Imaging Technologies（NIT）LiSa SWIR 2048 公式製品ページ</a>
+        </div>
+
+        <div class="contact-cta">
+            製品仕様のご確認・デモ機のご相談は<a href="https://www.chronix.co.jp/chronixjp/contact/index.html" target="_blank" rel="noopener noreferrer">こちら（お問い合わせ）</a>まで
+        </div>
+
+    </div>
+
+    <div class="footer-address">
+        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+</body>
+</html>
