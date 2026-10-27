@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可視光の限界を超え、宇宙から脅威と地球を常時監視『宇宙衛星・赤外線センサ最新動向』 | クロニクス株式会社</title>
+    <style>
+        :root {
+            --primary-color: #1a3687;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+            --border-color: #e2e8f0;
+            --accent-color: #d93829;
+            --tag-bg: #e8eef9;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            background-color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        .back-link {
+            display: block;
+            margin-top: 0.8rem;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .back-link:hover { opacity: 1; text-decoration: underline; }
+        .container {
+            max-width: 800px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .report-header {
+            padding: 1.5rem 1.5rem 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fcfcfc;
+        }
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+        .report-body {
+            padding: 2rem 2.5rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+            background: #f8fafc;
+        }
+        h2:first-of-type {
+            margin-top: 1rem;
+        }
+        h3 {
+            font-size: 1.15rem;
+            color: #334155;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        .trend-box {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+        .trend-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        .trend-section {
+            margin-bottom: 0.6rem;
+        }
+        .ref-text {
+            margin-top: 0.8rem;
+            padding-top: 0.6rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.85rem;
+        }
+        .ref-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 380px;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            width: 32%;
+        }
+        .contact-cta {
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            padding: 1.2rem;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #334155;
+        }
+        .contact-cta a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 0 0.2rem;
+            transition: color 0.2s ease;
+        }
+        .contact-cta a:hover {
+            color: #b92b1d;
+        }
+        .footer-address {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+            background-color: #fafbfc;
+        }
+        .footer-address img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+    </div>
+    <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
+</header>
+
+<div class="container">
+    <div class="report-header">
+        <img src="ad_image.jpg" alt="［約4,200文字 | 読了時間：約5分］夜間・悪天候・水平線の死角を打破し、熱源とガスを完全捕捉『宇宙衛星・赤外線センサ最新動向』 - SWIR/MWIR/LWIRが拓く防衛・気候変動・防災の軌道上センシングと現場課題解決" class="hero-img">
+    </div>
+
+    <div class="report-body">
+
+        <h2>厳選ニュース / 活用トピックス</h2>
+
+        <!-- 01 -->
+        <div class="trend-box">
+            <div class="trend-title">01.【安全保障・新技術】富士通が世界初「100万画素超 2波長T2SL赤外線センサー」を納品完了 (2026年3月27日)</div>
+            <p style="margin: 0 0 0.8rem 0;">防衛装備庁の研究試作委託を受け、中赤外と遠赤外の2波長を1素子で同時検出できる100万画素超のType-II超格子（T2SL）センサを納品しました。2026年度以降の軌道上宇宙監視衛星や早期警戒網への搭載を視野に入れています。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>極超音速兵器の微弱熱を捕捉：</strong> 変則軌道で高速飛翔するミサイルの排気熱（赤外線プルーム）を、雲や地表の反射ノイズから瞬時に分離・追尾できます。</li>
+                    <li><strong>国産宇宙防衛センサの確立：</strong> 海外依存を脱却し、高い耐放射線性を持つ超高精細FPAの国内調達・即応体制を実現します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://global.fujitsu/ja-JP/pr/news/2026/03/27-01" target="_blank" rel="noopener noreferrer">富士通株式会社 プレスリリース</a>
+            </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="trend-box">
+            <div class="trend-title">02.【宇宙障害・現場課題】気象衛星「ひまわり9号」障害で露呈した赤外線センサの「極低温冷却待ち」 (2025年10月12日)</div>
+            <p style="margin: 0 0 0.8rem 0;">「ひまわり9号」の地上画像配信途絶に伴う8号への待機切り替え時、可視光画像が約8時間で復旧した一方、赤外線センサは「素子の極低温再冷却」に長時間を要し復旧が大幅に遅延しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>宇宙熱観測の宿命的ボトルネック：</strong> 微弱な赤外線を測るための絶対零度近傍への物理冷却プロセスが、軌道上インフラの即時復旧における最大の障害と判明しました。</li>
+                    <li><strong>高動作温度（HOT）化の必然性：</strong> 冷却待ちによる観測空白を最小化するため、より高温で動作するセンサ素子や高効率クライオクーラーの実装が急務です。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.jma.go.jp/jma/press/2510/12b/himawari9_shogai2_20251012.html" target="_blank" rel="noopener noreferrer">気象庁 報道発表資料（ひまわり9号観測障害）</a>
+            </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="trend-box">
+            <div class="trend-title">03.【環境監視・SWIR分光】「いぶきGW」搭載TANSO-3が短波長赤外による全球温室効果ガスの面観測に成功 (2025年8月8日)</div>
+            <p style="margin: 0 0 0.8rem 0;">H-IIAロケットで打ち上げられた「いぶきGW」搭載のTANSO-3がファーストライトに成功し、短波長赤外（SWIR）反射光による高精度分光イメージングを開始しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>「点」から「面」への監視進化：</strong> 従来の単一ポイント観測から広域面イメージングへと刷新され、都市や個別の大規模排出源をピンポイントで可視化できます。</li>
+                    <li><strong>国際的な脱炭素監査を担保：</strong> CO2およびメタン（CH4）の全球濃度分布を高分解能で把握し、各国の排出削減実効性を客観的に検証します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.nies.go.jp/pr/news-and-updates/2025/20250808/20250808.html" target="_blank" rel="noopener noreferrer">国立環境研究所（NIES） プレスリリース</a>
+            </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="trend-box">
+            <div class="trend-title">04.【防災レスキュー・TIR】コロンビア政府×独OroraTechが小型熱赤外衛星群による山火事即時監視網を稼働 (2025年11月10日)</div>
+            <p style="margin: 0 0 0.8rem 0;">コロンビア政府は独OroraTechと連携し、超小型衛星群に搭載した熱赤外線（TIR）センサにより全国の森林火災をリアルタイム監視するプログラムを正式稼働させました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>30分間隔の高頻度再訪：</strong> 従来の大型衛星（1日1回）の死角を突く低軌道コンステレーションにより、発火直後の極初期段階で熱源を捉えられます。</li>
+                    <li><strong>初期消火の迅速化とコスト圧縮：</strong> 超小型キューブサットに低コスト熱赤外カメラを多数分散搭載し、大規模森林火災の延焼を未然に防ぎます。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://sorabatake.jp/43279/" target="_blank" rel="noopener noreferrer">宙畑（Sorabatake） 報道記事</a>
+            </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="trend-box">
+            <div class="trend-title">05.【安全保障・構造転換】H3初号機失敗による赤外線センサ喪失が防衛省のコンステレーション移行を加速 (2023年3月7日)</div>
+            <p style="margin: 0 0 0.8rem 0;">防衛省がミサイル発射探知実証用に開発した2波長赤外線センサが「だいち3号」と共に海中へ水没したことを機に、早期警戒体制の抜本的見直しが行われました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>単一障害点（SPOF）の排除：</strong> 大型衛星1基に高額センサを集中搭載する脆弱性を脱し、数百基規模の小型分散型コンステレーションへ舵を切りました。</li>
+                    <li><strong>宇宙監視網の抗堪性確立：</strong> 打上げ失敗や敵対勢力による攻撃リスクに対し、一部のセンサが失われても監視網全体が機能し続ける冗長性を確保します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://spacemedia.jp/news/6070" target="_blank" rel="noopener noreferrer">SPACE Media 報道記事</a>
+            </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="trend-box">
+            <div class="trend-title">06.【気象インフラ・次世代分光】次期気象衛星「ひまわり10号」に米L3Harris製「先進赤外サウンダ」が正式搭載決定 (2023年7月12日)</div>
+            <p style="margin: 0 0 0.8rem 0;">2029年度運用開始予定の「ひまわり10号」に、大気の鉛直構造を精密測定する米L3Harris Technologies製の干渉型赤外分光計の搭載が決定しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>水蒸気の3次元立体把握：</strong> 従来の雲頂温度撮像にとどまらず、地上から上層までの温度・湿度を15分間隔で立体的に測定可能になります。</li>
+                    <li><strong>線状降水帯予測の飛躍的向上：</strong> 豪雨をもたらす下層水蒸気の急激な流入を宇宙から捉え、水害避難のリードタイムを大幅に拡大します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.marubeni.com/jp/news/2023/group/00032.html" target="_blank" rel="noopener noreferrer">丸紅株式会社 ニュースリリース</a>
+            </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="trend-box">
+            <div class="trend-title">07.【超軽量化・新技術】福井大×アークエッジが270gの極小ハイパースペクトルカメラで軌道上観測を実証 (2025年11月5日)</div>
+            <p style="margin: 0 0 0.8rem 0;">福井大学とアークエッジ・スペースは、線形可変フィルタ（LVF）を用いて重量約270gまで極限小型化した分光カメラを6U衛星「AE2a」に搭載し、宇宙からの地表観測に成功しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>SWaP-Cのブレイクスルー：</strong> 重厚な光学プリズムを排し、超小型衛星へそのまま組み込める超軽量・低消費電力設計を確立しました。</li>
+                    <li><strong>赤外多波長コンステレーションへの道：</strong> 産業用光学部品と特殊薄膜フィルタを融合させることで、衛星群の大量・低コスト製造を実現します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://kyodonewsprwire.jp/release/202510318193" target="_blank" rel="noopener noreferrer">共同通信PRワイヤー（福井大学・アークエッジ）</a>
+            </div>
+        </div>
+
+        <!-- 08 -->
+        <div class="trend-box">
+            <div class="trend-title">08.【米安全保障・PWSA】米宇宙開発庁（SDA）が極超音速追尾用低軌道赤外線網「Tracking Layer」を本格拡大 (2025年12月19日)</div>
+            <p style="margin: 0 0 0.8rem 0;">米宇宙開発庁（SDA）は拡散型宇宙アーキテクチャ（PWSA）において、広視野（WFOV）赤外線センサ衛星群のTranche 3（72基）を発注し、グローバル追尾網の構築を加速させています。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>水平線の死角を宇宙から無力化：</strong> 地上レーダーでは捕捉不能な低高度・超高速の極超音速滑空兵器（HGV）を、低軌道から常時見下ろして追尾します。</li>
+                    <li><strong>排気熱のリアルタイム多角探知：</strong> 複数の低軌道赤外線衛星が熱プルームを立体交差測定し、迎撃システムへ瞬時に射撃諸元を伝送します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.sda.mil/space-development-agency-makes-awards-to-build-72-tracking-layer-satellites-for-tranche-3/" target="_blank" rel="noopener noreferrer">米宇宙開発庁（SDA） 公式調達発表</a>
+            </div>
+        </div>
+
+        <!-- 09 -->
+        <div class="trend-box">
+            <div class="trend-title">09.【深宇宙探査・FPA極大化】NASA「ローマン宇宙望遠鏡」が宇宙最大となる3億画素赤外線アレイを軌道上初起動 (2026年8月31日)</div>
+            <p style="margin: 0 0 0.8rem 0;">Falcon Heavyで打ち上げられた「ナンシー・グレース・ローマン」において、Teledyne製高感度センサ「H4RG-10」を18基結合した約3億画素の超巨大赤外線FPAが軌道上初起動に成功しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>ハッブル比100倍以上の超広視野：</strong> 赤外線波長による全天サーベイの所要時間を従来の100分の1に圧縮し、暗黒エネルギー解明を劇的に加速します。</li>
+                    <li><strong>メガピクセル集積技術の限界突破：</strong> 極低温下で数百ギガバイトの熱雑音と配線抵抗を極小化する宇宙FPA実装の金字塔を打ち立てました。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://satnews.com/2026/08/31/teledyne-surpasses-1000-orbital-imaging-sensors-following-launch-of-nasas-roman-space-telescope/" target="_blank" rel="noopener noreferrer">SatNews（Teledyne Space Imaging）報道記事</a>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="trend-box">
+            <div class="trend-title">10.【民間SWIR分光・排出源特定】Carbon Mapper「Tanager-1」がプラント単位で温室効果ガス漏出をピンポイント特定 (2024年8月16日)</div>
+            <p style="margin: 0 0 0.8rem 0;">NASA JPL開発のSWIRハイパースペクトル分光計を搭載した民間衛星「Tanager-1」が、石油施設や埋立地からのメタン・CO2漏洩プルームを地上分解能約30mで特定する運用を本格化しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>個別バルブ単位の法的証拠力：</strong> 広域平均値しか測れなかった従来の限界を打破し、どの施設のどの設備が漏洩しているかを客観的に特定できます。</li>
+                    <li><strong>カーボンクレジットの信頼性担保：</strong> メタン固有の赤外吸収ピークを数百バンドで精密測定し、企業の脱炭素宣言の実効性を客観証明します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.eoportal.org/satellite-missions/carbon-mapper" target="_blank" rel="noopener noreferrer">EO Portal（Carbon Mapper Mission）</a>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="trend-box">
+            <div class="trend-title">11.【超低軌道・超高解像度】米Albedoが高度320kmのVLEOから地上解像度2mの商用熱赤外線（LWIR）画像を提供 (2025年9月)</div>
+            <p style="margin: 0 0 0.8rem 0;">Albedo Space社は超低地球軌道（VLEO）を飛行する小型衛星「Clarity-1」を展開し、熱赤外線（LWIR）において航空写真に匹敵する地上分解能2mでの商用データ配信を開始しました。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>光学系を肥大化させない超解像：</strong> 軌道高度を半減させることで、大重量のレンズやクライオクーラーを積まずに小型衛星で極限解像度を達成しました。</li>
+                    <li><strong>都市・インフラの夜間常時診断：</strong> 夜間の防衛偵察に加え、工場稼働状況や都市熱アイランド、森林初期熱源を夜間でもクリアに監視可能です。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://www.eoportal.org/satellite-missions/clarity" target="_blank" rel="noopener noreferrer">EO Portal（Albedo Clarity Mission）</a>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="trend-box">
+            <div class="trend-title">12.【環境NGO・オープンデータ】「MethaneSAT」が高感度赤外分光で広域微量メタンをGoogle Earth上に全面公開 (2024年3月4日)</div>
+            <p style="margin: 0 0 0.8rem 0;">環境防衛基金（EDF）等の衛星「MethaneSAT」は、独自開発の高感度赤外分光センサにより世界中の中小農業や分散油田からの逃散微量メタンを測定し、完全無償公開しています。</p>
+            <div class="trend-section">
+                <strong style="display:block; margin-bottom:0.3rem; color:var(--primary-color);">なぜ重要か：</strong>
+                <ul style="margin:0; padding-left:1.2rem; line-height:1.7;">
+                    <li><strong>見逃されていた排出の大半を網羅：</strong> 大規模事故だけでなく、世界全体の排出過半を占める中小施設の逃散排出を可視化し、規制逃れを防止します。</li>
+                    <li><strong>第三者による気候ガバナンス：</strong> オープンデータ化によって国際機関や市民社会が脱炭素遵守状況を直接監査できる枠組みを提供します。</li>
+                </ul>
+            </div>
+            <div class="ref-text">
+                🔗 <strong>詳しく見る：</strong> <a href="https://developers.google.com/earth-engine/datasets/publisher/edf-methanesat-ee" target="_blank" rel="noopener noreferrer">Google Earth Engine / MethaneSAT データカタログ</a>
+            </div>
+        </div>
+
+        <h2>ピックアップ製品・ソリューション</h2>
+        <h3 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 0.6rem;">
+            LYNRED社 宇宙・極限環境対応 赤外線ディテクタ / 赤外線FPAモジュール<br>
+            <span style="font-size: 0.95rem; font-weight: normal; color: #64748b;">SWIRからVLWIRまで網羅し、過酷な宇宙空間で最高峰のS/N比・高耐放射線・長寿命を実現</span>
+        </h3>
+        
+        <img src="lynred_space_ir_detector.jpg" alt="LYNRED社 宇宙・極限環境対応 赤外線ディテクタ" class="product-img">
+        
+        <div class="trend-section" style="margin-top: 1.5rem;">
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">なぜ重要か：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>軌道上運用の信頼性極大化：</strong> 欧州宇宙機関（ESA）や各国の宇宙防衛・地球観測ミッションで実証済みの耐放射線性能と超低NETDにより、白キズ（ホットピクセル）を抑制し、長期間にわたり極微弱な熱・スペクトル情報を欠損なく捉え続けます。</li>
+            </ul>
+
+            <strong style="display:block; font-size:1.05rem; margin-bottom:0.4rem; color:var(--primary-color);">現場課題への解決アプローチ：</strong>
+            <ul style="margin:0 0 1.5rem 0; padding-left:1.2rem; line-height:1.7;">
+                <li><strong>高動作温度（HOT）化による冷却待機時間の極小化：</strong> 先進のHOT技術と小型統合型クライオクーラー（IDCA）の採用により、冷却負荷を大幅低減。「ひまわり」事例のような待機系切り替え時の長大な再冷却待ちを解消し、即時復旧と連続観測体制を実現します。</li>
+                <li><strong>宇宙放射線被ばく環境に強いT2SL / MCT構造：</strong> LEOやGEOを飛び交う高エネルギー荷電粒子に対し、最適化された結晶構造と欠陥抑制技術を適用。放射線被ばくによる白キズ増加を極限まで抑え、ミサイル追尾やガス分光での誤検知を根絶します。</li>
+                <li><strong>超小型衛星コンステレーションへのSWaP-C最適化：</strong> 冷却型FPAのモジュール超小型化に加え、キューブサットに直接搭載可能な非冷却マイクロボロメータのラインナップも展開。打上げコストと電力を大幅に削減し、数十〜数百基規模の早期配備を支援します。</li>
+            </ul>
+        </div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>対応波長帯域</th>
+                    <td>SWIR（0.9〜1.7μm / 2.5μm）、MWIR（3〜5μm）、LWIR（8〜12μm）、VLWIR（15μm超）</td>
+                </tr>
+                <tr>
+                    <th>検出素子マテリアル</th>
+                    <td>MCT（HgCdTe）、Type-II超格子（T2SL）、InGaAs、非冷却マイクロボロメータ（a-Si / VOx）</td>
+                </tr>
+                <tr>
+                    <th>解像度 / ピクセルピッチ</th>
+                    <td>640×512（VGA）〜 1280×1024（SXGA/HD） / 10μm 〜 15μmピッチ</td>
+                </tr>
+                <tr>
+                    <th>宇宙環境耐性</th>
+                    <td>耐放射線性スクリーニング（Total Ionizing Dose: TID / SEE耐性）、ESA/CNES宇宙フライトヘリテージ実績多数</td>
+                </tr>
+                <tr>
+                    <th>冷却パッケージ</th>
+                    <td>高動作温度（HOT）対応IDCAクライオクーラー / デュワー密閉アセンブリ / パッシブ放熱対応</td>
+                </tr>
+                <tr>
+                    <th>主要アプリケーション</th>
+                    <td>極超音速滑空兵器（HGV）早期警戒追尾層、温室効果ガス（メタン/CO2）広域分光、次世代気象サウンディング、森林火災早期検知</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ref-text" style="margin-bottom: 2rem;">
+            🔗 <strong>製品詳細：</strong> <a href="https://www.chronix.co.jp/chronixjp/products/picture/lynred/lynred.html" target="_blank" rel="noopener noreferrer">クロニクス株式会社 LYNRED社（リンレッド社）製品ページ</a>
+        </div>
+
+        <div class="contact-cta">
+            製品仕様のご確認・デモ機のご相談は<a href="https://www.chronix.co.jp/chronixjp/contact/index.html" target="_blank" rel="noopener noreferrer">こちら（お問い合わせ）</a>まで
+        </div>
+
+    </div>
+
+    <div class="footer-address">
+        <img src="logo-adress.jpg" alt="クロニクス株式会社 連絡先・所在地">
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 CHRONIX. クロニクス株式会社</p>
+</footer>
+
+</body>
+</html>
