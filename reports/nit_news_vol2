@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【技術解説】半導体検査のスループットと精度を両立する「高速SWIRカメラ」の活用戦略</title>
+  <style>
+    :root {
+      --primary-color: #0f4c81;
+      --accent-color: #0077cc;
+      --bg-quote: #f4f7fa;
+      --border-quote: #0f4c81;
+      --text-main: #222222;
+      --border-light: #e0e6ed;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 共通ヘッダーのスタイル */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 5%;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      margin-bottom: 30px;
+    }
+
+    .header-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .back-link {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    /* コンテナとヒーロー画像のスタイル */
+    .container {
+      max-width: 820px;
+      margin: 0 auto 60px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+
+    .report-header {
+      width: 100%;
+      background-color: #eeeeee;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .report-body {
+      padding: 40px 48px;
+    }
+
+    /* 記事内のスタイル */
+    .article-title-area {
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .article-badge {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      line-height: 1.4;
+      margin: 0;
+      color: #111111;
+    }
+
+    .lead-text {
+      font-size: 1.02rem;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      border-left: 5px solid var(--primary-color);
+      padding: 6px 0 6px 14px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      background-color: #f8fafc;
+    }
+
+    .quote-box {
+      background-color: var(--bg-quote);
+      border-left: 4px solid var(--border-quote);
+      margin: 20px 0;
+      padding: 16px 20px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .quote-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    .quote-box p,
+    .quote-box ul {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      color: #333333;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .quote-box ul {
+      padding-left: 20px;
+    }
+
+    .quote-box li + li {
+      margin-top: 6px;
+    }
+
+    .commentary-label {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #334155;
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .feature-list {
+      padding-left: 22px;
+      margin: 12px 0 24px;
+    }
+
+    .feature-list li {
+      margin-bottom: 12px;
+    }
+
+    .article-footer {
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.95rem;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      word-break: break-all;
+    }
+
+    .source-link:hover {
+      text-decoration: underline;
+    }
+
+    /* スマホ向け調整 */
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 12px 16px;
+      }
+      .container {
+        margin: 0 10px 40px;
+        width: calc(100% - 20px);
+      }
+      .report-body {
+        padding: 24px 20px;
+      }
+      h1 {
+        font-size: 1.35rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 共通ヘッダー -->
+  <header class="site-header">
+      <div>
+          <img src="logo_CHRONIX.jpg" alt="CHRONIX ロゴ" class="header-logo">
+      </div>
+      <a href="../index.html" class="back-link">← アーカイブ一覧に戻る</a>
+  </header>
+
+  <!-- コンテナ開始 -->
+  <div class="container">
+      <div class="report-header">
+          <!-- ※必要に応じて画像ファイル名（src）とalt属性を差し替えてください -->
+          <img src="hik_vol2.jpg" alt="半導体検査のスループットと精度を両立する「高速SWIRカメラ」の活用戦略" class="hero-img">
+      </div>
+
+      <div class="report-body">
+        
+        <!-- ▼ ここから記事本文 ▼ -->
+        <div class="article-title-area">
+          <span class="article-badge">技術解説・原文引用版</span>
+          <h1>半導体検査のスループットと精度を両立する「高速SWIRカメラ」の活用戦略</h1>
+        </div>
+
+        <div class="lead-text">
+          <p>半導体製造ラインの高速化とプロセスの微細化が進む中、仏New Imaging Technologies（NIT）社は、優れた画質とスピードを両立する「高速SWIR（短波長赤外）カメラ」の重要性を説く技術レポートを公開しました。本記事では、公式発表の原文に基づき、インライン検査がもたらす歩留まり向上のメカニズムと、ラインスキャン・エリアスキャンの最適な使い分け戦略を紐解きます。</p>
+        </div>
+
+        <section>
+          <h2>1. 微細化・高速化する検査ラインの要求事項とコア技術</h2>
+          
+          <blockquote class="quote-box">
+            <span class="quote-label">【NIT社 原文】</span>
+            <p>"As inspection lines move toward higher speeds and smaller geometries, manufacturers require high-performance SWIR cameras (Line-scan, Area-scan) that can deliver excellent image quality, speed, and stability under demanding industrial conditions. ... NIT's high-speed SWIR cameras are built around proprietary InGaAs sensor technology designed for high sensitivity, low noise, and high dynamic range."</p>
+          </blockquote>
+
+          <span class="commentary-label">【技術解説】</span>
+          <p>検査ラインの高速化とデバイスの微細化（Smaller geometries）が進むにつれ、産業用の過酷な条件下でも安定して高品質な画像を捉えるカメラが求められています。NIT社は、独自のInGaAs（インジウム・ガリウム・ヒ素）センサー技術により<strong>「高感度・低ノイズ・ハイダイナミックレンジ（HDR）」</strong>を実現。半導体製造に特有の高反射（High-reflectance）が混在する環境下でも、確実な微小欠陥（Micro-Defects）の検出を保証する基盤技術として位置づけています。</p>
+        </section>
+
+        <section>
+          <h2>2. 半導体プロセスにおける主要なSWIR検査用途</h2>
+          
+          <blockquote class="quote-box">
+            <span class="quote-label">【NIT社 原文】</span>
+            <p>"Detecting Micro-Defects with High-Speed SWIR Cameras:</p>
+            <ul>
+              <li>Bond and interconnect analysis: Inspecting layers and verifying bonding integrity.</li>
+              <li>Encapsulation and packaging inspection: Identifying trapped particles or voids in encapsulant materials."</li>
+            </ul>
+          </blockquote>
+
+          <span class="commentary-label">【技術解説】</span>
+          <p>SWIRカメラが威力を発揮する具体的な検査工程として、以下が挙げられています。</p>
+          <ul class="feature-list">
+            <li><strong>接合・インターコネクト解析：</strong>シリコンを透過する特性を活かし、ウェーハの積層界面やハイブリッドボンディングの接合品質（ボイドや剥離）を非破壊で検証します。</li>
+            <li><strong>封止・パッケージング検査：</strong>モールド樹脂などの封止材内部に混入した異物（パーティクル）や気泡（ボイド）を透視し、後工程での重大な品質不良を防ぎます。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. 「ラインスキャン」と「エリアスキャン」の使い分け戦略</h2>
+          
+          <blockquote class="quote-box">
+            <span class="quote-label">【NIT社 原文】</span>
+            <p>"Recommendation:</p>
+            <ul>
+              <li>Choose line-scan SWIR cameras for continuous, high-speed wafer or substrate inspection.</li>
+              <li>Choose area-scan SWIR cameras for detailed defect review, lab analysis, or applications requiring high spatial resolution."</li>
+            </ul>
+          </blockquote>
+
+          <span class="commentary-label">【技術解説】</span>
+          <p>量産ラインの要件に合わせ、2つのカメラ方式を最適に選択することが推奨されています。</p>
+          <ul class="feature-list">
+            <li><strong>ラインスキャン（例：LiSaSWIR 2048 v2）：</strong>コンベアで連続搬送されるウェーハ検査や、ダイシング・研磨工程での「インライン欠陥検出」に最適です。2048ピクセルの高解像度で、移動する対象物を止めることなく（ノンストップで）長尺にわたって均一にスキャンできるため、量産タクトの高速化に直結します。</li>
+            <li><strong>エリアスキャン（例：SenS 1280）：</strong>静止したサンプルや移動の遅いプロセスにおいて、瞬時に視野全体（フルフィールド）を捉えます。HD解像度を活かした微細欠陥の詳細なレビューや、ラボでの解析、空間分解能を最優先する精密検査に向いています。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. 導入効果：インライン検査による「歩留まり向上と手戻り削減」</h2>
+          
+          <blockquote class="quote-box">
+            <span class="quote-label">【NIT社 原文】</span>
+            <p>"Boosting Yield and Quality Control. By integrating high-speed SWIR cameras into semiconductor inspection systems, manufacturers can detect hidden defects earlier in the process, reduce rework, and improve overall production yield. ... seeking to increase throughput while maintaining stringent quality standards."</p>
+          </blockquote>
+
+          <span class="commentary-label">【技術解説】</span>
+          <p>高速SWIRカメラを半導体検査システムに統合する最大の目的は、<strong>「隠れた欠陥をプロセスのより早い段階で発見する（detect hidden defects earlier）」</strong>ことです。これにより、不良品が後工程へ流出するのを未然に防ぎ、無駄な手戻り（Rework）や廃棄ロスを削減します。厳しい品質基準をクリアしつつスループット（処理能力）を最大化し、工場全体の生産歩留まり（Yield）を劇的に引き上げる強力なインフラとして機能します。</p>
+        </section>
+
+        <footer class="article-footer">
+          <p>
+            🔗 <strong>出典・詳しく見る：</strong>
+            <a class="source-link" href="https://new-imaging-technologies.com/news/enhancing-semiconductor-inspection-with-high-speed-swir-cameras/" target="_blank" rel="noopener noreferrer">
+              New Imaging Technologies（NIT）社 公式技術発表
+            </a>
+          </p>
+        </footer>
+        <!-- ▲ 記事本文ここまで ▲ -->
+
+      </div> <!-- /.report-body 終了 -->
+  </div> <!-- /.container 終了 -->
+
+</body>
+</html>
