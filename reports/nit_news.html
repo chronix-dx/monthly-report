@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【技術解説】半導体バックエンド検査の限界を突破する「SWIR×真のHDR」技術の最前線</title>
+  <style>
+    :root {
+      --primary-color: #0f4c81;
+      --accent-color: #0077cc;
+      --bg-quote: #f4f7fa;
+      --border-quote: #0f4c81;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --border-light: #e0e6ed;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      line-height: 1.8;
+      color: var(--text-main);
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .tech-article {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .article-header {
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .article-badge {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      line-height: 1.4;
+      margin: 0;
+      color: #111111;
+    }
+
+    .lead-text {
+      font-size: 1.02rem;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      border-left: 5px solid var(--primary-color);
+      padding: 6px 0 6px 14px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      background-color: #f8fafc;
+    }
+
+    .quote-box {
+      background-color: var(--bg-quote);
+      border-left: 4px solid var(--border-quote);
+      margin: 20px 0;
+      padding: 16px 20px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .quote-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    .quote-box p,
+    .quote-box ul {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      color: #333333;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .quote-box ul {
+      padding-left: 20px;
+    }
+
+    .quote-box li + li {
+      margin-top: 6px;
+    }
+
+    .commentary-label {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #334155;
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .feature-list {
+      padding-left: 22px;
+      margin: 12px 0 24px;
+    }
+
+    .feature-list li {
+      margin-bottom: 12px;
+    }
+
+    .article-footer {
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.95rem;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      word-break: break-all;
+    }
+
+    .source-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      .tech-article {
+        padding: 24px 20px;
+      }
+      h1 {
+        font-size: 1.35rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <article class="tech-article">
+    <header class="article-header">
+      <span class="article-badge">技術解説・原文引用版</span>
+      <h1>半導体バックエンド検査の限界を突破する「SWIR×真のHDR」技術の最前線</h1>
+    </header>
+
+    <div class="lead-text">
+      <p>AI向けHBM（広帯域メモリ）や3D積層パッケージの普及に伴い、半導体のバックエンド（後工程）検査において「シリコンを透過して内部を透視する」短波長赤外（SWIR）カメラの導入が急速に進んでいます。しかし、SWIRカメラを導入すればすべてが解決するわけではありません。現場には特有の「光の反射率」という物理的な壁が存在するからです。</p>
+    </div>
+
+    <section>
+      <h2>1. バックエンド特有の課題：シリコンと金属の「極端な明暗差」</h2>
+      
+      <blockquote class="quote-box">
+        <span class="quote-label">【NIT社 原文】</span>
+        <p>"Backend scenes mix extremes of reflectance. ... Metallization layers and wire bonds are specular and bright; silicon and mold compound are dark. A camera that clips the highlights to see the dark regions (or vice versa) corrupts both classes of measurement. True HDR capability – addresses this in a single exposure path."</p>
+      </blockquote>
+
+      <span class="commentary-label">【技術解説】</span>
+      <p>後工程の検査環境では、光の反射率が極端に異なる素材が1つの視野内に混在します。「金属配線層やワイヤーボンド」は鏡面反射して極端に明るく、「シリコンやモールド樹脂」は極端に暗く映ります。一般的なカメラでは、暗いシリコン内部を透視しようとすると金属部分が白飛びし、逆に金属に合わせるとシリコン内部が黒つぶれしてしまいます。どちらかのデータが欠落すれば検査エラーとなるため、単一露光で明暗の両方を同時に捉えきる<strong>「真のHDR（ハイダイナミックレンジ）機能」</strong>が不可欠視されています。</p>
+    </section>
+
+    <section>
+      <h2>2. 失敗しないSWIRカメラの選定要件（スペックチェックリスト）</h2>
+      
+      <blockquote class="quote-box">
+        <span class="quote-label">【NIT社 原文】</span>
+        <ul>
+          <li>"Camera Specification Checklist for Backend: Sensitivity: measured QE across 900–1700 nm; read out noise in the operating temperature condition."</li>
+          <li>"Dynamic range and its mechanism: single-exposure DR vs multi-response (dual-gain) HDR."</li>
+        </ul>
+      </blockquote>
+
+      <span class="commentary-label">【技術解説】</span>
+      <p>SWIRセンサー大手の仏New Imaging Technologies（NIT）社は、カメラ選定時に以下の仕様を厳密に確認すべきと警鐘を鳴らしています。</p>
+      <ul class="feature-list">
+        <li><strong>実動作環境での「感度（Sensitivity）」：</strong>900〜1700nmの波長域における量子効率（QE）の高さだけでなく、「実際の動作温度条件下での読み出しノイズレベル」が重要です。シリコンを数百µm透過する過程で光が大きく減衰するため、極低ノイズ特性が検査の成否を分けます。</li>
+        <li><strong>ダイナミックレンジの「仕組み」：</strong>仕様書上の単なる「単一露光のダイナミックレンジ」なのか、それとも前述の明暗混在シーンに対応するために設計された「デュアルゲイン（複数応答）によるHDR」を備えているかを把握する必要があります。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. 用途で選ぶ最新SWIRカメララインナップ</h2>
+      
+      <blockquote class="quote-box">
+        <span class="quote-label">【NIT社 原文】</span>
+        <ul>
+          <li>"Typical fits for backend imaging tasks: WiDy SenS 320 / WiDy SenS 640: High-speed, dual-response HDR area cameras for scenes combining metallization and silicon..."</li>
+          <li>"SenS 1280 / SenS 1920: Full HD, high sensitivity."</li>
+          <li>"LiSaSWIR 2048 v2: 2K line-scan for inline strip, substrate and panel-level packaging inspection."</li>
+        </ul>
+      </blockquote>
+
+      <span class="commentary-label">【技術解説】</span>
+      <p>NIT社は、検査対象やタクトタイムの要求に合わせて以下の最適解を提示しています。</p>
+      <ul class="feature-list">
+        <li><strong>HDR特化モデル（WiDy SenSシリーズ）：</strong>金属の明部とシリコンの暗部を1回の露光で同時に捉える必要がある複合シーンに最適な、高速・デュアル応答HDR対応エリアカメラ。</li>
+        <li><strong>高感度・高解像度モデル（SenSシリーズ）：</strong>HD・フルHD解像度を備え、極めて高い感度と微細な空間分解能が求められるダイアタッチボイドやワイヤーボンド検査に特化。</li>
+        <li><strong>ラインスキャンモデル（LiSaSWIR）：</strong>2Kのラインセンサーを備え、連続搬送されるウェーハやストリップ基板の高速インライン・パッケージング検査に適合。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. SWIR技術の真の価値：インライン全数検査へのブレイクスルー</h2>
+      
+      <blockquote class="quote-box">
+        <span class="quote-label">【NIT社 原文】</span>
+        <p>"Can a SWIR camera replace cross-sectioning or acoustic microscopy? Not entirely. Destructive and slow methods don't fit inline process control, and SWIR camera backend inspection doesn't cover every defect type. SWIR provides fast, non-destructive, inline-capable through-silicon imaging."</p>
+      </blockquote>
+
+      <span class="commentary-label">【技術解説】</span>
+      <p>NIT社は技術の限界についても客観的に触れており、「SWIRカメラは、従来の断面観察（破壊検査）や超音波顕微鏡を完全に置き換えるものではない（すべての欠陥を網羅できるわけではない）」としています。</p>
+      <p>しかし、従来の破壊検査や超音波顕微鏡には「時間がかかりすぎるため、量産ラインのプロセス制御に組み込めない」という致命的な弱点がありました。SWIRカメラの最大の価値は、この弱点を補完し、<strong>「高速・非破壊・インライン対応」でシリコン内部構造を全数透視する次世代の検査インフラ</strong>として機能する点にあります。</p>
+      <p>歩留まりの直撃を防ぐため、後工程ラインにおける「SWIR×HDR」の標準化は今後さらに加速していく見通しです。</p>
+    </section>
+
+    <footer class="article-footer">
+      <p>
+        🔗 <strong>出典・詳しく見る：</strong>
+        <a class="source-link" href="https://new-imaging-technologies.com/news/swir-camera-backend-inspection/" target="_blank" rel="noopener noreferrer">
+          New Imaging Technologies（NIT）社 公式技術解説
+        </a>
+      </p>
+    </footer>
+  </article>
+
+</body>
+</html>
